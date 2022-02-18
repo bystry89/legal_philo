@@ -4,7 +4,8 @@ works <- read.csv("works.csv")
 
 refs <- list()
 cits <- list()
-for (i in 7476:nrow(works)) {
+
+for (i in 1:nrow(works)) {
   url <- paste("https://api.openalex.org/works:", works[i,"id"],'?username=piotr.bystranowski@uj.edu.pl',sep='')
   json <- GET(url)
   if (json$status_code == 404) {
@@ -30,6 +31,9 @@ for (i in 7476:nrow(works)) {
   }}
   print(i)
 }
+<<<<<<< HEAD
 
 write.csv(cits, "cits.csv")
 write.csv(refs, "refs.csv")
+=======
+>>>>>>> 5cf411c0c62edd9d5733dcb5649b4a87f7389d3c
