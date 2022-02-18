@@ -21,19 +21,19 @@ cits <- read.csv("cits.csv") %>%
   ungroup()
 
 ## STEP 1
-ref_filt <- refs %>% 
-  filter(refs %in% works$id)
+#ref_filt <- refs %>% 
+#  filter(refs %in% works$id)
 
-works <- ref_filt %>% 
-  count(work) %>% 
-  rename(inrefs_N=n) %>% 
-  right_join(works, c("work" = "id"))
+#works <- ref_filt %>% 
+#  count(work) %>% 
+#  rename(inrefs_N=n) %>% 
+#  right_join(works, c("work" = "id"))
 
-works <- ref_filt %>% 
-  count(refs) %>% 
-  rename(incits_N=n) %>% 
-  right_join(works, c("cit" = "work")) %>% 
-  rename(id = refs)
+#works <- ref_filt %>% 
+#  count(refs) %>% 
+#  rename(incits_N=n) %>% 
+#  right_join(works, c("cit" = "work")) %>% 
+#  rename(id = refs)
 
 works <- works %>% 
   mutate(inrefs_N = ifelse(is.na(inrefs_N), 0, inrefs_N),
@@ -44,8 +44,9 @@ works_filt <- works %>% filter(inrefs_N>0 | incits_N > 0)
 
 ## STEP 2
 outrefs <- refs %>% 
-  filter(work %in% works_filt$id, 
-         !refs %in% works_filt$id) %>% 
+  #filter(work %in% works_filt$id, 
+  #       !refs %in% works_filt$id) %>% 
+  filter(!refs %in% works$work) %>% 
   count(refs) %>% 
   filter(n > 3) %>% 
   arrange(desc(n))
