@@ -5,7 +5,7 @@ date: '2022-03-05'
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+#knitr::opts_chunk$set(echo = TRUE)
 library(kableExtra)
 ```
 
@@ -21,11 +21,89 @@ source("graph_analysis.R")
 
 ## Including Plots
 
+##General jurisprudence (2)
 
-
-```{r pressure, echo=FALSE}
-nodes %>% filter(Modularity.Class==2) %>% 
-  left_join(works) %>% 
-  arrange(desc(eigen)) %>% select(id, Label, publication_year, first_author) %>% head(10) %>% kable()
+```{r }
+tf_idf(2) 
 ```
+```{r}
+subgraphCentrality(2) %>% kable() %>% kableExtra::kable_paper()
+```
+
+## Justice and equality (1)
+
+```{r }
+tf_idf(1) 
+```
+```{r}
+subgraphCentrality(1) %>% kable() %>% kableExtra::kable_paper()
+```
+
+## Theory of argumentation (12)
+```{r }
+tf_idf(12) 
+```
+```{r}
+subgraphCentrality(12) %>% kable() %>% kableExtra::kable_paper()
+```
+
+## Punishment (16)
+
+```{r }
+tf_idf(16) 
+```
+```{r}
+subgraphCentrality(16) %>% kable() %>% kableExtra::kable_paper()
+```
+
+## Responsibility (4)
+
+
+```{r }
+tf_idf(4) 
+```
+```{r}
+subgraphCentrality(4) %>% kable() %>% kableExtra::kable_paper()
+```
+
+## Precedents and case-based reasoning (10)
+
+
+```{r }
+tf_idf(10) 
+```
+```{r}
+subgraphCentrality(10) %>% kable() %>% kableExtra::kable_paper()
+```
+
+## Presumption of innocence (9)
+
+```{r }
+tf_idf(9) 
+```
+```{r}
+subgraphCentrality(9) %>% kable() %>% kableExtra::kable_paper()
+```
+
+## Philosophy of (14)
+
+```{r }
+tf_idf(14) 
+```
+```{r}
+subgraphCentrality(14) %>% kable() %>% kableExtra::kable_paper()
+```
+
+## Philosophy of (6)
+
+```{r }
+tf_idf(6) 
+```
+```{r}
+subgraphCentrality(6) %>% kable() %>% kableExtra::kable_paper()
+```
+
+
+
+
 

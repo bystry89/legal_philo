@@ -1,6 +1,8 @@
 library(igraph)
 library(tidyverse)
 library(tidytext)
+library(ggplot2)
+
 
 nodes <- read_csv("cmp_nodes.csv")
 edges <- read_csv("edges_cmp.csv")
@@ -22,21 +24,40 @@ clust_words <- clust_words %>% left_join(tot_words)
 clust_tf_idf <-  clust_words %>% 
   bind_tf_idf(token, Modularity.Class, n)
 
+tf_idf <- function(x) {
 clust_tf_idf %>% 
-  filter(Modularity.Class == 1) %>% 
-  arrange(desc(tf_idf)) %>% head(25)
-
+  filter(Modularity.Class == x) %>% 
+  arrange(desc(tf_idf)) %>% 
+    select(token, tf_idf) %>% 
+    mutate(tf_idf = tf_idf, token = reorder(token, -tf_idf))%>% 
+    head(10) %>% 
+    ggplot(aes(x = token, y = tf_idf)) + geom_bar(stat = "identity") +
+    theme_minimal()+
+    theme(axis.text.x = element_text(angle = 40, size = 13))
+}
 
 nodes %>% filter(Modularity.Class==6) %>% 
   left_join(works, by="id") %>% 
   arrange(desc(eigen)) %>% select(id, Label, publication_year, first_author) %>% head(10)
 
-nodes %>% count(Modularity.Class, sort=T)
+#nodes %>% count(Modularity.Class, sort=T) %>% print(n=Inf)
 
-authors <- read_csv("authors_full.csv") %>% distinct(item, id, .keep_all = T) %>% select(-...1, -X.1, -X)
+#authors <- read_csv("authors_full.csv") %>% distinct(item, id, .keep_all = T) %>% select(-...1, -X.1, -X)
 
-authors %>% filter(item %in% nodes$id) %>% left_join(works, by=c("item"="id"))  %>% View()
+#authors %>% filter(item %in% nodes$id) %>% left_join(works, by=c("item"="id"))  %>% View()
 
 inst <- read_csv("insts_full.csv")
 
-inst %>% filter(item %in% nodes$id) %>% count(country_code, sort=T) %>% print(n=Inf)
+#inst %>% filter(item %in% nodes$id) %>% count(country_code, sort=T) %>% print(n=Inf)
+
+make_subgraph <- function(x) {
+  nodes <- nodes %>% 
+    filter(Modularity.Class == x)
+  edges <- edges %>% 
+    filter(Source %in% nodes$id & Target %in% nodes$id)
+  return(graph_from_data_frame(edges, vertices = nodes, directed = F))
+}
+subgraphCentrality <- function(x) {
+data.frame(Label=names(eigen_centrality(make_subgraph(x))$vector), centrality = as.numeric(eigen_centrality(make_subgraph(x))$vector)) %>% 
+  arrange(desc(centrality)) %>% head(10) %>% left_join(works, by = c("Label" = "id")) %>% select(first_author, display_name, centrality)
+}
