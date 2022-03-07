@@ -1,12 +1,13 @@
 library(tidyverse)
+library(httr)
 
-works <- read.csv("works.csv")
+works <- read.csv("works_oa+j.csv")
 
 refs <- list()
 cits <- list()
 
 
-for (i in 978:nrow(works)) {
+for (i in 13194:nrow(works)) {
 
   url <- paste("https://api.openalex.org/works:", works[i,"id"],'?username=piotr.bystranowski@uj.edu.pl',sep='')
   json <- GET(url)
@@ -23,19 +24,23 @@ for (i in 978:nrow(works)) {
   works[i, 'citations'] <- result$cited_by_count
   
   if (result$cited_by_count > 0) {
-    json <- GET(result$cited_by_api_url)
-    result_cit <- rjson::fromJSON(rawToChar(json$content))$results 
-    if (length(result_cit) > 0) {
-    for (j in 1:length(result_cit)) {
-      cits <- bind_rows(cits, data.frame(work = works[i, 'id'], 
+    numb <- result$cited_by_count %/% 200
+    if (result$cited_by_count %% 200 > 0) numb <- numb + 1
+    for (m in 1:numb) {
+      json <- GET(paste0(result$cited_by_api_url, "&per_page=200&page=", m))
+      result_cit <- rjson::fromJSON(rawToChar(json$content))$results 
+      if (length(result_cit) > 0) {
+        for (j in 1:length(result_cit)) {
+        cits <- bind_rows(cits, data.frame(work = works[i, 'id'], 
                                          cit = result_cit[[j]]$id))
+        }
     }}
   }}
   print(i)
 }
 
-bind_rows(cits, read.csv("cits.csv")) %>% 
-  write.csv("cits.csv")
-bind_rows(refs, read.csv("refs.csv")) %>% 
-  write.csv("refs.csv")
+
+  write.csv(cits, "cits.csv")
+
+  write.csv(refs, "refs.csv")
 

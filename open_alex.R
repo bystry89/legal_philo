@@ -21,7 +21,7 @@ inst <- list()
 authors <- data.frame()
 faulty <- c()
 n <- 0
-for (i in doi$DOI[1:nrow(doi)]) {
+for (i in doi$DOI[6964:nrow(doi)]) {
   n = n + 1
   print(n)
   url <- paste("https://api.openalex.org/works/doi:", i,'?username=piotr.bystranowski@uj.edu.pl',sep='')
@@ -37,6 +37,7 @@ for (i in doi$DOI[1:nrow(doi)]) {
   df <- bind_cols(df, data.frame(journal=result$host_venue$display_name, journal_id = result$host_venue$id, 
                                  doi = result$ids$doi))
   if (length(result$authorships)>0) df$first_author <- result$authorships[[1]]$author$display_name
+  if (!is.null(result$cited_by_count)) df$citations <- result$cited_by_count
   articles <- bind_rows(df, articles)
   if (length(result$authorships)==0) next
   for (j in result$authorships) {
@@ -62,7 +63,7 @@ for (i in doi$DOI[1:nrow(doi)]) {
 
 
 #### STEP2
-faulty <- read.csv("faulty_doi.csv")
+#faulty <- read.csv("faulty_doi.csv")
 
 faulty <- data.frame(faulty)
 
@@ -84,7 +85,7 @@ articles2 <- list()
 authors2 <- data.frame()
 inst2 <- list()
 faulty2 <- c()
-for (i in 4401:nrow(resid)) {
+for (i in 3010:nrow(resid)) {
   url <- paste('https://api.openalex.org/works?filter=display_name.search:"', 
                resid[i,"title"],'"',sep='')
   json <- GET(url)
@@ -104,6 +105,7 @@ for (i in 4401:nrow(resid)) {
   df <- bind_cols(df, data.frame(journal=result[[1]]$host_venue$display_name, 
                                  journal_id = result[[1]]$host_venue$id, 
                                  first_author = result[[1]]$authorships[[1]]$author$display_name))
+  if (!is.null(result$cited_by_count)) df$citations <- result$cited_by_count
   articles2 <- bind_rows(df, articles2)
   if (length(result[[1]]$authorships)==0) next
   for (j in result[[1]]$authorships) {
@@ -135,7 +137,7 @@ resid_a$title <- gsub("\\’", "\\'", resid_a$title)
 articles2a <- list()
 authors2a <- data.frame()
 inst2a <- list()
-for (i in 1229:nrow(resid_a)) {
+for (i in 1:nrow(resid_a)) {
   url <- paste('https://api.openalex.org/works?filter=display_name.search:"', 
                resid_a[i,"title"],'"',sep='')
   json <- GET(url)
@@ -155,6 +157,7 @@ for (i in 1229:nrow(resid_a)) {
   df <- bind_cols(df, data.frame(journal=result[[1]]$host_venue$display_name, 
                                  journal_id = result[[1]]$host_venue$id, 
                                  first_author = result[[1]]$authorships[[1]]$author$display_name))
+  if (!is.null(result$cited_by_count)) df$citations <- result$cited_by_count
   articles2a <- bind_rows(df, articles2a)
   if (length(result[[1]]$authorships)==0) next
   for (j in result[[1]]$authorships) {
@@ -182,7 +185,7 @@ articles3 <- list()
 authors3 <- data.frame()
 inst3 <- list()
 
-for (i in 1:nrow(resid_num)) {
+for (i in 1278:nrow(resid_num)) {
   url <- paste('https://api.openalex.org/works?filter=display_name.search:"', 
                resid_num[i,"title"], 
                '",publication_year:',
@@ -221,17 +224,18 @@ for (i in 1:nrow(resid_num)) {
   print(i)
 }
 
+
 bind_rows(articles,
           articles2,
           articles2a,
-          articles3) %>% write.csv("works.csv")
+          articles3) %>% write.csv("works_oa.csv")
 
 bind_rows(authors,
           authors2,
           authors2a,
-          authors3) %>% write.csv("authors.csv")
+          authors3) %>% write.csv("authors_oa.csv")
 
 bind_rows(inst,
           inst2,
           inst2a,
-          inst3) %>% write.csv("insts.csv")
+          inst3) %>% write.csv("insts_oa.csv")
