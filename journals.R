@@ -33,7 +33,8 @@ for (i in journals) {
   json <- GET(url)
   results <- rjson::fromJSON(rawToChar(json$content)) %>% nullToNA()
   numb <- results$meta$count %/% 200
-  for (m in 1:(numb+1)) {
+  if (results$meta$count %% 200 > 0) numb <- numb + 1
+  for (m in 1:numb) {
     arts <- list()
     auths <- list()
     ins <- list()
@@ -57,29 +58,38 @@ for (i in journals) {
                            name = j$author$display_name)
         auths <- bind_rows(auths, auth)
         
+        if (length(j$institutions)>0) {
         for (k in j$institutions) {
           ins <- bind_rows(ins, data.frame(item = result$id, 
                                              nullToNA(k)))
+        }
         }
       }
     }
     articles <- bind_rows(articles, arts)
     authors <- bind_rows(authors, auths)
     inst <- bind_rows(inst, ins)
-    print(paste("journal: ", i, ", round: ", m, "/", numb+1, sep=""))
+    print(paste("journal: ", i, ", round: ", m, "/", numb, sep=""))
   }
 }
 
 #filter
-articles <- articles %>% anti_join(read.csv("works.csv"), by='id')
-authors <- authors %>% anti_join(read.csv("works.csv"), by=c('item'='id'))
-inst <- inst %>% anti_join(read.csv("works.csv"), by=c('item'='id'))
+write_csv(articles, "works_jour.csv")
+write_csv(authors, "authors_jour.csv")
+write_csv(inst, "inst_jour.csv")
 
-bind_rows(articles, read.csv("works.csv")) %>% 
-  write.csv("works.csv")
 
-bind_rows(authors, read.csv("authors.csv")) %>% 
-  write.csv("authors.csv")
+articles <- articles %>% anti_join(read.csv("works_oa.csv"), by='id')
+authors <- authors %>% anti_join(read.csv("works_oa.csv"), by=c('item'='id'))
+inst <- inst %>% anti_join(read.csv("works_oa.csv"), by=c('item'='id'))
 
-bind_rows(inst, read.csv("insts.csv")) %>% 
-  write.csv("insts.csv")          
+
+
+bind_rows(articles, read.csv("works_oa.csv")) %>% 
+  write.csv("works_oa+j.csv")
+
+bind_rows(authors, read.csv("authors_oa.csv")) %>% 
+  write.csv("authors_oa+j.csv")
+
+bind_rows(inst, read.csv("insts_oa.csv")) %>% 
+  write.csv("insts_oa+j.csv")          
