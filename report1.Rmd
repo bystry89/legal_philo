@@ -9,11 +9,10 @@ date: '2022-03-05'
 library(kableExtra)
 ```
 
-## R Markdown
+## Data set acquisition
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
 
 ```{r cars}
 source("graph_analysis.R")
@@ -21,25 +20,17 @@ source("graph_analysis.R")
 
 ## Including Plots
 
-##General jurisprudence (2)
+## Argumentation (0)
 
 ```{r }
-tf_idf(2) 
+tf_idf(0) 
 ```
 ```{r}
-subgraphCentrality(2) %>% kable() %>% kableExtra::kable_paper()
+subgraphCentrality(0) %>% kable() %>% kableExtra::kable_paper()
 ```
 
-## Justice and equality (1)
+## General jurisprudence (12)
 
-```{r }
-tf_idf(1) 
-```
-```{r}
-subgraphCentrality(1) %>% kable() %>% kableExtra::kable_paper()
-```
-
-## Theory of argumentation (12)
 ```{r }
 tf_idf(12) 
 ```
@@ -47,36 +38,15 @@ tf_idf(12)
 subgraphCentrality(12) %>% kable() %>% kableExtra::kable_paper()
 ```
 
-## Punishment (16)
-
+## Punishment and responsibility (11)
 ```{r }
-tf_idf(16) 
+tf_idf(11) 
 ```
 ```{r}
-subgraphCentrality(16) %>% kable() %>% kableExtra::kable_paper()
+subgraphCentrality(11) %>% kable() %>% kableExtra::kable_paper()
 ```
 
-## Responsibility (4)
-
-
-```{r }
-tf_idf(4) 
-```
-```{r}
-subgraphCentrality(4) %>% kable() %>% kableExtra::kable_paper()
-```
-
-## Precedents and case-based reasoning (10)
-
-
-```{r }
-tf_idf(10) 
-```
-```{r}
-subgraphCentrality(10) %>% kable() %>% kableExtra::kable_paper()
-```
-
-## Presumption of innocence (9)
+## Justice and fairness (9)
 
 ```{r }
 tf_idf(9) 
@@ -85,16 +55,45 @@ tf_idf(9)
 subgraphCentrality(9) %>% kable() %>% kableExtra::kable_paper()
 ```
 
-## Philosophy of (14)
+## Global justice (2)
+
 
 ```{r }
-tf_idf(14) 
+tf_idf(2) 
 ```
 ```{r}
-subgraphCentrality(14) %>% kable() %>% kableExtra::kable_paper()
+subgraphCentrality(2) %>% kable() %>% kableExtra::kable_paper()
 ```
 
-## Philosophy of (6)
+## Justice in contracts and torts (7)
+
+
+```{r }
+tf_idf(7) 
+```
+```{r}
+subgraphCentrality(7) %>% kable() %>% kableExtra::kable_paper()
+```
+
+## Constitutionalism / legal pluralism / Germans / virtues (5)
+
+```{r }
+tf_idf(5) 
+```
+```{r}
+subgraphCentrality(5) %>% kable() %>% kableExtra::kable_paper()
+```
+
+## Criminal law (19)
+
+```{r }
+tf_idf(19) 
+```
+```{r}
+subgraphCentrality(19) %>% kable() %>% kableExtra::kable_paper()
+```
+
+## Law and political theory (6)
 
 ```{r }
 tf_idf(6) 
@@ -104,6 +103,94 @@ subgraphCentrality(6) %>% kable() %>% kableExtra::kable_paper()
 ```
 
 
+## Natural law and non-positivism (8)
+
+```{r }
+tf_idf(8) 
+```
+```{r}
+subgraphCentrality(8) %>% kable() %>% kableExtra::kable_paper()
+```
+
+## International (criminal) law (1)
+
+```{r }
+tf_idf(1) 
+```
+```{r}
+subgraphCentrality(1) %>% kable() %>% kableExtra::kable_paper()
+```
+
+## Expert systems (13)
+
+```{r }
+tf_idf(13) 
+```
+```{r}
+subgraphCentrality(13) %>% kable() %>% kableExtra::kable_paper()
+```
+
+## ? (20)
+
+```{r }
+tf_idf(20) 
+```
+```{r}
+subgraphCentrality(20) %>% kable() %>% kableExtra::kable_paper()
+```
+
+## Promising and reasonableness (21)
+
+```{r }
+tf_idf(21) 
+```
+```{r}
+subgraphCentrality(21) %>% kable() %>% kableExtra::kable_paper()
+```
+
+## Classical natural law (23)
+
+```{r }
+tf_idf(23) 
+```
+```{r}
+subgraphCentrality(23) %>% kable() %>% kableExtra::kable_paper()
+```
+
+## Legal epistemology (3)
+
+```{r }
+tf_idf(3) 
+```
+```{r}
+subgraphCentrality(3) %>% kable() %>% kableExtra::kable_paper()
+```
 
 
+## Corporate personhood (18)
+
+```{r }
+tf_idf(18) 
+```
+```{r}
+subgraphCentrality(18) %>% kable() %>% kableExtra::kable_paper()
+```
+
+## Hate speech (17)
+
+```{r }
+tf_idf(17) 
+```
+```{r}
+subgraphCentrality(17) %>% kable() %>% kableExtra::kable_paper()
+```
+
+## Kant/Hegel/Kelsen (4)
+
+```{r }
+tf_idf(4) 
+```
+```{r}
+subgraphCentrality(4) %>% kable() %>% kableExtra::kable_paper()
+```
 
