@@ -3,11 +3,13 @@ library(tidyverse)
 library(tidytext)
 library(ggplot2)
 
-nodes <- read_csv("cmp_nodes.csv")
-edges <- read_csv("edges_cmp.csv")
-works <- read_csv("works_full.csv")
+#nodes <- read_csv("data/cits/cmp_nodes.csv")
+#edges <- read_csv("data/cits/edges_cmp.csv")
+#works <- read_csv("data/raw/works_full.csv")
 
-abstract_tokens <- read.csv("tokenized.csv") %>% 
+abstract_tokens <- 
+  #read.csv("data/text/tokenized.csv") %>% 
+  tokenized %>% 
   anti_join(get_stopwords(), by = c("term" = "word")) %>% 
   left_join(nodes, by = c("doc" = "id")) %>% 
   select(term, n, Modularity.Class) %>% 
@@ -46,33 +48,21 @@ clust_tf_idf %>%
     mutate(token= reorder(token, tf_idf, mean))%>% 
     ggplot(aes(x = token, y = tf_idf)) + geom_bar(stat = "identity") +
     theme_minimal()+
-    theme(axis.text.x = element_text(angle = 40, size = 13))
+    theme(axis.text.x = element_text(angle = 40, size = 19, vjust = 1, hjust = 1), axis.title = element_blank())
 }
 
-nodes %>% filter(Modularity.Class==0) %>% 
-  left_join(works, by="id") %>% 
-  arrange(desc(eigen)) %>% select(id, display_name, publication_year, first_author) %>% head(10)
+# nodes %>% filter(Modularity.Class==0) %>% 
+#   left_join(works, by="id") %>% 
+#   arrange(desc(eigen)) %>% select(id, display_name, publication_year, first_author) %>% head(10)
 
-nodes %>% count(Modularity.Class, sort=T) %>% print(n=Inf)
+#nodes %>% count(Modularity.Class, sort=T) %>% print(n=Inf)
 
 #authors <- read_csv("authors_full.csv") %>% distinct(item, id, .keep_all = T) %>% select(-...1, -X.1, -X)
 
 #authors %>% filter(item %in% nodes$id) %>% left_join(works, by=c("item"="id"))  %>% View()
 
-inst <- read_csv("insts_full.csv")
+#inst <- read_csv("insts_full.csv")
 
 #inst %>% filter(item %in% nodes$id) %>% count(country_code, sort=T) %>% print(n=Inf)
 
-make_subgraph <- function(x) {
-  nodes <- nodes %>% 
-    filter(Modularity.Class == x)
-  edges <- edges %>% 
-    filter(Source %in% nodes$id & Target %in% nodes$id)
-  return(graph_from_data_frame(edges, vertices = nodes, directed = F))
-}
-subgraphCentrality <- function(x) {
-  G <- make_subgraph(x)
-  eigen <- eigen_centrality(G, weights = NA)
-data.frame(Label=names(eigen$vector), centrality = as.numeric(eigen$vector)) %>% 
-  arrange(desc(centrality)) %>% head(10) %>% left_join(works, by = c("Label" = "id")) %>% select(first_author, display_name, centrality)
-}
+

@@ -126,96 +126,258 @@ source("../src/flowchart.R")
 flowchart
 ```
 
---
+---
 
-You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rstudio/), but you do not have to.
-
-- Create a new R Markdown document from the menu `File -> New File -> R Markdown -> From Template -> Ninja Presentation`;<sup>1</sup>
-
---
-
-- Click the `Knit` button to compile it;
-
---
-
-- or use the [RStudio Addin](https://rstudio.github.io/rstudioaddins/)<sup>2</sup> "Infinite Moon Reader" to live preview the slides (every time you update and save the Rmd document, the slides will be automatically reloaded in RStudio Viewer.
-
-.footnote[
-[1] 中文用户请看[这份教程](https://slides.yihui.org/xaringan/zh-CN.html)
-
-[2] See [#2](https://github.com/yihui/xaringan/issues/2) if you do not see the template or addin in RStudio.
+# Graph
+.graph[
+```{r, echo=FALSE, out.width="150%"}
+ knitr::include_graphics("graph.png") 
+```
 ]
 
 ---
-background-image: url(`r xaringan:::karl`)
-background-position: 50% 50%
-class: center, bottom, inverse
-
-# You only live once!
+class: inverse, center, middle
+# Wykrywanie <br>i interpretacja <br>wspólnot
 
 ---
 
-# Hello Ninja
+.left.column[# Wykrywanie <br>i interpretacja <br>wspólnot]
+.right-column[Wykrywanie wspólnot przy pomocy algorytmu z Louvain.
 
-As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
+26 wspólnot (od 2 do 367 członków), w tym 19 zinterpretowanych.
 
-1. The [remark.js](https://remarkjs.com) library;
-
-1. The **xaringan** package;
-
-Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
-
----
-
-# remark.js
-
-You can see an introduction of remark.js from [its homepage](https://remarkjs.com). You should read the [remark.js Wiki](https://github.com/gnab/remark/wiki) at least once to know how to
-
-- create a new slide (Markdown syntax<sup>*</sup> and slide properties);
-
-- format a slide (e.g. text alignment);
-
-- configure the slideshow;
-
-- and use the presentation (keyboard shortcuts).
-
-It is important to be familiar with remark.js before you can understand the options in **xaringan**.
-
-.footnote[[*] It is different with Pandoc's Markdown! It is limited but should be enough for presentation purposes. Come on... You do not need a slide for the Table of Contents! Well, the Markdown support in remark.js [may be improved](https://github.com/gnab/remark/issues/142) in the future.]
-
----
-background-image: url(`r xaringan:::karl`)
-background-size: cover
-class: center, bottom, inverse
-
-# I was so happy to have discovered remark.js!
-
----
-class: inverse, middle, center
-
-# Using xaringan
+Interpretacja wspólnot:
+.list2[
+    + analiza charakterystycznych słów z tytułów i abstraktów (*tf-idf*)
++ analiza najbardziej "prestiżowych" członków (*eigenvector centrality*)
+]]
 
 ---
 
-# xaringan
-
-Provides an R Markdown output format `xaringan::moon_reader` as a wrapper for remark.js, and you can use it in the YAML metadata, e.g.
-
-```yaml
----
-title: "A Cool Presentation"
-output:
-  xaringan::moon_reader:
-    yolo: true
-    nature:
-      autoplay: 30000
----
+# Argumentation
+.left_panel[
+```{r, message=FALSE, echo=FALSE}
+library(kableExtra)
+nodes <- read.csv("../data/cits/nodes.csv")
+edges <- read.csv("../data/cits/edges.csv")
+works <- read.csv("../data/raw/works_full.csv")
+source("../src/functions/subgraphCentrality.R")
+#DT::datatable(subgraphCentrality(0),
+#  fillContainer = T, options = list(pageLength = 8))
+knitr::kable(subgraphCentrality(0), format = 'html') %>% kable_styling(font_size = 12)
 ```
+]
 
-See the help page `?xaringan::moon_reader` for all possible options that you can use.
+.right_top_panel[
+*N* = `r nodes %>% filter(Modularity.Class == 0) %>% nrow()`
+]
 
+.right_bottom_panel[
+```{r, message=F, echo=F}
+tokenized <- read.csv("../data/text/tokenized.csv")
+source("../src/graph_analysis.R")
+tf_idf(0)
+```
+]
 ---
+# General jurisprudence
+.left_panel[
+```{r, message=FALSE, echo=FALSE}
+k=12
+knitr::kable(subgraphCentrality(k), format = 'html') %>% kable_styling(font_size = 12)
+```
+]
 
+.right_top_panel[
+*N* = `r nodes %>% filter(Modularity.Class == k) %>% nrow()`
+]
+
+.right_bottom_panel[
+```{r, message=F, echo=F}
+tf_idf(k)
+```
+]
+---
+# Punishment and responsibility
+.left_panel[
+```{r, message=FALSE, echo=FALSE}
+k=11
+knitr::kable(subgraphCentrality(k), format = 'html') %>% kable_styling(font_size = 12)
+```
+]
+
+.right_top_panel[
+*N* = `r nodes %>% filter(Modularity.Class == k) %>% nrow()`
+]
+
+.right_bottom_panel[
+```{r, message=F, echo=F}
+tf_idf(k)
+```
+]
+---
+# Justice and fairness
+.left_panel[
+```{r, message=FALSE, echo=FALSE}
+k=9
+knitr::kable(subgraphCentrality(k), format = 'html') %>% kable_styling(font_size = 12)
+```
+]
+
+.right_top_panel[
+*N* = `r nodes %>% filter(Modularity.Class == k) %>% nrow()`
+]
+
+.right_bottom_panel[
+```{r, message=F, echo=F}
+tf_idf(k)
+```
+]
+---
+# Global justice
+.left_panel[
+```{r, message=FALSE, echo=FALSE}
+k=2
+knitr::kable(subgraphCentrality(k), format = 'html') %>% kable_styling(font_size = 12)
+```
+]
+
+.right_top_panel[
+*N* = `r nodes %>% filter(Modularity.Class == k) %>% nrow()`
+]
+
+.right_bottom_panel[
+```{r, message=F, echo=F}
+tf_idf(k)
+```
+]
+---
+# Justice in contracts and torts
+.left_panel[
+```{r, message=FALSE, echo=FALSE}
+k=7
+knitr::kable(subgraphCentrality(k), format = 'html') %>% kable_styling(font_size = 12)
+```
+]
+
+.right_top_panel[
+*N* = `r nodes %>% filter(Modularity.Class == k) %>% nrow()`
+]
+
+.right_bottom_panel[
+```{r, message=F, echo=F}
+tf_idf(k)
+```
+]
+---
+# Constitutionalism / legal pluralism / Germans / virtues
+.left_panel[
+```{r, message=FALSE, echo=FALSE}
+k=5
+knitr::kable(subgraphCentrality(k), format = 'html') %>% kable_styling(font_size = 12)
+```
+]
+
+.right_top_panel[
+*N* = `r nodes %>% filter(Modularity.Class == k) %>% nrow()`
+]
+
+.right_bottom_panel[
+```{r, message=F, echo=F}
+tf_idf(k)
+```
+]
+---
+# Criminal law
+.left_panel[
+```{r, message=FALSE, echo=FALSE}
+k=19
+knitr::kable(subgraphCentrality(k), format = 'html') %>% kable_styling(font_size = 12)
+```
+]
+
+.right_top_panel[
+*N* = `r nodes %>% filter(Modularity.Class == k) %>% nrow()`
+]
+
+.right_bottom_panel[
+```{r, message=F, echo=F}
+tf_idf(k)
+```
+]
+---
+# Law and political theory
+.left_panel[
+```{r, message=FALSE, echo=FALSE}
+k=6
+knitr::kable(subgraphCentrality(k), format = 'html') %>% kable_styling(font_size = 12)
+```
+]
+
+.right_top_panel[
+*N* = `r nodes %>% filter(Modularity.Class == k) %>% nrow()`
+]
+
+.right_bottom_panel[
+```{r, message=F, echo=F}
+tf_idf(k)
+```
+]
+---
+# Natural law and non-positivism
+.left_panel[
+```{r, message=FALSE, echo=FALSE}
+k=8
+knitr::kable(subgraphCentrality(k), format = 'html') %>% kable_styling(font_size = 12)
+```
+]
+
+.right_top_panel[
+*N* = `r nodes %>% filter(Modularity.Class == k) %>% nrow()`
+]
+
+.right_bottom_panel[
+```{r, message=F, echo=F}
+tf_idf(k)
+```
+]
+---
+# International (criminal) law
+.left_panel[
+```{r, message=FALSE, echo=FALSE}
+k=1
+knitr::kable(subgraphCentrality(k), format = 'html') %>% kable_styling(font_size = 12)
+```
+]
+
+.right_top_panel[
+*N* = `r nodes %>% filter(Modularity.Class == k) %>% nrow()`
+]
+
+.right_bottom_panel[
+```{r, message=F, echo=F}
+tf_idf(k)
+```
+]
+---
+# Expert systems
+.left_panel[
+```{r, message=FALSE, echo=FALSE}
+k=13
+knitr::kable(subgraphCentrality(k), format = 'html') %>% kable_styling(font_size = 12)
+```
+]
+
+.right_top_panel[
+*N* = `r nodes %>% filter(Modularity.Class == k) %>% nrow()`
+]
+
+.right_bottom_panel[
+```{r, message=F, echo=F}
+tf_idf(k)
+```
+]
+---
 # remark.js vs xaringan
 
 Some differences between using remark.js (left) and using **xaringan** (right):

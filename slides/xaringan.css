@@ -80,6 +80,36 @@ body { font-family:  'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft Y
   
 }
 
+.graph {
+  position: absolute;
+  left: 2%;
+}
+
+.left_panel {
+  position: absolute;
+  width: 42%;
+  left: 5%;
+}
+
+.right_bottom_panel {
+  position: absolute;
+  width: 45%;
+  height: 60%;
+  right: 5%;
+  bottom:10%;
+}
+
+.right_top_panel {
+  position: absolute;
+  width: 42%;
+  height: 30%;
+  right: 5%;
+  top:10%;
+  text-align: right;
+  font-size: 150%;
+  font-weight: bold;
+}
+
 .list1 {
     list-style-type: disc;
     font-size: 25px;

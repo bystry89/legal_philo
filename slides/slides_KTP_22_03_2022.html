@@ -15,6 +15,8 @@
     <link href="libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
     <script src="libs/chromatography/chromatography.js"></script>
     <script src="libs/DiagrammeR-binding/DiagrammeR.js"></script>
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
     <link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
     <script src="libs/datatables-binding/datatables.js"></script>
     <script src="libs/jquery/jquery-3.6.0.min.js"></script>
@@ -127,99 +129,911 @@ class: inverse, center, middle
 
 
 
-<div id="htmlwidget-34a0da18146d251a41dd" style="width:864px;height:504px;" class="DiagrammeR html-widget"></div>
-<script type="application/json" data-for="htmlwidget-34a0da18146d251a41dd">{"x":{"diagram":"\n        graph LR\n        A-->J\n        B-->J\n        J-->C\n        C-->D\n        D-->E\n        E-->F\n        F-->G\n        G-->H\n        H-->I\n        A[All items published in 7 <br> specialist journals]\n        B[All items classified <br> in the philpapers <br>category philosophy of law]\n        C((5,174))\n        D[Add texts <br>cited >7 times]\n        E((5,953))\n        F[Add texts <br>citing >4 items]\n        G((9,429))\n        H[Keep items <br>co-cited >5 times <br>with >1 other items]\n        I((2,262))\n        J[Cited >1 time]\n      "},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-19923e9a80dcd0f0afd3" style="width:864px;height:504px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-19923e9a80dcd0f0afd3">{"x":{"diagram":"\n        graph LR\n        A-->J\n        B-->J\n        J-->C\n        C-->D\n        D-->E\n        E-->F\n        F-->G\n        G-->H\n        H-->I\n        A[All items published in 7 <br> specialist journals]\n        B[All items classified <br> in the philpapers <br>category philosophy of law]\n        C((5,174))\n        D[Add texts <br>cited >7 times]\n        E((5,953))\n        F[Add texts <br>citing >4 items]\n        G((9,429))\n        H[Keep items <br>co-cited >5 times <br>with >1 other items]\n        I((2,262))\n        J[Cited >1 time]\n      "},"evals":[],"jsHooks":[]}</script>
 
---
+---
 
-You are recommended to use the [RStudio IDE](https://www.rstudio.com/products/rstudio/), but you do not have to.
-
-- Create a new R Markdown document from the menu `File -&gt; New File -&gt; R Markdown -&gt; From Template -&gt; Ninja Presentation`;&lt;sup&gt;1&lt;/sup&gt;
-
---
-
-- Click the `Knit` button to compile it;
-
---
-
-- or use the [RStudio Addin](https://rstudio.github.io/rstudioaddins/)&lt;sup&gt;2&lt;/sup&gt; "Infinite Moon Reader" to live preview the slides (every time you update and save the Rmd document, the slides will be automatically reloaded in RStudio Viewer.
-
-.footnote[
-[1] 中文用户请看[这份教程](https://slides.yihui.org/xaringan/zh-CN.html)
-
-[2] See [#2](https://github.com/yihui/xaringan/issues/2) if you do not see the template or addin in RStudio.
+# Graph
+.graph[
+&lt;img src="graph.png" width="150%" /&gt;
 ]
 
 ---
-background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
-background-position: 50% 50%
-class: center, bottom, inverse
-
-# You only live once!
+class: inverse, center, middle
+# Wykrywanie &lt;br&gt;i interpretacja &lt;br&gt;wspólnot
 
 ---
 
-# Hello Ninja
+.left.column[# Wykrywanie &lt;br&gt;i interpretacja &lt;br&gt;wspólnot]
+.right-column[Wykrywanie wspólnot przy pomocy algorytmu z Louvain.
 
-As a presentation ninja, you certainly should not be satisfied by the "Hello World" example. You need to understand more about two things:
+26 wspólnot (od 2 do 367 członków), w tym 19 zinterpretowanych.
 
-1. The [remark.js](https://remarkjs.com) library;
-
-1. The **xaringan** package;
-
-Basically **xaringan** injected the chakra of R Markdown (minus Pandoc) into **remark.js**. The slides are rendered by remark.js in the web browser, and the Markdown source needed by remark.js is generated from R Markdown (**knitr**).
-
----
-
-# remark.js
-
-You can see an introduction of remark.js from [its homepage](https://remarkjs.com). You should read the [remark.js Wiki](https://github.com/gnab/remark/wiki) at least once to know how to
-
-- create a new slide (Markdown syntax&lt;sup&gt;*&lt;/sup&gt; and slide properties);
-
-- format a slide (e.g. text alignment);
-
-- configure the slideshow;
-
-- and use the presentation (keyboard shortcuts).
-
-It is important to be familiar with remark.js before you can understand the options in **xaringan**.
-
-.footnote[[*] It is different with Pandoc's Markdown! It is limited but should be enough for presentation purposes. Come on... You do not need a slide for the Table of Contents! Well, the Markdown support in remark.js [may be improved](https://github.com/gnab/remark/issues/142) in the future.]
-
----
-background-image: url(https://github.com/yihui/xaringan/releases/download/v0.0.2/karl-moustache.jpg)
-background-size: cover
-class: center, bottom, inverse
-
-# I was so happy to have discovered remark.js!
-
----
-class: inverse, middle, center
-
-# Using xaringan
+Interpretacja wspólnot:
+.list2[
+    + analiza charakterystycznych słów z tytułów i abstraktów (*tf-idf*)
++ analiza najbardziej "prestiżowych" członków (*eigenvector centrality*)
+]]
 
 ---
 
-# xaringan
+# Argumentation
+.left_panel[
+&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; first_author &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; display_name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; centrality &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Kevin D. Ashley &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Modeling Legal Argument: Reasoning with Cases and Hypotheticals &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Henry Prakken &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Modelling Reasoning with Precedents in a Formal Dialogue Game &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.96 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Henry Prakken &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A dialectical model of assessing conflicting arguments in legal reasoning &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.95 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; David B. Skalak &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Arguments and cases: An inevitable intertwining &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.92 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Trevor J. M. Bench-Capon &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A model of legal reasoning with cases incorporating theories and values &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.92 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Marek Sergot &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The British Nationality Act as a logic program &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.91 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Thomas F. Gordon &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Pleadings Game: an exercise in computational dialectics &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.90 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Vincent Aleven &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Teaching case-based argumentation through a model and examples &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.89 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Donald H. Berman &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Representing teleological structure in case-based legal reasoning: the missing link &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.87 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Douglas Walton &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Argumentation Schemes for Presumptive Reasoning &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.85 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
 
-Provides an R Markdown output format `xaringan::moon_reader` as a wrapper for remark.js, and you can use it in the YAML metadata, e.g.
+.right_top_panel[
+*N* = 367
+]
 
-```yaml
+.right_bottom_panel[
+![](slides_KTP_22_03_2022_files/figure-html/unnamed-chunk-3-1.png)&lt;!-- --&gt;
+]
 ---
-title: "A Cool Presentation"
-output:
-  xaringan::moon_reader:
-    yolo: true
-    nature:
-      autoplay: 30000
+# General jurisprudence
+.left_panel[
+&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; first_author &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; display_name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; centrality &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; H. L. A. Hart &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Concept of Law &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ronald M. Dworkin &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Law's Empire &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.96 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ronald Dworkin &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Taking Rights Seriously &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.93 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; John Finnis &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Natural Law and Natural Rights &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.89 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; H. L. A. Hart &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Positivism and the Separation of Law and Morals &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.84 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Alan R. White &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Authority of Law &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.79 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; J. L. Austin &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Province of Jurisprudence Determined &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.75 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Lon L. Fuller &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Positivism and Fidelity to Law: A Reply to Professor Hart &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.75 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Joseph Raz &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Authority of Law: Essays on Law and Morality &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.75 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Joseph Raz &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Practical Reason and Norms &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.74 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.right_top_panel[
+*N* = 332
+]
+
+.right_bottom_panel[
+![](slides_KTP_22_03_2022_files/figure-html/unnamed-chunk-5-1.png)&lt;!-- --&gt;
+]
 ---
-```
+# Punishment and responsibility
+.left_panel[
+&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; first_author &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; display_name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; centrality &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; H. L. A. Hart &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Punishment and responsibility &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Nicola Lacey &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Punishment, Communication, and Community &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.95 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Herbert Morris &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Persons and Punishment &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.84 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; R. A. Duff &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Trials and Punishments &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.82 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Joel Feinberg &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Expressive Function of Punishment &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.81 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Andrew von Hirsch &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Censure and sanctions &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.80 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; John Rawls &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Two concepts of rules &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.80 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jeffrie G. Murphy &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Forgiveness and Mercy &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.69 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Peter F. Strawson &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Freedom and Resentment &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.69 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; David Dolinko &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Some thoughts about retributivism &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.67 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
 
-See the help page `?xaringan::moon_reader` for all possible options that you can use.
+.right_top_panel[
+*N* = 321
+]
 
+.right_bottom_panel[
+![](slides_KTP_22_03_2022_files/figure-html/unnamed-chunk-7-1.png)&lt;!-- --&gt;
+]
 ---
+# Justice and fairness
+.left_panel[
+&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; first_author &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; display_name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; centrality &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Joseph Raz &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Morality of Freedom &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; H. L. A. Hart &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Are There Any Natural Rights &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.95 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A. John Simmons &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Moral Principles and Political Obligations &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.71 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; John Rawls &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Justice as Fairness : A Restatement &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.70 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; John Rawls &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A Theory of Justice: Revised Edition &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.68 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Gerald A. Cohen &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; On the Currency of Egalitarian Justice &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.64 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Hillel Steiner &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; An essay on rights &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.60 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ronald Dworkin &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sovereign Virtue: The Theory and Practice of Equality &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.60 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Gerald A. Cohen &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Rescuing justice and equality &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.59 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Philip Pettit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Republicanism: A Theory of Freedom and Government &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.56 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
 
+.right_top_panel[
+*N* = 265
+]
+
+.right_bottom_panel[
+![](slides_KTP_22_03_2022_files/figure-html/unnamed-chunk-9-1.png)&lt;!-- --&gt;
+]
+---
+# Global justice
+.left_panel[
+&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; first_author &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; display_name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; centrality &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; John Rawls &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Law of Peoples &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Simon Caney &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Justice Beyond Borders &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.99 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Arash Abizadeh &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Democratic Theory and Border Coercion No Right to Unilaterally Control Your Own Borders &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.87 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Thomas Pogge &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; World Poverty and Human Rights &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.75 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Laura Valentini &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ideal vs. Non-ideal Theory: A Conceptual Map &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.74 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Allen Buchanan &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Political Legitimacy and Democracy &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.69 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Philip Pettit &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A republican law of peoples &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.69 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Gerald Allan Cohen &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Facts and Principles &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.68 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Michael Blake &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Distributive Justice, State Coercion, and Autonomy &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.67 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Allen Buchanan &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Legitimacy of Global Governance Institutions &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.65 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.right_top_panel[
+*N* = 160
+]
+
+.right_bottom_panel[
+![](slides_KTP_22_03_2022_files/figure-html/unnamed-chunk-11-1.png)&lt;!-- --&gt;
+]
+---
+# Justice in contracts and torts
+.left_panel[
+&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; first_author &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; display_name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; centrality &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Oliver Wendell Holmes &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Path of the Law &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Felix S. Cohen &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Transcendental Nonsense and the Functional Approach &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.97 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ernest J. Weinrib &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Idea of Private Law &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.94 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jerome Frank &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Law and the modern mind &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.91 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Roberto Mangabeira Unger &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Critical Legal Studies Movement &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.85 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Oliver Wendell Holmes &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Common Law &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.80 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Karl N. Llewellyn &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A Realistic Jurisprudence: The Next Step &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.79 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Guido Calabresi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Property Rules, Liability Rules, and Inalienability: One View of the Cathedral &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.79 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Margaret Jane Radin &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Property and Personhood &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.78 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Richard A. Epstein &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A Theory of Strict Liability &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.78 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.right_top_panel[
+*N* = 146
+]
+
+.right_bottom_panel[
+![](slides_KTP_22_03_2022_files/figure-html/unnamed-chunk-13-1.png)&lt;!-- --&gt;
+]
+---
+# Constitutionalism / legal pluralism / Germans / virtues
+.left_panel[
+&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; first_author &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; display_name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; centrality &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jeremy Waldron &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Core of the Case Against Judicial Review &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jeremy Waldron &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Law and Disagreement &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.79 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jürgen Habermas &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Between Facts and Norms &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.79 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Peter W. Hogg &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Charter Dialogue between Courts and Legislatures (Or Perhaps the Charter of Rights Isn't Such a Bad Thing after All) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.75 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Michael Boudin &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Democracy and Distrust: A Theory of Judicial Review &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.73 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Alexander M. Bickel &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Least Dangerous Branch: The Supreme Court at the Bar of Politics &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.69 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Juergen Habermas &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Between Facts and Norms: Contributions to a Discourse Theory of Law and Democracy. by &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.67 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ronald Dworkin &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Freedom's Law: The Moral Reading of the American Constitution &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.66 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ran Hirschl &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Towards Juristocracy: The Origins and Consequences of the New Constitutionalism &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.64 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Robert Alexy &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A Theory of Constitutional Rights &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.62 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.right_top_panel[
+*N* = 140
+]
+
+.right_bottom_panel[
+![](slides_KTP_22_03_2022_files/figure-html/unnamed-chunk-15-1.png)&lt;!-- --&gt;
+]
+---
+# Criminal law
+.left_panel[
+&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; first_author &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; display_name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; centrality &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Kent Greenawalt &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Perplexing Borders of Justification and Excuse &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Paul H. Robinson &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Criminal Law Defenses: A Systematic Analysis &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.99 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Meir Dan-Cohen &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Decisions Rules and Conduct Rules: On Acoustic Separation in Criminal Law &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.98 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Mitchell N. Berman &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Justification and Excuse, Law and Morality &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.96 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; George P. Fletcher &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Fairness and Utility in Tort Theory &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.96 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Larry Alexander &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Lesser Evils: A Closer Look at the Paradigmatic Justification &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.96 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Douglas Husak &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; On the Supposed Priority of Justification to Excuse &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.95 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; J. L. Austin &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; I.—A Plea for Excuses: The Presidential Address &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.95 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Mitchell N. Berman &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Lesser Evils and Justification: A Less Close Look &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.95 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Whitley R. P. Kaufman &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Is there a “right” to self‐defense? &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.95 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.right_top_panel[
+*N* = 80
+]
+
+.right_bottom_panel[
+![](slides_KTP_22_03_2022_files/figure-html/unnamed-chunk-17-1.png)&lt;!-- --&gt;
+]
+---
+# Law and political theory
+.left_panel[
+&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; first_author &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; display_name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; centrality &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Joel Anderson &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Autonomy, Vulnerability, Recognition, and Justice &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Michael E. Bratman &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Faces of Intention: Selected Essays on Intention and Agency &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.86 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Joshua Cohen &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Reflections on Habermas on Democracy &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.81 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The rights of others : aliens, residents, and citizens &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.76 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bernhard Peters &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; On reconstructive legal and political theory &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.67 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Hegel: Elements of the Philosophy of Right &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.66 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jeremy Waldron &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Theoretical Foundations of Liberalism &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.60 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; John Rawls &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Justice as Fairness: Political Not Metaphysical &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.60 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Susan Moller Okin &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Minorities within Minorities: Multiculturalism and feminism: no simple question, no simple answers &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.60 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Robin West &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Jurisprudence and Gender &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.59 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.right_top_panel[
+*N* = 70
+]
+
+.right_bottom_panel[
+![](slides_KTP_22_03_2022_files/figure-html/unnamed-chunk-19-1.png)&lt;!-- --&gt;
+]
+---
+# Natural law and non-positivism
+.left_panel[
+&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; first_author &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; display_name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; centrality &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Robert Alexy &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The dual nature of law &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Robert Alexy &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; On the Concept and the Nature of Law &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Germain Grisez &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Practical Principles, Moral Truth, and Ultimate Ends &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.99 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Mark C. Murphy &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NATURAL LAW JURISPRUDENCE &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.98 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Mark C. Murphy &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Natural Law in Jurisprudence and Politics: Acknowledgments &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.98 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Gustav Radbruch &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Statutory Lawlessness and Supra-Statutory Law (1946) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.98 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Neil MacCormick &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; An Institutional Theory of Law &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.98 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jonathan Crowe &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Natural Law Beyond Finnis &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.98 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ralph McInerny &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Principles of Natural Law &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.98 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; John Finnis &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Good of Marriage and the Morality of Sexual Relations: Some Philosophical and Historical Observations &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.98 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.right_top_panel[
+*N* = 64
+]
+
+.right_bottom_panel[
+![](slides_KTP_22_03_2022_files/figure-html/unnamed-chunk-21-1.png)&lt;!-- --&gt;
+]
+---
+# International (criminal) law
+.left_panel[
+&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; first_author &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; display_name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; centrality &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; David Rodin &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; War and Self-Defense &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jeff McMahan &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Killing in War &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.94 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Larry May &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; War Crimes and Just War &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.78 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Larry May &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Crimes against Humanity: A Normative Account &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.77 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Christopher Kutz &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; The Difference Uniforms Make: Collective Violence in Criminal Law and War &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.67 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Mark A. Drumbl &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Atrocity, Punishment, and International Law &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.66 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Larry May &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Aggression and Crimes Against Peace &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.64 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Mark A. Drumbl &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Atrocity, Punishment, and International Law: Frontmatter &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.61 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Christopher Kutz &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Complicity: Ethics and Law for a Collective Age &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.60 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Jeff McMahan &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; THE BASIS OF MORAL LIABILITY TO DEFENSIVE KILLING &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.56 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.right_top_panel[
+*N* = 55
+]
+
+.right_bottom_panel[
+![](slides_KTP_22_03_2022_files/figure-html/unnamed-chunk-23-1.png)&lt;!-- --&gt;
+]
+---
+# Expert systems
+.left_panel[
+&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; first_author &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; display_name &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; centrality &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Robert W. Van Kralingen &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Frame-based conceptual models of statute law &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Aldo Gangemi &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A constructive framework for legal ontologies &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.90 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; L. T. McCarty &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A language for legal Discourse I. basic features &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.90 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A. Valente &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Legal knowledge engineering : a modelling approach &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.88 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Joost Breuker &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Use and reuse of legal ontologies in knowledge engineering and information management &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.86 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Pepijn R. S. Visser &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A Comparison of Four Ontologies for the Design of Legal Knowledge Systems &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.84 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Andre Valente &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Legal modeling and automated reasoning with ON—LINE &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.81 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Andre Valente &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Types and roles of legal ontologies &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.79 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Robert W. van Kralingen &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; A principled approach to developing legal knowledge systems &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.76 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Hans Kelsen &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; General Theory of Norms &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.72 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.right_top_panel[
+*N* = 49
+]
+
+.right_bottom_panel[
+![](slides_KTP_22_03_2022_files/figure-html/unnamed-chunk-25-1.png)&lt;!-- --&gt;
+]
+---
 # remark.js vs xaringan
 
 Some differences between using remark.js (left) and using **xaringan** (right):
@@ -408,8 +1222,8 @@ DT::datatable(
 )
 ```
 
-<div id="htmlwidget-42922e4d5ea479b4c7f3" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-42922e4d5ea479b4c7f3">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-cb24bf21d8c6be6fa647" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cb24bf21d8c6be6fa647">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 ---
 

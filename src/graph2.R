@@ -2,14 +2,10 @@ library(tidyverse)
 library(igraph)
 library(biblionetwork)
 library(tidytext)
-works <- read.csv("works_full.csv") %>% 
+works <- read.csv("data/raw/works_full.csv") %>% 
   distinct(id, .keep_all=T)
 
-
-refs <- read.csv("refs.csv") %>% 
-  distinct(work, refs)
-
-cits <- read.csv("cits.csv") %>% 
+cits <- read.csv("data/raw/cits.csv") %>% 
   distinct(work, cit)
 
 CITS <- cits %>% 
@@ -132,8 +128,8 @@ for (i in 1:length(unique(CITS$cit))) {
   print(round(i/length(unique(CITS$cit)),4)*100)
 }
 
-  write_csv(cocits, "cocits.csv")
-cocits <- read_csv("cocits.csv")
+  write_csv(cocits, "data/cits/cocits.csv")
+cocits <- read_csv("data/cits/cocits.csv")
 
 cocits <- cocits %>% filter(work %in% works$id & work2 %in% works$id)
 
@@ -151,48 +147,59 @@ cocits2 <- cocits %>%
 nodes <- data.frame(work=c(cocits2$Source, cocits2$Target)) %>% count(work) %>% 
   filter(n>1) %>% .$work %>% data.frame(id = .) %>% 
   left_join(works) %>% 
-  select(id, display_name) %>% 
-  rename(Label = display_name) 
+  select(id, display_name) 
 
 G <- igraph::graph_from_data_frame(filter(cocits2, Source %in% nodes$id, Target %in% nodes$id), vertices=nodes, directed=F)
 cmp <- components(G)
 cmp$csize
-nodes_cmp <- data.frame(id=1:length(cmp$csize), size=cmp$csize) %>% filter(size>50) %>% 
+nodes<- data.frame(id=1:length(cmp$csize), size=cmp$csize) %>% filter(size>50) %>% 
   left_join(data.frame(id=names(cmp$membership), mbp=cmp$membership, degree=as.numeric(degree(G))), by=c("id"="mbp")) %>% 
-  rename(cmp=id, id=id.y)%>% left_join(works) %>% select(id, display_name) %>% 
-  rename(Label = display_name) 
+  rename(cmp=id, id=id.y)%>% left_join(works) %>% select(id, display_name) 
 
 
-edges_cmp <- cits%>% filter(work %in% nodes_cmp$id) %>% 
+edges <- cits%>% filter(work %in% nodes$id) %>% 
   biblio_cocitation(ref = "work", source = "cit", weight_threshold = 4) %>% 
   select(Source, Target, weight) %>% arrange((weight)) 
-edges_cmp%>% write_csv("edges_cmp.csv")
+edges%>% write_csv("data/cits/edges.csv")
 
-#cocits3 <- cocits2 %>% filter(Source %in% nodes_cmp$id, Target %in% nodes_cmp$id)   
-#write.csv(cocits3, "cocits3.csv", row.names = F)
+
 G2 <- graph_from_data_frame(
-  edges_cmp,
-  #cocits3, 
-  nodes_cmp, directed=F)
-nodes_cmp <- read_csv("inferred.csv") %>% select(Id, stat_inf_class, modularity_class) %>% rename(id=Id) %>% 
-  left_join(nodes_cmp)
+  edges,
+  nodes, directed=F)
+nodes <- read_csv("data/cits/inferred.csv") %>% select(Id, stat_inf_class, modularity_class) %>% rename(id=Id) %>% 
+  left_join(nodes)
 
 
-nodes_cmp %>% count(modularity_class, sort=T)
-#leid <- 
-  #cluster_louvain(G2)
-#  cluster_leiden(G2, objective_function = "modularity",resolution_parameter = 6, n_iterations = 400, weights = NA)
-#sort(table(leid$membership))
-#sum(table(leid$membership)[table(leid$membership)>70])/sum(table(leid$membership))
+nodes %>% count(modularity_class, sort=T)
 
 eigen <- eigen_centrality(G2, weights = NA)$vector
 
-cmp_nodes <- 
-  #data.frame(id=leid$names, `Modularity Class`=leid$membership) %>% 
-  nodes_cmp %>% left_join(data.frame(id=names(eigen), eigen=as.numeric(eigen))) %>% rename(Modularity.Class = modularity_class)
+nodes <- 
+  nodes %>% 
+  left_join(data.frame(id=names(eigen), eigen=as.numeric(eigen))) %>%
+  rename(Modularity.Class = modularity_class) 
 
-write.csv(cmp_nodes, "cmp_nodes.csv", row.names = F)
+source("src/functions/labelClust.R")
+nodes_labelled <- labelClusts(nodes)
 
-source("labelClust.R")
-nodes_labelled <- labelClusts(cmp_nodes)
+clusts <- nodes_labelled %>% 
+  filter(!is.na(cluster_label)) %>% 
+  .$Modularity.Class %>% unique()
 
+source("src/functions/subgraphCentrality.R")
+
+eigenMax <- list()
+for (i in 1:length(clusts)) {
+  eigenMax <- bind_rows(eigenMax, subgraphCentrality(clusts[i]))
+}
+
+nodes <- works %>% 
+  select(display_name, publication_year, first_author, id) %>% 
+  right_join(eigenMax) %>% 
+  mutate(Label = paste0(stringr::str_extract(first_author, "[A-Z][a-z]+$"), ", ", publication_year)) %>% 
+  select(-display_name, -first_author, -publication_year) %>% 
+  right_join(nodes) %>% 
+  mutate(Label = if_else(is.na(Label), "", Label)
+  )
+
+write.csv(nodes, "data/cits/nodes.csv", row.names = F)    
