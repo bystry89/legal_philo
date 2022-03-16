@@ -8,16 +8,16 @@
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
     <script src="libs/htmlwidgets/htmlwidgets.js"></script>
-    <script src="libs/jquery/jquery-3.6.0.min.js"></script>
-    <link href="libs/leaflet/leaflet.css" rel="stylesheet" />
-    <script src="libs/leaflet/leaflet.js"></script>
-    <link href="libs/leafletfix/leafletfix.css" rel="stylesheet" />
-    <script src="libs/proj4/proj4.min.js"></script>
-    <script src="libs/Proj4Leaflet/proj4leaflet.js"></script>
-    <link href="libs/rstudio_leaflet/rstudio_leaflet.css" rel="stylesheet" />
-    <script src="libs/leaflet-binding/leaflet.js"></script>
+    <script src="libs/d3/d3.min.js"></script>
+    <script src="libs/dagre/dagre-d3.min.js"></script>
+    <link href="libs/mermaid/dist/mermaid.css" rel="stylesheet" />
+    <script src="libs/mermaid/dist/mermaid.slim.min.js"></script>
+    <link href="libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
+    <script src="libs/chromatography/chromatography.js"></script>
+    <script src="libs/DiagrammeR-binding/DiagrammeR.js"></script>
     <link href="libs/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
     <script src="libs/datatables-binding/datatables.js"></script>
+    <script src="libs/jquery/jquery-3.6.0.min.js"></script>
     <link href="libs/dt-core/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="libs/dt-core/css/jquery.dataTables.extra.css" rel="stylesheet" />
     <script src="libs/dt-core/js/jquery.dataTables.min.js"></script>
@@ -35,20 +35,50 @@ class: title-slide-custom
 ## Badanie metanaukowe
 
 .bottom[
-.center[.title-author[Piotr Bystranowski&amp;emsp;&amp;bull;&amp;emsp;INCET UJ] &lt;br /&gt;&lt;br /&gt;
-.title-bottom[15 marca, 2022 r.&lt;br /&gt;Katedra Teorii Prawa UJ]]]
+.title-author[**Piotr Bystranowski**]
+
+.title-author[INCET UJ] &lt;br /&gt;&lt;br /&gt;
+.title-bottom[15 marca, 2022 r.&lt;br /&gt;Katedra Teorii Prawa UJ]]
 ---
-# Metanauka
+class: inverse
+# Sieci (współ-)cytowań
+
+
+--
+
+.ex1[![description of the image](ex1.png)]
+
+--
+
+.ex2[![description of the image](ex2.png)]
+
+--
+
+.ex3[![description of the image](ex3.png)]
+
+--
+
+.ex4[![description of the image](ex4.png)]
+
 ---
 .left-column[# Projekt]
 .right-column[
-.list1[- Opierając się na sieci współcytowań:]
-.list2[- odnaleźć jądro współczesnej filozofii prawa,]
-.list2[- wyodrębnić jej główne obszary zainteresowań oraz]
-.list2[- opisać jej strukturę.]
-.list1[- Przeanalizować stopień, w jakim różne obszary wchodzą ze sobą w interakcję.]
-.list1[- Przeanalizować, w jakim stopniu poszczególne obszary cytowane są poza filozofią prawa.]
+.list1[
+- Opierając się na sieci współcytowań:
+
+.list2[
+    
+  * odnaleźć jądro współczesnej filozofii prawa,
+* wyodrębnić jej główne obszary zainteresowań oraz
+* opisać jej strukturę.
 ]
+- Przeanalizować stopień, w jakim różne obszary wchodzą ze sobą w interakcję.
+- Przeanalizować, w jakim stopniu poszczególne obszary cytowane są poza filozofią prawa.
+]
+--
+.bottom[**Źródło danych**: *openalex.org* (a także *philpapers.org* i *SCOPUS*)]
+]
+
 ---
 background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
 
@@ -59,27 +89,46 @@ background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharin
 Image credit: [Wikimedia Commons](https://commons.wikimedia.org/wiki/File:Sharingan_triple.svg)
 
 ---
-class: center, middle
-
-# xaringan
-
-### /ʃaː.'riŋ.ɡan/
-
----
 class: inverse, center, middle
 
-# Get Started
+# Zbiór tekstów &lt;br&gt; i &lt;br&gt; budowa grafu
+
+
+---
+.left-column[
+# Problem ]
+
+.right-column[&lt;br&gt;&lt;br&gt;
+**Standardowo**: *zacznij od tesktów opublikowanych w czasopismach z danego obszaru*. &lt;br&gt;&lt;br&gt;
+
+
+
+**Ale**: &lt;br&gt;
+.list2[
+    * ważne artykuły w FP często publikowane poza czasopismami specjalistycznymi;
+* kluczowe teksty w FP to książki.
+]]
+&lt;br&gt;
+
+--
+
+.right-column[
+**Alternatywne podejście**:
+.list2[
+    * zacznij od tekstów opublikowanhych w czasopismach specjalistycznych *oraz* sklasyfikowanych w *philpapers.org*;
+* uzupełnij o teksty najczęściej cytowane i cytujące;
+* na podstawie analizy współcytowań zidentyfikuj rdzeń takiego korpusu.
+]]
+{{content}}
 
 ---
 
-# Hello World
-
-Install the **xaringan** package from [Github](https://github.com/yihui/xaringan):
+# Proces
 
 
-```r
-remotes::install_github("yihui/xaringan")
-```
+
+<div id="htmlwidget-34a0da18146d251a41dd" style="width:864px;height:504px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-34a0da18146d251a41dd">{"x":{"diagram":"\n        graph LR\n        A-->J\n        B-->J\n        J-->C\n        C-->D\n        D-->E\n        E-->F\n        F-->G\n        G-->H\n        H-->I\n        A[All items published in 7 <br> specialist journals]\n        B[All items classified <br> in the philpapers <br>category philosophy of law]\n        C((5,174))\n        D[Add texts <br>cited >7 times]\n        E((5,953))\n        F[Add texts <br>citing >4 items]\n        G((9,429))\n        H[Keep items <br>co-cited >5 times <br>with >1 other items]\n        I((2,262))\n        J[Cited >1 time]\n      "},"evals":[],"jsHooks":[]}</script>
 
 --
 
@@ -248,7 +297,7 @@ grep('天', dojutsu, value = TRUE)
 ```
 
 ```
-# character(0)
+# [1] "地爆天星" "天照"
 ```
 
 ---
@@ -349,9 +398,6 @@ library(leaflet)
 leaflet() %&gt;% addTiles() %&gt;% setView(-93.65, 42.0285, zoom = 17)
 ```
 
-<div id="htmlwidget-897aa318905fe39e3ef7" style="width:100%;height:432px;" class="leaflet html-widget"></div>
-<script type="application/json" data-for="htmlwidget-897aa318905fe39e3ef7">{"x":{"options":{"crs":{"crsClass":"L.CRS.EPSG3857","code":null,"proj4def":null,"projectedBounds":null,"options":{}}},"calls":[{"method":"addTiles","args":["//{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",null,null,{"minZoom":0,"maxZoom":18,"tileSize":256,"subdomains":"abc","errorTileUrl":"","tms":false,"noWrap":false,"zoomOffset":0,"zoomReverse":false,"opacity":1,"zIndex":1,"detectRetina":false,"attribution":"&copy; <a href=\"http://openstreetmap.org\">OpenStreetMap<\/a> contributors, <a href=\"http://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA<\/a>"}]}],"setView":[[42.0285,-93.65],17,[]]},"evals":[],"jsHooks":[]}</script>
-
 ---
 
 
@@ -362,8 +408,8 @@ DT::datatable(
 )
 ```
 
-<div id="htmlwidget-39ea52f6cca5a9e6a566" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-39ea52f6cca5a9e6a566">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-42922e4d5ea479b4c7f3" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-42922e4d5ea479b4c7f3">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["1","2","3","4","5","6","7","8","9","10"],[5.1,4.9,4.7,4.6,5,5.4,4.6,5,4.4,4.9],[3.5,3,3.2,3.1,3.6,3.9,3.4,3.4,2.9,3.1],[1.4,1.4,1.3,1.5,1.4,1.7,1.4,1.5,1.4,1.5],[0.2,0.2,0.2,0.2,0.2,0.4,0.3,0.2,0.2,0.1],["setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa","setosa"]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>Sepal.Length<\/th>\n      <th>Sepal.Width<\/th>\n      <th>Petal.Length<\/th>\n      <th>Petal.Width<\/th>\n      <th>Species<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":8,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[8,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 ---
 

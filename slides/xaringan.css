@@ -5,24 +5,79 @@ body { font-family:  'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft Y
   }
 
 .title-slide-custom h1 {
-    margin-top: 15%;
+    margin-top: 10%;
     font-size: 60px;
 }
 
 .title-author {
-    text-align: center;
+    text-align: left;
     font-size: 30px;
 }
 
 .title-bottom {
-    text-align: center;
+    text-align: left;
     font-weight: bold;
 }
 
-.bottom {
+.title-slide-custom .bottom {
     position: absolute;
   bottom: 10%;
   font-family: 'Yanone Kaffeesatz';
+}
+
+.bottom {
+      position: absolute;
+  bottom: 10%;
+}
+
+.ex1 {
+  display: block;
+  max-width: 40%;
+  height: auto;
+  position: absolute;
+  right: 5%;
+  opacity: 0.9;
+  border-radius: 50%;
+  transform: rotate(5deg);
+  
+}
+
+.ex2 {
+  display: block;
+  max-width: 40%;
+  height: auto;
+  position: absolute;
+  left: 5%;
+  bottom: 5%;
+  opacity: 0.9;
+  border-radius: 50%;
+  transform: rotate(7deg);
+  
+}
+
+.ex3 {
+  display: block;
+  max-width: 40%;
+  height: auto;
+  position: absolute;
+  right: 15%;
+  bottom: 8%;
+  opacity: 0.9;
+  border-radius: 50%;
+  transform: rotate(-2deg);
+  
+}
+
+.ex4 {
+  display: block;
+  max-width: 40%;
+  height: auto;
+  position: absolute;
+  left: 5%;
+  opacity: 0.9;
+  border-radius: 50%;
+  transform: rotate(-5deg);
+  
 }
 
 .list1 {
@@ -38,4 +93,19 @@ body { font-family:  'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft Y
     margin-left: 40px;
     margin-block-start: 0.5em;
     margin-block-end: 0.5em;
+}
+
+li {
+  padding-bottom: 15px;
+}
+
+ul { 
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.DiagrammeR {
+  position: absolute;
+  left: 3%;
+  font-weight: bold;
 }
