@@ -2,7 +2,7 @@ library(httr)
 library(tidyverse)
 library(tidytext)
 library(textstem)
-nodes <- read.csv("cmp_nodes.csv")
+nodes <- read.csv("data/cits/nodes.csv")
 
 
 tokenized <- list()
@@ -15,6 +15,8 @@ abs <- result$abstract_inverted_index
 if (is.null(abs)) next
 temp <- data.frame(term=names(lengths(abs)), n=as.numeric(lengths(abs))) %>% 
   mutate(term = tolower(term)) %>% 
+  mutate(term = gsub("\\'s", "", term)) %>% 
+  mutate(term = gsub("\\`s", "", term)) %>% 
   mutate(term = gsub("[[:punct:]]", "", term)) %>% 
   mutate(term = gsub("[0-9]", "", term)) %>% 
   filter(!term %in% get_stopwords()) %>% 
@@ -28,7 +30,7 @@ tokenized <- bind_rows(tokenized, temp)
 print(round(i/nrow(nodes)*100))
 }
 
-write.csv(tokenized, "tokenized.csv")
+write.csv(tokenized, "data/text/tokenized.csv")
 tokenized <- tokenized %>% 
   filter(term != "")
 

@@ -30,6 +30,11 @@ body { font-family:  'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft Y
   bottom: 10%;
 }
 
+#DT {
+  width: 90%;
+  font-size: 14px;
+}
+
 .ex1 {
   display: block;
   max-width: 40%;

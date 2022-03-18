@@ -8,8 +8,8 @@ dplyr::case_when(
   community == 11 ~ "Punishment and responsibility",
   community == 9 ~ "Justice and fairness",
   community == 2 ~ "Global justice",
-  community == 7 ~ "Justice in contracts and torts",
-  community == 5 ~ "Constitutionalism / legal pluralism / Germans / virtues",
+  community == 7 ~ "Private law / Legal realism and descendants",
+  community == 5 ~ "Constitutionalism / Legal pluralism",
   community == 19 ~ "Criminal law",
   community == 6 ~ "Law and political theory",
   community == 8 ~ "Natural law and non-positivism",
@@ -21,6 +21,6 @@ dplyr::case_when(
   community == 3 ~ "Legal epistemology",
   community == 18 ~ "Corporate personhood",
   community == 17 ~ "Hate speech", 
-  community == 4 ~ "Kant/Hegel/Kelsen"
+  community == 4 ~ "Kant / Kelsen"
 ))
 }

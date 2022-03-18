@@ -7,16 +7,15 @@ date: "15 marca 2022 r."
 output:
   xaringan::moon_reader:
     lib_dir: libs
-    echo: false
     css: ["default", "default-fonts", "xaringan.css"]
     seal: false
     nature:
-      titleSlideClass: [left, middle. ]
+      titleSlideClass: [left, middle]
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
 
-      
+
 
 
 ---
@@ -30,7 +29,7 @@ class: title-slide-custom
 .title-author[**Piotr Bystranowski**]
 
 .title-author[INCET UJ] <br /><br />
-.title-bottom[15 marca, 2022 r.<br />Katedra Teorii Prawa UJ]]
+.title-bottom[22 marca, 2022 r.<br />Katedra Teorii Prawa UJ]]
 ---
 class: inverse
 # Sieci (współ-)cytowań
@@ -75,7 +74,7 @@ class: inverse
 background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/be/Sharingan_triple.svg)
 
 ```{r setup, include=FALSE}
-options(htmltools.dir.version = FALSE)
+options(htmltools.dir.version = FALSE, htmltools.preserve.raw = FALSE)
 ```
 
 ???
@@ -128,7 +127,7 @@ flowchart
 
 ---
 
-# Graph
+# Graf
 .graph[
 ```{r, echo=FALSE, out.width="150%"}
  knitr::include_graphics("graph.png") 
@@ -143,6 +142,8 @@ class: inverse, center, middle
 
 .left.column[# Wykrywanie <br>i interpretacja <br>wspólnot]
 .right-column[Wykrywanie wspólnot przy pomocy algorytmu z Louvain.
+
+(Z wielu możliwych podziałów trzeba wybrać najbardziej adekwatny/najciekawszy)
 
 26 wspólnot (od 2 do 367 członków), w tym 19 zinterpretowanych.
 
@@ -198,7 +199,7 @@ tf_idf(k)
 ```
 ]
 ---
-# Punishment and responsibility
+# Punishment / Responsibility
 .left_panel[
 ```{r, message=FALSE, echo=FALSE}
 k=11
@@ -252,7 +253,7 @@ tf_idf(k)
 ```
 ]
 ---
-# Justice in contracts and torts
+# Private law / Legal realism and descendants
 .left_panel[
 ```{r, message=FALSE, echo=FALSE}
 k=7
@@ -270,7 +271,7 @@ tf_idf(k)
 ```
 ]
 ---
-# Constitutionalism / legal pluralism / Germans / virtues
+# Constitutionalism / legal pluralism 
 .left_panel[
 ```{r, message=FALSE, echo=FALSE}
 k=5
@@ -378,91 +379,26 @@ tf_idf(k)
 ```
 ]
 ---
-# remark.js vs xaringan
 
-Some differences between using remark.js (left) and using **xaringan** (right):
-
-.pull-left[
-1. Start with a boilerplate HTML file;
-
-1. Plain Markdown;
-
-1. Write JavaScript to autoplay slides;
-
-1. Manually configure MathJax;
-
-1. Highlight code with `*`;
-
-1. Edit Markdown source and refresh browser to see updated slides;
-]
-
-.pull-right[
-1. Start with an R Markdown document;
-
-1. R Markdown (can embed R/other code chunks);
-
-1. Provide an option `autoplay`;
-
-1. MathJax just works;<sup>*</sup>
-
-1. Highlight code with `{{}}`;
-
-1. The RStudio addin "Infinite Moon Reader" automatically refreshes slides on changes;
-]
-
-.footnote[[*] Not really. See next page.]
+class: inverse, center, middle
+# Analiza grafu
 
 ---
+# Centralne teksty
 
-# Math Expressions
-
-You can write LaTeX math expressions inside a pair of dollar signs, e.g. &#36;\alpha+\beta$ renders $\alpha+\beta$. You can use the display style with double dollar signs:
-
-```
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-```
-
-$$\bar{X}=\frac{1}{n}\sum_{i=1}^nX_i$$
-
-Limitations:
-
-1. The source code of a LaTeX math expression must be in one line, unless it is inside a pair of double dollar signs, in which case the starting `$$` must appear in the very beginning of a line, followed immediately by a non-space character, and the ending `$$` must be at the end of a line, led by a non-space character;
-
-1. There should not be spaces after the opening `$` or before the closing `$`.
-
-1. Math does not work on the title slide (see [#61](https://github.com/yihui/xaringan/issues/61) for a workaround).
-
----
-
-# R Code
-
-```{r comment='#'}
-# a boring regression
-fit = lm(dist ~ 1 + speed, data = cars)
-coef(summary(fit))
-dojutsu = c('地爆天星', '天照', '加具土命', '神威', '須佐能乎', '無限月読')
-grep('天', dojutsu, value = TRUE)
+```{r eval=require('DT'), tidy=FALSE, message=FALSE, echo=FALSE}
+#library(DT)
+nodes %>%
+ left_join(works) %>%
+ select(first_author, display_name, eigen, betweenness) %>%
+ mutate_at(c("eigen", "betweenness"), round, 2) %>%
+ arrange(desc(eigen)) %>%
+DT::datatable(
+ fillContainer = F, options = list(pageLength = 10), elementId = "DT")
 ```
 
----
+<br><br><br><br>
 
-# R Plots
-
-```{r cars, fig.height=4, dev='svg'}
-par(mar = c(4, 4, 1, .1))
-plot(cars, pch = 19, col = 'darkgray', las = 1)
-abline(fit, lwd = 2)
-```
-
----
-
-# Tables
-
-If you want to generate a table, make sure it is in the HTML format (instead of Markdown or other formats), e.g.,
-
-```{r}
-knitr::kable(head(iris), format = 'html')
-```
 
 ---
 
@@ -490,45 +426,23 @@ DT::datatable(
 )
 ```
 
----
-
-# Some Tips
-
-- Do not forget to try the `yolo` option of `xaringan::moon_reader`.
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        yolo: true
-    ```
 
 ---
 
 # Some Tips
 
-- Slides can be automatically played if you set the `autoplay` option under `nature`, e.g. go to the next slide every 30 seconds in a lightning talk:
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        nature:
-          autoplay: 30000
-    ```
-
-- If you want to restart the play after it reaches the last slide, you may set the sub-option `loop` to TRUE, e.g.,
-
-    ```yaml
-    output:
-      xaringan::moon_reader:
-        nature:
-          autoplay:
-            interval: 30000
-            loop: true
-    ```
-
----
-
-# Some Tips
+```{r eval=require('DT'), tidy=FALSE}
+nodes %>% filter(!is.na(cluster_label)) %>% 
+  group_by(cluster_label) %>% 
+  summarise(eigen = mean(eigen, na.rm=T),
+            betweenness = mean(betweenness, na.rm=T)) %>% 
+  arrange(desc(eigen)) %>% 
+  mutate_at(c("eigen", "betweenness"), round, 2) %>% 
+DT::datatable(
+  
+  fillContainer = FALSE, options = list(pageLength = 8)
+)
+```
 
 - A countdown timer can be added to every page of the slides using the `countdown` option under `nature`, e.g. if you want to spend one minute on every page when you give the talk, you can set:
 

@@ -8,16 +8,12 @@ works <- read.csv("data/raw/works_full.csv") %>%
 cits <- read.csv("data/raw/cits.csv") %>% 
   distinct(work, cit)
 
-CITS <- cits %>% 
-  count(cit, sort=T) %>% 
-  filter(n >1) %>% 
-  select(cit) %>% 
-  left_join(cits) %>% 
-  select(work, cit)
+
 
 
 ## to move up later##
-dupl <- c("https://openalex.org/W310899332", "https://openalex.org/W201347684",
+dupl <- c("https://openalex.org/W310899332", "https://openalex.org/W201347684", "https://openalex.org/W3143175199",
+          "https://openalex.org/W2027539254",
           "https://openalex.org/W1498909244",
           "https://openalex.org/W1024763542",
           "https://openalex.org/W2150146195",
@@ -47,6 +43,7 @@ dupl <- c("https://openalex.org/W310899332", "https://openalex.org/W201347684",
           "https://openalex.org/W2032987097",
           "https://openalex.org/W1593499730", 
           "https://openalex.org/W2165448399",
+          "https://openalex.org/W3216089140",
           #to delete
           "https://openalex.org/W2189821821",
           "https://openalex.org/W398143332",
@@ -57,6 +54,10 @@ dupl <- c("https://openalex.org/W310899332", "https://openalex.org/W201347684",
 works <- works %>% filter(!id %in% dupl)
 
 cits <- cits %>% mutate(work = str_replace_all(work, c(
+  "https://openalex.org/W3143175199" = "https://openalex.org/W3143175199",
+  "https://openalex.org/W2027539254" = "https://openalex.org/W2083201648",
+  
+  
   "https://openalex.org/W2150146195" = "https://openalex.org/W3121484141",
   "https://openalex.org/W2025894382" = "https://openalex.org/W3126016604",
   "https://openalex.org/W2008305937" = "https://openalex.org/W3125377858",
@@ -114,7 +115,15 @@ cits <- cits %>% mutate(work = str_replace_all(work, c(
   "https://openalex.org/W2165448399" = "https://openalex.org/W3122374186")
 ))
 
-cits <- cits %>% filter(!work %in% dupl)
+cits <- cits %>% filter(!work %in% dupl) %>% 
+  distinct(work, cit)
+
+CITS <- cits %>% 
+  count(cit, sort=T) %>% 
+  filter(n >1) %>% 
+  select(cit) %>% 
+  left_join(cits) %>% 
+  select(work, cit)
 
 cocits <- list()
 for (i in 1:length(unique(CITS$cit))) {
@@ -132,6 +141,7 @@ for (i in 1:length(unique(CITS$cit))) {
 cocits <- read_csv("data/cits/cocits.csv")
 
 cocits <- cocits %>% filter(work %in% works$id & work2 %in% works$id)
+
 
 cocits <- cocits %>% filter(!(work %in% dupl|work2 %in% dupl))
 
@@ -169,15 +179,24 @@ G2 <- graph_from_data_frame(
 nodes <- read_csv("data/cits/inferred.csv") %>% select(Id, stat_inf_class, modularity_class) %>% rename(id=Id) %>% 
   left_join(nodes)
 
+leid <-cluster_louvain(G2)
 
+#  cluster_leiden(G2, objective_function = "modularity",resolution_parameter = 6, n_iterations = 400, weights = NA)
+
+#sort(table(leid$membership))
+
+#sum(table(leid$membership)[table(leid$membership)>70])/sum(table(leid$membership))
 nodes %>% count(modularity_class, sort=T)
 
 eigen <- eigen_centrality(G2, weights = NA)$vector
+betweenness <- betweenness(G2)
+closeness <- closeness(G2)
 
 nodes <- 
   nodes %>% 
-  left_join(data.frame(id=names(eigen), eigen=as.numeric(eigen))) %>%
-  rename(Modularity.Class = modularity_class) 
+  left_join(data.frame(id=names(eigen), eigen=as.numeric(eigen), betweenness=betweenness, closeness=closeness)) %>%
+  rename(Modularity.Class = modularity_class) %>% 
+  rename(Label = display_name)
 
 source("src/functions/labelClust.R")
 nodes_labelled <- labelClusts(nodes)
@@ -202,4 +221,4 @@ nodes <- works %>%
   mutate(Label = if_else(is.na(Label), "", Label)
   )
 
-write.csv(nodes, "data/cits/nodes.csv", row.names = F)    
+write.csv(nodes_labelled, "data/cits/nodes.csv", row.names = F)    
