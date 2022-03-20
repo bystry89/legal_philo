@@ -28,7 +28,26 @@ in_cits %>% group_by(Source) %>%
   left_join(in_cits) %>% 
   filter(Source==Target) %>% 
   mutate(ratio = weight/n) %>% 
-  arrange(desc(ratio))
+  arrange(desc(ratio)) %>% 
+  select(Source, n, weight, ratio)
+
+in_cits %>% group_by(Target) %>% 
+  summarise(n = sum(weight)) %>% 
+  left_join(in_cits) %>% 
+  filter(Source==Target) %>% 
+  mutate(ratio = weight/n) %>% 
+  arrange(desc(ratio))%>% 
+  select(Target, n, weight, ratio)
+
+in_cits %>% 
+  filter(Source != Target) %>% 
+  group_by(Source) %>% 
+  summarise(n = sum(weight)) %>% 
+  right_join(in_cits) %>% 
+  filter(Source != Target) %>% 
+  mutate(ratio = weight/n) %>% 
+  #arrange(desc(ratio))
+  arrange(ratio)
 
 
 
