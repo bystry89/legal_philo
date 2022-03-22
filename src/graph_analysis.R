@@ -18,6 +18,7 @@ abstract_tokens <-
 clust_words <- unnest_tokens(nodes, 'token', 'Label') %>% 
   mutate(token = gsub("\\'s", "", token)) %>% 
   mutate(token = gsub("\\`s", "", token)) %>% 
+  mutate(token = gsub("\\’s", "", token)) %>% 
   mutate(token = gsub("[[:punct:]]", "", token)) %>% 
   mutate(token = gsub("[0-9]", "", token))   %>%   
   filter(nchar(token)>2) %>% 
@@ -47,6 +48,7 @@ clust_tf_idf %>%
     head(10) %>% 
     mutate(token= reorder(token, tf_idf, mean))%>% 
     ggplot(aes(x = token, y = tf_idf)) + geom_bar(stat = "identity") +
+    coord_cartesian(ylim = c(0,0.05))+
     theme_minimal()+
     theme(axis.text.x = element_text(angle = 40, size = 19, vjust = 1, hjust = 1), axis.title = element_blank())
 }

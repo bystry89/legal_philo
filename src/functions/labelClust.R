@@ -5,7 +5,7 @@ labelClusts <- function(x, community = x$Modularity.Class) {
 dplyr::case_when(
   community == 0 ~ "Argumentation",
   community == 12 ~ "General jurisprudence",
-  community == 11 ~ "Punishment and responsibility",
+  community == 11 ~ "Punishment / Responsibility",
   community == 9 ~ "Justice and fairness",
   community == 2 ~ "Global justice",
   community == 7 ~ "Private law / Legal realism and descendants",
@@ -19,8 +19,8 @@ dplyr::case_when(
   community == 21 ~ "Promising / Reasonableness",
   community == 23 ~ "Classical natural law",
   community == 3 ~ "Legal epistemology",
-  community == 18 ~ "Corporate personhood",
-  community == 17 ~ "Hate speech", 
+  community == 18 ~ "Legal personhood",
+  community == 17 ~ "Free speech", 
   community == 4 ~ "Kant / Kelsen"
 ))
 }

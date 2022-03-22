@@ -63,3 +63,5 @@ tbl <- by_area %>%
   summarise(across(where(is.numeric), mean, na.rm=T)) %>% bind_cols(data.frame(cluster=clusters[i])) %>% 
   bind_rows(tbl)
 }
+
+write.csv(tbl, "data/cits/out_by_clust.csv")

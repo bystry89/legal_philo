@@ -7,3 +7,33 @@ duplicates:
 -hohfeld duplicate
 - Hegel, no author
 - the rights of others- no authorwor
+
+
+
+
+```{r}
+# nodes %>%
+#   left_join(works) %>%
+#   filter(!is.na(type)) %>%
+#   group_by(type) %>%
+#   summarize(n = n(), mean_eigen = round(mean(eigen, na.rm=T), 2)) %>%
+#   filter(n>20) %>%
+#   arrange(desc(mean_eigen))
+#2+2
+```
+
+
+
+
+
+```{r}
+# nodes %>% 
+#   left_join(works) %>% 
+#   filter(publication_year>1960) %>% 
+#   filter(type %in% c("book", "journal-article")) %>% 
+#   lm(eigen ~ type*publication_year, data = .) %>% 
+#   broom::tidy() %>% 
+#   knitr::kable()
+```
+
+

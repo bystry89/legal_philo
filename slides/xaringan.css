@@ -1,5 +1,9 @@
 body { font-family:  'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft YaHei', 'Songti SC', serif; }
 
+.address {
+  height: 12px;
+}
+
 .title-slide-custom .remark-slide-number {
     display: none;
   }
@@ -32,7 +36,22 @@ body { font-family:  'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft Y
 
 #DT {
   width: 90%;
-  font-size: 14px;
+  font-size: 13px;
+}
+
+#DT2 {
+  width: 90%;
+  font-size: 13px;
+}
+
+#DT3 {
+  width: 90%;
+  font-size: 13px;
+}
+
+#DT4 {
+  width: 90%;
+  font-size: 13px;
 }
 
 .ex1 {
@@ -90,6 +109,11 @@ body { font-family:  'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft Y
   left: 2%;
 }
 
+.hart {
+  opacity: 0.7;
+}
+
+
 .left_panel {
   position: absolute;
   width: 42%;
@@ -130,8 +154,29 @@ body { font-family:  'Palatino Linotype', 'Book Antiqua', Palatino, 'Microsoft Y
     margin-block-end: 0.5em;
 }
 
+
+.question {
+  text-align: center;
+  font-size: 150px;
+}
 li {
   padding-bottom: 15px;
+}
+
+.no_margin {
+  margin: 0;
+  font-size: 55px;
+  font-weight: normal;
+  font-family: 'Yanone Kaffeesatz';
+}
+
+.small {
+  font-size: 10px;
+}
+
+.subttl {
+  text-align: center;
+  margin: 0;
 }
 
 ul { 
@@ -143,4 +188,8 @@ ul {
   position: absolute;
   left: 3%;
   font-weight: bold;
+}
+
+.xaringan {
+  font-size: 10px;
 }
