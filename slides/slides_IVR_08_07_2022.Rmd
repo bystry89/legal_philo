@@ -22,6 +22,7 @@ output:
 class: title-slide-custom
 
 
+
 # Who cares about legal philosophy? <br /> What do legal philosophers care about?
 ## A co-citation analysis
 
@@ -29,7 +30,9 @@ class: title-slide-custom
 .title-author[**Piotr Bystranowski**]
 
 .title-author[Interdisciplinary Centre for Ethics <br /> Jagiellonian University] <br /><br />
+
 .title-bottom[July 8th, 2022<br />IVR World Congress<br />SW 28]]
+
 ---
 class: inverse
 # (Co-)citation networks
