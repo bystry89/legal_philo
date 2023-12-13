@@ -162,8 +162,10 @@ Interpreting communities:
 .left_panel[
 ```{r, message=FALSE, echo=FALSE}
 library(kableExtra)
+
 source("../src/functions/labelClust.R")
-nodes <- read.csv("../data/cits/nodes.csv") %>% labelClusts()
+nodes <- read.csv("../data/cits/nodes_w=6.csv") %>% labelClusts() 
+  
 edges <- read.csv("../data/cits/edges.csv")
 works <- read.csv("../data/raw/works_full.csv")
 source("../src/functions/subgraphCentrality.R")
@@ -179,7 +181,7 @@ knitr::kable(subgraphCentrality(0), format = 'html') %>% kable_styling(font_size
 
 .right_bottom_panel[
 ```{r, message=F, echo=F}
-tokenized <- read.csv("../data/text/tokenized.csv")
+tokenized <- read.csv("../data/text/tokenized_w=6.csv")
 source("../src/graph_analysis.R")
 tf_idf(0)
 ```
@@ -527,9 +529,9 @@ class: inverse, center, middle
 #library(DT)
 nodes %>%
  left_join(works) %>%
- select(first_author, display_name, eigen, betweenness, cluster_label) %>%
- mutate_at(c("eigen", "betweenness"), round, 2) %>%
- arrange(desc(eigen)) %>%
+ select(first_author, display_name, eigencentrality, betweenness, cluster_label) %>%
+ mutate_at(c("eigencentrality", "betweenness"), round, 2) %>%
+ arrange(desc(eigencentrality)) %>%
 DT::datatable(
  fillContainer = F, options = list(pageLength = 10), elementId = "DT")
 ```
@@ -541,9 +543,9 @@ DT::datatable(
 ```{r, message=FALSE, echo=FALSE}
 #library(DT)
 nodes %>%
-  filter(!is.na(cluster_label)) %>% left_join(works, by = "id") %>% 
+  filter(!is.na(cluster_label)) %>% left_join(works, by = c("Id" = "id")) %>% 
  group_by(cluster_label) %>% 
-summarise(n = n(), year = round(mean(publication_year, na.rm=T)), eigen=mean(eigen, na.rm=T), betweenness=mean(betweenness,  na.rm=T))%>% 
+summarise(n = n(), year = round(mean(publication_year.x, na.rm=T)), eigen=mean(eigencentrality, na.rm=T), betweenness=mean(betweenness,  na.rm=T))%>% 
  mutate_at(c("eigen", "betweenness"), round, 2) %>%
  arrange(desc(betweenness)) %>% 
 DT::datatable(
@@ -555,9 +557,10 @@ DT::datatable(
 .no_margin[Isolation within the graph]
 
 ```{r, echo=FALSE}
-cits <- read.csv("../data/raw/cits.csv") %>% 
-  filter(work %in% nodes$id, cit %in% nodes$id) %>% 
-  distinct(work, cit, .keep_all = T)
+inrefs <- read.csv("../data/raw/outcits.csv") %>% 
+  rename(Source = id.1, Target = id) %>% 
+  filter(Target %in% nodes$Id, Source %in% nodes$Id) %>% 
+  distinct(Target, Source, .keep_all = T)
 source("../src/in_cit_analysis.R")
 ```
 
@@ -596,17 +599,21 @@ net_cits%>%
 # Geography
 
 ```{r, message=FALSE, echo=FALSE}
+works$author <- gsub("\r\n", "", works$author)
+works$author <- lapply(works$author, function(x) eval(parse(text = x)))
 
-insts <- read.csv("../data/raw/insts_full.csv")
+works$country <-   sapply(works$author, function (x) x['institution_country_code'])
+works$country <-sapply(works$country, function (x) x[1]) 
+
 nodes %>% 
   filter(!is.na(cluster_label)) %>% 
-  left_join(insts, by = c("id" = "item")) %>% 
-  filter(!is.na(country_code)) %>% 
+  left_join(works, by = c("Id" = "id")) %>% 
+  filter(!is.na(country)) %>% 
   group_by(cluster_label) %>% 
-  summarize(US = mean(country_code == "US", na.rm=T),
-            non_US_English = mean(country_code %in% c("GB", "CA", "AU", "NZ", "IE"), na.rm=T),
-            other = mean(!country_code %in% c("GB", "CA", "AU", "NZ", "IE", "US"), na.rm=T)) %>% 
-  mutate_at(c("US", "non_US_English", "other"), round, 2) %>% 
+  summarize(US = mean(country == "US", na.rm=T),
+            other_English = mean(country %in% c("GB", "CA", "AU", "NZ", "IE"), na.rm=T),
+            non_English = mean(!country %in% c("GB", "CA", "AU", "NZ", "IE", "US"), na.rm=T)) %>% 
+  mutate_at(c("US", "other_English", "non_English"), round, 2) %>% 
  DT::datatable(
  fillContainer = F, options = list(pageLength = 10), elementId = "DT3")
 ```
@@ -619,10 +626,10 @@ nodes %>%
 .pull-left[
 ```{r, message=FALSE, echo=FALSE}
 nodes %>%
-  left_join(works) %>%
+  left_join(works, by = c("Id" = "id")) %>%
   filter(!is.na(type)) %>%
   group_by(type) %>%
-  summarize(n = n(), mean_eigen = round(mean(eigen, na.rm=T), 3)) %>%
+  summarize(n = n(), mean_eigen = round(mean(eigencentrality, na.rm=T), 3)) %>%
   filter(n>20) %>%
   arrange(desc(mean_eigen)) %>% 
   knitr::kable() %>% kable_styling(font_size = 12)
@@ -636,10 +643,10 @@ nodes %>%
 .pull-right[
 ```{r, message=FALSE, warning=FALSE, echo=FALSE, fig.height=5}
 nodes %>%
-  left_join(works) %>%
-  filter(publication_year>1960, cluster_label!="Argumentation") %>%
-  filter(type %in% c("book", "journal-article")) %>%
-  ggplot(aes(x=publication_year, y=eigen, color= type)) +
+  left_join(select(works, -publication_year), by = c("Id" = "id")) %>%
+  filter(publication_year>1960) %>%
+  filter(type %in% c("book", "journal-article", "article")) %>%
+  ggplot(aes(x=publication_year, y=eigencentrality, color= type)) +
   geom_smooth(method = "lm")+
   #geom_point(alpha=0.4)+
   theme_minimal()
@@ -648,10 +655,10 @@ nodes %>%
 
 ```{r, message=FALSE, warning=FALSE, echo=FALSE}
 nodes %>%
-  left_join(works) %>%
+    left_join(select(works, -publication_year), by = c("Id" = "id")) %>%
   filter(publication_year>1960) %>%
   filter(type %in% c("book", "journal-article")) %>%
-  lm(eigen ~ type*publication_year, data = .) %>%
+  lm(eigencentrality ~ type*publication_year, data = .) %>%
   broom::tidy() %>%
   mutate_at(c("estimate", "std.error", "statistic", "p.value"), round, 3) %>% 
    mutate(signif = gtools::stars.pval(p.value)) %>% 
@@ -676,7 +683,7 @@ opacity: 0.5
 ---
 
 ```{r, echo=FALSE, message=F}
-read.csv("../data/cits/out_by_clust.csv") %>% 
+read_csv("../data/cits/out_by_clust.csv") %>% 
   select(cluster, Philosophy.of.law, Law, Philosophy, Humanities, Social.sciences, Other) %>% 
   mutate_if(is.numeric, round, 2) %>% 
   DT::datatable(

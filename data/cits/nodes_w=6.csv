@@ -1,0 +1,714 @@
+Id,Label,publication_year,first_author,display_name,modularity_class,eigencentrality,cluster_label,betweenness
+https://openalex.org/W1022946631,"Ely, 1983",1983,John Hart Ely,Democracy and Distrust,0,0.124999,Judicial review and constitutional rights,0
+https://openalex.org/W104357497,"Brewer, 1996",1996,Scott Brewer,"Exemplary Reasoning: Semantics, Pragmatics, and the Rational Force of Legal Argument by Analogy",3,0.10629,Legal reasoning,702
+https://openalex.org/W105723337,"Dworkin, 2002",2002,Ronald Dworkin,Thirty Years on,5,0.080531,General jurisprudence,0
+https://openalex.org/W107842537,"Quong, 2010",2010,Jonathan Quong,Liberalism without Perfection,4,0.110704,Law and political theory,0
+https://openalex.org/W109677913,"Waldron, 2006",2006,Jeremy Waldron,The Core of the Case against Judicial Review,0,0.372548,Judicial review and constitutional rights,2192
+https://openalex.org/W117217249,"Arnolds, 1974",1974,Edward B. Arnolds,The Defense of Necessity in Criminal Law: The Right to Choose the Lesser Evil,20,0.017253,Justifications and excuses,0
+https://openalex.org/W121887062,"Barnett, 1992",1992,Randy E. Barnett,The Sound of Silence: Default Rules and Contractual Consent,9,0.00536,Theory of rights,0
+https://openalex.org/W12585591,"Hart, 1958",1958,Hart,The Aims of the Criminal Law,15,0.00603,Punishment,0
+https://openalex.org/W127338104,"Harcourt, 1999",1999,Bernard E. Harcourt,The Collapse of the Harm Principle,4,0.007676,Law and political theory,711
+https://openalex.org/W136591480,"Waldron, 1996",1996,Jeremy Waldron,Kant's Legal Positivism,4,0.054928,Law and political theory,0
+https://openalex.org/W138458895,"Fuller, 1949",1949,Lon L. Fuller,The Case of the Speluncean Explorers,20,0.0294,Justifications and excuses,0
+https://openalex.org/W1450459739,"Hartney, 1991",1991,Michael T. Hartney,Some Confusions Concerning Collective Rights,4,0.028364,Law and political theory,0
+https://openalex.org/W1469191350,"Alexander, 1992",1992,Larry Alexander,"What Makes Wrongful Discrimination Wrong? Biases, Preferences, Stereotypes, and Proxies",2,0.006733,Responsibility,0
+https://openalex.org/W1483374326,"NA, 2000",2000,NA,Sovereign virtue: the theory and practice of equality,4,0.239273,Law and political theory,110
+https://openalex.org/W1485501857,"Kelsen, 1934",1934,Hans Kelsen,Pure Theory of Law,5,0.471625,General jurisprudence,2244
+https://openalex.org/W1485874378,"Weinrib, 1995",1995,Ernest J. Weinrib,The Idea of Private Law,5,0.214769,General jurisprudence,0
+https://openalex.org/W1488611786,"Dworkin, 1984",1984,Ronald Dworkin,Los derechos en serio,1,0.01881,NA,0
+https://openalex.org/W1489372415,"Hart, 1968",1968,H. L. A. Hart,Punishment and responsibility,15,0.326378,Punishment,11894
+https://openalex.org/W1490967561,"Kronman, 1980",1980,Anthony T. Kronman,Contract Law and Distributive Justice,9,0.032298,Theory of rights,0
+https://openalex.org/W1495885934,"Moreau, 2010",2010,Sophia Moreau,What Is Discrimination?,2,0.005148,Responsibility,0
+https://openalex.org/W1497647472,"Lacey, 2005",2005,Nicola Lacey,"PUNISHMENT, COMMUNICATION AND COMMUNITY",15,0.132905,Punishment,0
+https://openalex.org/W1499476502,"Allan, 2001",2001,T. R. S. Allan,Constitutional Justice: A Liberal Theory of the Rule of Law,0,0.225998,Judicial review and constitutional rights,0
+https://openalex.org/W1502108759,"Tushnet, 2000",2000,Mark Tushnet,Taking the Constitution Away from the Courts,0,0.24212,Judicial review and constitutional rights,711
+https://openalex.org/W1503906844,"Altman, 2009",2009,Andrew Altman,A Liberal Theory of International Justice,4,0.032725,Law and political theory,0
+https://openalex.org/W1504060166,"Holmes, 1881",1881,Oliver Wendell Holmes,The Common Law,5,0.298444,General jurisprudence,2
+https://openalex.org/W1504314083,"Finkelstein, 2003",2003,Claire Oakes Finkelstein,Is Risk a Harm?,16,0.001355,Risk and prevention in criminal law,1425
+https://openalex.org/W1504374584,"Raz, 2008",2008,Joseph Raz,Can There be a Theory of Law?,5,0.040532,General jurisprudence,0
+https://openalex.org/W1506104239,"Collins, 2004",2004,John Collins,Causation and Counterfactuals,19,0.009404,Torts / causation,0
+https://openalex.org/W1506680948,"Anderson, 2005",2005,Terence Anderson,Analysis of Evidence,10,0.001547,Evidence and proof,0
+https://openalex.org/W1512084092,"Mahan, 2009",2009,Jeff McMahan,"INTENTION, PERMISSIBILITY, TERRORISM, AND WAR",8,0.0133,War and killing,1407
+https://openalex.org/W1514428340,"Bratman, 1999",1999,Michael E. Bratman,Faces of Intention,19,0.137213,Torts / causation,3677
+https://openalex.org/W1514637386,"Prakken, 1997",1997,Henry Prakken,Logical Tools for Modelling Legal Argument,3,0.039704,Legal reasoning,385
+https://openalex.org/W1518929111,"Coleman, 2004",2004,Jules L. Coleman,The Oxford Handbook of Jurisprudence and Philosophy of Law,5,0.14047,General jurisprudence,0
+https://openalex.org/W1519668286,"NA, 1981",1981,Carlos E. Alchourrón,The Expressive Conception of Norms,3,0.028614,Legal reasoning,0
+https://openalex.org/W1520467851,"Nelkin, 2011",2011,Dana Kay Nelkin,Making Sense of Freedom and Responsibility,2,0.042737,Responsibility,1
+https://openalex.org/W1522342316,"Alexy, 2002",2002,Robert Alexy,A Theory of Constitutional Rights,0,0.264512,Judicial review and constitutional rights,703
+https://openalex.org/W1523838136,"Postema, 2019",2019,Gerald J. Postema,Bentham and the Common Law Tradition,5,0.234988,General jurisprudence,0
+https://openalex.org/W1524162620,"Fassbender, 2009",2009,Bardo Fassbender,The United Nations Charter as the Constitution of the International Community,12,0.029046,International law,0
+https://openalex.org/W1527018558,"Coleman, 2001",2001,Jules L. Coleman,The Practice of Principle: In Defence of a Pragmatist Approach to Legal Theory,5,0.422033,General jurisprudence,0
+https://openalex.org/W1528399442,"Tomlin, 2012",2012,Patrick Tomlin,Extending the Golden Thread? Criminalisation and the Presumption of Innocence*,10,6.06e-4,Evidence and proof,0
+https://openalex.org/W1529277309,"Hart, 1983",1983,H. L. A. Hart,Essays in Jurisprudence and Philosophy,5,0.492066,General jurisprudence,0
+https://openalex.org/W1533067089,"Golding, 2004",2004,Martin P. Golding,The Blackwell Guide to the Philosophy of Law and Legal Theory,5,0.095231,General jurisprudence,0
+https://openalex.org/W1533150963,"Elder, 2004",2004,Crawford L. Elder,Real Natures and Familiar Objects,17,0.002491,Natural law,0
+https://openalex.org/W1536162307,"Paulson, 2002",2002,Stanley L. Paulson,The argument from injustice : a reply to legal positivism,5,0.090215,General jurisprudence,0
+https://openalex.org/W1539274691,"NA, 1996",1996,NA,Freedom's law: the moral reading of the American Constitution,0,0.30186,Judicial review and constitutional rights,0
+https://openalex.org/W1539454026,"Rosen, 2004",2004,Gideon Rosen,Skepticism about Moral Responsibility,2,0.042983,Responsibility,0
+https://openalex.org/W1540195487,"Zimmerman, 2002",2002,Michael J. Zimmerman,Taking Luck Seriously,2,0.04909,Responsibility,1946
+https://openalex.org/W1541703906,"Pereboom, 2001",2001,Derk Pereboom,Living without Free Will,2,0.082828,Responsibility,6404
+https://openalex.org/W1544949079,"Waldron, 1999",1999,Jeremy Waldron,The dignity of legislation,0,0.181636,Judicial review and constitutional rights,0
+https://openalex.org/W1547717991,"Waldron, 1994",1994,Jeremy Waldron,Vagueness in Law and Language: Some Philosophical Issues,5,0.049905,General jurisprudence,0
+https://openalex.org/W1547775889,"Viehoff, 2014",2014,Daniel Viehoff,Democratic Equality and Political Authority,4,0.023641,Law and political theory,0
+https://openalex.org/W1547788921,"Calabresi, 1961",1961,Guido Calabresi,Some Thoughts on Risk Distribution and the Law of Torts,19,0.10775,Torts / causation,0
+https://openalex.org/W1548654059,"Hirsch, 1994",1994,Andrew von Hirsch,Censure and sanctions,15,0.134126,Punishment,0
+https://openalex.org/W1550427443,"Morris, 1991",1991,Christopher W. Morris,Punishment and Loss of Moral Standing,15,0.002935,Punishment,0
+https://openalex.org/W1557385649,"Hohfeld, 1917",1917,Wesley Newcomb Hohfeld,Fundamental Legal Conceptions as Applied in Judicial Reasoning,9,0.491361,Theory of rights,26609
+https://openalex.org/W1558461042,"Marmor, 2005",2005,Andrei Marmor,Interpretation and Legal Theory,5,0.214069,General jurisprudence,0
+https://openalex.org/W1560170356,"Fumerton, 2001",2001,Richard Fumerton,"Causation and the Law: Preemption, Lawful Sufficiency, and Causal Sufficiency",19,0.011462,Torts / causation,0
+https://openalex.org/W1563041628,"Calabresi, 1975",1975,Guido Calabresi,"Concerning Cause and the Law of Torts: An Essay for Harry Kalven, Jr.",19,0.031632,Torts / causation,0
+https://openalex.org/W1563201617,"Ross, 1959",1959,Alf Ross,On law and justice,5,0.158931,General jurisprudence,0
+https://openalex.org/W1563715884,"Waluchow, 2007",2007,Wilfrid J. Waluchow,A common law theory of judicial review: the living tree,0,0.087279,Judicial review and constitutional rights,0
+https://openalex.org/W1564062619,"Alexy, 1989",1989,Robert Alexy,A Theory of Legal Argumentation: The Theory of Rational Discourse as Theory of Legal Justification,5,0.098406,General jurisprudence,0
+https://openalex.org/W1565174900,"Kelsen, 1991",1991,Hans Kelsen,General Theory of Norms,3,0.084277,Legal reasoning,709
+https://openalex.org/W1568392343,"Kramer, 1999",1999,Matthew H. Kramer,In Defense of Legal Positivism: Law without Trimmings,5,0.232742,General jurisprudence,0
+https://openalex.org/W1571603731,"Frank, 1931",1931,John P. Frank,Law and the modern mind,5,0.258644,General jurisprudence,0
+https://openalex.org/W1578179010,"Sapolsky, 2004",2004,Robert M. Sapolsky,The frontal cortex and the criminal justice system,2,0.006734,Responsibility,0
+https://openalex.org/W1580510701,"Beatty, 2004",2004,David M. Beatty,The Ultimate Rule of Law,0,0.11832,Judicial review and constitutional rights,1990
+https://openalex.org/W1582040817,"Enoch, 2012",2012,David Enoch,"Statistical Evidence, Sensitivity, and the Legal Value of Knowledge",10,0.007281,Evidence and proof,7
+https://openalex.org/W1582197671,"Dworkin, 2011",2011,Ronald Dworkin,Justice for Hedgehogs,5,0.433904,General jurisprudence,18097
+https://openalex.org/W1590467032,"Kahan, 1996",1996,Dan M. Kahan,Two Conceptions of Emotion in Criminal Law,20,0.011405,Justifications and excuses,0
+https://openalex.org/W1592795557,"Murphy, 1987",1987,Jeffrie G. Murphy,Does Kant Have a Theory of Punishment?,15,0.021879,Punishment,0
+https://openalex.org/W1594094994,"Fiss, 1982",1982,Owen M. Fiss,Objectivity and Interpretation,5,0.180399,General jurisprudence,0
+https://openalex.org/W1595012795,"Austin, 2017",2017,John Austin,The Province of Jurisprudence Determined,5,0.500683,General jurisprudence,14
+https://openalex.org/W1597362725,"Sunstein, 1996",1996,Cass R. Sunstein,Legal reasoning and political conflict,5,0.142745,General jurisprudence,0
+https://openalex.org/W1598548519,"Raz, 2011",2011,Joseph Raz,From Normativity to Responsibility,2,0.045078,Responsibility,360
+https://openalex.org/W1603082488,"Letsas, 2007",2007,George Letsas,A Theory of Interpretation of the European Convention on Human Rights,0,0.084319,Judicial review and constitutional rights,0
+https://openalex.org/W1606436076,"Markovits, 2004",2004,Daniel Markovits,Contract and Collaboration,9,0.002728,Theory of rights,0
+https://openalex.org/W1711204715,"Wallace, 2010",2010,R. Jay Wallace,"Hypocrisy, Moral Address, and the Equal Standing of Persons",6,0.014532,NA,0
+https://openalex.org/W173038773,"Jackson, 2000",2000,Frank Jackson,From Metaphysics to Ethics,5,0.063536,General jurisprudence,0
+https://openalex.org/W174389237,"Sunstein, 1993",1993,Cass R. Sunstein,On Analogical Reasoning,3,0.07567,Legal reasoning,0
+https://openalex.org/W1754088298,"Merrill, 2001",2001,Thomas W. Merrill,What Happened to Property in Law and Economics?,9,0.031476,Theory of rights,0
+https://openalex.org/W175463262,"Raz, 1970",1970,Joseph Raz,The concept of a legal system,5,0.190265,General jurisprudence,0
+https://openalex.org/W1780578637,"Fletcher, 1994",1994,George P. Fletcher,On the Moral Irrelevance of Bodily Movements,19,0.019279,Torts / causation,0
+https://openalex.org/W1783030812,"NA, 1989",1989,NA,The authority of the State,5,0.148363,General jurisprudence,0
+https://openalex.org/W1814366986,"Green, 1991",1991,Leslie Green,Two Views of Collective Rights,4,0.021901,Law and political theory,0
+https://openalex.org/W181618895,"Cormick, 1986",1986,Neil MacCormick,An Institutional Theory of Law,5,0.276027,General jurisprudence,703
+https://openalex.org/W1843303664,"Webber, 2009",2009,Grégoire Webber,The Negotiable Constitution: On the Limitation of Rights,0,0.033539,Judicial review and constitutional rights,0
+https://openalex.org/W1846881622,"Bellamy, 2007",2007,Richard Bellamy,Political Constitutionalism: A Republican Defence of the Constitutionality of Democracy,0,0.235063,Judicial review and constitutional rights,1585
+https://openalex.org/W1858207329,"Klabbers, 2009",2009,Jan Klabbers,The Constitutionalization of International Law,12,0.055458,International law,0
+https://openalex.org/W1861011270,"Loughlin, 2010",2010,Martin Loughlin,Foundations of Public Law,12,0.040337,International law,0
+https://openalex.org/W1898777572,"Krisch, 2011",2011,Nico Krisch,Who is Afraid of Radical Pluralism? Legal Order and Political Stability in the Postnational Space*,12,0.001867,International law,0
+https://openalex.org/W1899358847,"Applbaum, 2010",2010,Arthur Isak Applbaum,Legitimacy without the Duty to Obey,4,0.032955,Law and political theory,0
+https://openalex.org/W1915762082,"Merrill, 2000",2000,Thomas W. Merrill,Optimal Standardization in the Law of Property: The Numerus Clausus Principle,9,0.028725,Theory of rights,0
+https://openalex.org/W1949741859,"Nelkin, 2013",2013,Dana Kay Nelkin,"So Close, Yet So Far: Why Solutions to the Closeness Problem for the Doctrine of Double Effect Fall Short",8,0.002231,War and killing,0
+https://openalex.org/W1962176859,"Alexander, 2008",2008,Larry Alexander,Demystifying Legal Reasoning,3,0.107095,Legal reasoning,0
+https://openalex.org/W1963995633,"Bratman, 1984",1984,Michael E. Bratman,Two Faces of Intention,19,0.009714,Torts / causation,0
+https://openalex.org/W1965823236,"Perry, 1987",1987,Stephen R. Perry,"JUDICIAL OBLIGATION, PRECEDENT AND THE COMMON LAW",5,0.072115,General jurisprudence,0
+https://openalex.org/W1967015803,"Lewis, 2008",2008,David Lewis,Are we free to break the laws?,2,0.017522,Responsibility,0
+https://openalex.org/W1967124739,"Alexander, 1996",1996,Larry Alexander,The Moral Magic of Consent (II),18,0.001993,Consent,0
+https://openalex.org/W1967260891,"Bose, 1997",1997,Prosenjit Bose,The Good of Marriage and the Morality of Sexual Relations: Some Philosophical and Historical Observations,17,0.002331,Natural law,0
+https://openalex.org/W1967450494,"Beres, 2007",2007,Melanie Beres,‘Spontaneous’ Sexual Consent: An Analysis of Sexual Consent Literature,18,0.001522,Consent,1420
+https://openalex.org/W1968094512,"Bulygin, 1992",1992,Eugenio Bulygin,On norms of competence,3,0.048365,Legal reasoning,0
+https://openalex.org/W1971827776,"Letsas, 2006",2006,George Letsas,Two Concepts of the Margin of Appreciation,0,0.034632,Judicial review and constitutional rights,0
+https://openalex.org/W1972471114,"Forst, 2010",2010,Rainer Forst,The Justification of Human Rights and the Basic Right to Justification: A Reflexive Approach,9,0.027732,Theory of rights,0
+https://openalex.org/W1974237129,"Fischer, 1993",1993,John Martin Fischer,"Quinn on Double Effect: The Problem of ""Closeness""",8,0.005213,War and killing,710
+https://openalex.org/W1974412448,"Kramer, 2010",2010,Matthew J. Kramer,Refining the Interest Theory of Rights,9,0.035275,Theory of rights,0
+https://openalex.org/W1975154664,"Scanlon, 2013",2013,T. M. Scanlon,Giving desert its due,2,0.030183,Responsibility,0
+https://openalex.org/W1975192395,"George, 1999",1999,Robert P. George,In Defense of Natural Law,17,0.05161,Natural law,0
+https://openalex.org/W1975710200,"Simmons, 1981",1981,A. John Simmons,Moral Principles and Political Obligations.,5,0.295416,General jurisprudence,0
+https://openalex.org/W1975824152,"Marmor, 2008",2008,Andrei Marmor,The Pragmatics of Legal Language,5,0.006406,General jurisprudence,0
+https://openalex.org/W1975959592,"Morris, 1968",1968,Herbert Morris,Persons and Punishment,15,0.175131,Punishment,5912
+https://openalex.org/W1976083926,"Griffith, 1979",1979,J. A. G. Griffith,The Political Constitution*,0,0.071927,Judicial review and constitutional rights,0
+https://openalex.org/W1976156251,"Duff, 2010",2010,R. A. Duff,"BLAME, MORAL STANDING AND THE LEGITIMACY OF THE CRIMINAL TRIAL",6,0.012694,NA,292
+https://openalex.org/W1976214767,"Duff, 1998",1998,R. A. Duff,"Law, language and community: some preconditions of criminal liability",15,0.012331,Punishment,710
+https://openalex.org/W1976613925,"Zimmerman, 1987",1987,Michael J. Zimmerman,Luck and Moral Responsibility,2,0.029067,Responsibility,711
+https://openalex.org/W1976729917,"Dowe, 2001",2001,Phil Dowe,A Counterfactual Theory of Prevention and 'Causation' by Omission,19,0.015561,Torts / causation,0
+https://openalex.org/W1977927756,"Maibom, 2008",2008,Heidi L. Maibom,"The Mad, the Bad, and the Psychopath",2,0.005883,Responsibility,0
+https://openalex.org/W1979758634,"Matravers, 2006",2006,Matt Matravers,‘Who’s Still Standing?’ A Comment on Antony Duff’s Preconditions of Criminal Liability,6,0.001677,NA,0
+https://openalex.org/W1980315820,"Dworkin, 2004",2004,Ronald Dworkin,Hart's Postscript and the Character of Political Philosophy,5,0.170286,General jurisprudence,0
+https://openalex.org/W1980782361,"Epstein, 1974",1974,Richard A. Epstein,Defenses and Subsequent Pleas in a System of Strict Liability,19,0.008487,Torts / causation,0
+https://openalex.org/W1981074040,"Patrick, 2006",2006,William J. FitzPatrick,The Intend/Foresee Distinction and the Problem of “Closeness”,8,0.010303,War and killing,0
+https://openalex.org/W1981788994,"Thomson, 1990",1990,James Thomson,The Realm of Rights,9,0.148606,Theory of rights,0
+https://openalex.org/W1982523722,"Cormick, 1971",1971,D. N. MacCormick,The Concept of a Legal System: An Introduction to the Theory of Legal System.,5,0.152446,General jurisprudence,0
+https://openalex.org/W1982651933,"French, 1984",1984,Peter A. French,Collective and Corporate Responsibility,19,0.075274,Torts / causation,210
+https://openalex.org/W1983025967,"Wellman, 2012",2012,Christopher Heath Wellman,The Rights Forfeiture Theory of Punishment,15,0.007446,Punishment,0
+https://openalex.org/W1983699023,"Thigpen, 1990",1990,Robert B. Thigpen,"Liberalism, Community, and Culture",4,0.221437,Law and political theory,255
+https://openalex.org/W1984025373,"James, 2005",2005,Aaron James,Constructing Justice for Existing Practice: Rawls and the Status Quo,4,0.034778,Law and political theory,0
+https://openalex.org/W1984999953,"Nelkin, 2012",2012,Dana Kay Nelkin,Three Cheers for Double Effect,8,0.006458,War and killing,0
+https://openalex.org/W1985968075,"Coleman, 1982",1982,Jules L. Coleman,Negative and Positive Positivism,5,0.217425,General jurisprudence,711
+https://openalex.org/W1986739574,"Paulson, 1992",1992,Stanley L. Paulson,The Neo-Kantian Dimension of Kelsen's Pure Theory of Law,5,0.029556,General jurisprudence,0
+https://openalex.org/W1987468100,"Fuller, 1969",1969,Lon L. Fuller,Human Interaction and the Law,5,0.057513,General jurisprudence,0
+https://openalex.org/W1987984014,"Frowe, 2009",2009,Helen Frowe,A Practical Account of Self-Defence,8,0.005289,War and killing,0
+https://openalex.org/W1988208978,"Kymlicka, 1989",1989,Will Kymlicka,Liberal Individualism and Liberal Neutrality,4,0.117408,Law and political theory,0
+https://openalex.org/W198849153,"Cormick, 1972",1972,Neil MacCormick,Voluntary Obligations and Normative Powers,9,0.089769,Theory of rights,0
+https://openalex.org/W1989374108,"Sreenivasan, 2005",2005,Gopal Sreenivasan,A Hybrid Theory of Claim-Rights,9,0.049575,Theory of rights,0
+https://openalex.org/W1990328343,"Postema, 1982",1982,Gerald J. Postema,Coordination and Convention at the Foundations of Law,5,0.256041,General jurisprudence,0
+https://openalex.org/W1990362375,"Simmonds, 2007",2007,N. E. Simmonds,Law as a Moral Idea,5,0.173159,General jurisprudence,0
+https://openalex.org/W1990904714,"Kaplow, 1994",1994,Louis Kaplow,Why the Legal System Is Less Efficient than the Income Tax in Redistributing Income,9,0.012898,Theory of rights,1
+https://openalex.org/W1990990149,"Sadurski, 1989",1989,Wojciech Sadurski,"Theory of punishment, social justice, and liberal neutrality",15,0.02042,Punishment,0
+https://openalex.org/W1994326792,"Thomasson, 2003",2003,Amie L. Thomasson,Realism and Human Kinds,17,0.007759,Natural law,0
+https://openalex.org/W1994534805,"Williams, 1988",1988,Glanville Williams,The Logic of “Exceptions”,20,0.003198,Justifications and excuses,0
+https://openalex.org/W1996138251,"Kaufman, 2004",2004,Whitley Kaufman,Is there a “right” to self‐defense?,20,0.003273,Justifications and excuses,0
+https://openalex.org/W1996659825,"Macedo, 1997",1997,Stephen Macedo,In Defense of Liberal Public Reason: are Slavery and Abortion Hard Cases?,4,0.010399,Law and political theory,0
+https://openalex.org/W1997782454,"Intyre, 2001",2001,Alison McIntyre,Doing Away with Double Effect,8,0.010445,War and killing,700
+https://openalex.org/W1999165976,"Allan, 2004",2004,T. R. S. Allan,"LEGISLATIVE SUPREMACY AND LEGISLATIVE INTENTION: INTERPRETATION, MEANING, AND AUTHORITY",0,0.017651,Judicial review and constitutional rights,0
+https://openalex.org/W1999532401,"Coleman, 1998",1998,Jules L. Coleman,"Incorporationism, Conventionality, and the Practical Difference Thesis",5,0.196346,General jurisprudence,0
+https://openalex.org/W200124229,"Tribe, 1971",1971,Laurence H. Tribe,Trial by Mathematics: Precision and Ritual in the Legal Process,10,0.020335,Evidence and proof,11873
+https://openalex.org/W2001282989,"Dagger, 1993",1993,Richard Dagger,Playing Fair with Punishment,15,0.057607,Punishment,0
+https://openalex.org/W2001594127,"Hieronymi, 2006",2006,Pamela Hieronymi,Responsibility for believing,2,0.021407,Responsibility,0
+https://openalex.org/W2002788212,"Braithwaite, 1999",1999,John Braithwaite,Restorative Justice: Assessing Optimistic and Pessimistic Accounts,15,0.008474,Punishment,0
+https://openalex.org/W2004265956,"Husak, 2005",2005,Douglas Husak,On the Supposed Priority of Justification to Excuse,20,0.003855,Justifications and excuses,0
+https://openalex.org/W2006291010,"Horder, 1993",1993,Jeremy Horder,Criminal culpability: The possibility of a general theory,20,7.09e-4,Justifications and excuses,0
+https://openalex.org/W2008168692,"King, 2009",2009,Matt King,The Problem with Negligence,2,0.018093,Responsibility,0
+https://openalex.org/W2009243336,"Strawson, 1994",1994,Galen Strawson,The impossibility of moral responsibility,2,0.066369,Responsibility,2322
+https://openalex.org/W2009439209,"Alexy, 2013",2013,Robert Alexy,Some Reflections on the Ideal Dimension of Law and on the Legal Philosophy of John Finnis,7,0.004441,Non-positivism (Alexy & Radbruch),0
+https://openalex.org/W2009596531,"Mahan, 1994",1994,Jeff McMahan,Self-Defense and the Problem of the Innocent Attacker,8,0.010352,War and killing,0
+https://openalex.org/W2009741018,"Alexy, 1990",1990,Robert Alexy,The Concept of Coherence and Its Significance for Discursive Rationality,5,0.012649,General jurisprudence,0
+https://openalex.org/W2009896285,"Schauer, 2010",2010,Frederick Schauer,Was Austin Right After All? On the Role of Sanctions in a Theory of Law,4,0.057895,Law and political theory,710
+https://openalex.org/W2010849541,"Summers, 1993",1993,Robert W. Summers,A Formal Theory of the Rule of Law*,5,0.063962,General jurisprudence,0
+https://openalex.org/W2011498050,"Shoemaker, 2007",2007,David Shoemaker,"Moral Address, Moral Responsibility, and the Boundaries of the Moral Community",2,0.021628,Responsibility,0
+https://openalex.org/W2012297130,"Habermas, 2003",2003,Jürgen Habermas,"On Law and Disagreement. Some Comments on ""Interpretative Pluralism""",12,0.00535,International law,0
+https://openalex.org/W2012751363,"Cormick, 1998",1998,Neil MacCormick,Review article. Risking constitutional collision in Europe?,12,0.006997,International law,0
+https://openalex.org/W2013396264,"Cormick, 1993",1993,Neil MacCormick,Beyond the Sovereign State,12,0.060689,International law,641
+https://openalex.org/W2014010033,"Green, 1983",1983,Leslie Green,"LAW, CO-ORDINATION AND THE COMMON GOOD",5,0.02942,General jurisprudence,0
+https://openalex.org/W2014772536,"Plunkett, 2012",2012,David Plunkett,A POSITIVIST ROUTE FOR EXPLAINING HOW FACTS MAKE LAW,5,0.007794,General jurisprudence,0
+https://openalex.org/W2016325035,"Zedner, 2007",2007,Lucia Zedner,Pre-crime and post-criminology?,16,0.001543,Risk and prevention in criminal law,2352
+https://openalex.org/W2016826192,"Finnis, 1983",1983,John Finnis,Natural Law and Natural Rights.,5,0.675596,General jurisprudence,6014
+https://openalex.org/W2018150336,"Waldron, 2002",2002,Jeremy Waldron,Is the Rule of Law an Essentially Contested Concept (In Florida)?,5,0.224258,General jurisprudence,0
+https://openalex.org/W2018986083,"Eser, 1976",1976,Albin Eser,Justification and Excuse,20,0.002669,Justifications and excuses,0
+https://openalex.org/W2021695404,"Dworkin, 1996",1996,Ronald Dworkin,Objectivity and Truth: You'd Better Believe It,5,0.180812,General jurisprudence,0
+https://openalex.org/W2022049923,"Borgo, 1979",1979,John Borgo,Causal Paradigms in Tort Law,19,0.025751,Torts / causation,0
+https://openalex.org/W2022829934,"Levy, 2012",2012,Neil Levy,Skepticism and Sanction: The Benefits of Rejecting Moral Responsibility,2,0.011199,Responsibility,0
+https://openalex.org/W2023238833,"Brady, 1982",1982,Gordon L. Brady,Social Justice in the Liberal State,4,0.16781,Law and political theory,0
+https://openalex.org/W2023270709,"Zimmerman, 1997",1997,Michael J. Zimmerman,Moral Responsibility and Ignorance,2,0.041932,Responsibility,1
+https://openalex.org/W2024102269,"Prakken, 1996",1996,Henry Prakken,A dialectical model of assessing conflicting arguments in legal reasoning,3,0.098173,Legal reasoning,695
+https://openalex.org/W2024318497,"Capon, 2003",2003,Trevor Bench-Capon,A model of legal reasoning with cases incorporating theories and values,3,0.045295,Legal reasoning,3879
+https://openalex.org/W2025294665,"Buchanan, 2002",2002,Allen Buchanan,Political Legitimacy and Democracy,4,0.129992,Law and political theory,0
+https://openalex.org/W2026133433,"Feinberg, 1970",1970,Joel Feinberg,The nature and value of rights,9,0.142849,Theory of rights,0
+https://openalex.org/W2027019383,"Ashworth, 2007",2007,Andrew Ashworth,"Defending the Criminal Law: Reflections on the Changing Character of Crime, Procedure, and Sanctions",16,3.62e-4,Risk and prevention in criminal law,0
+https://openalex.org/W2027539909,"Kolodny, 2003",2003,Niko Kolodny,Promises and Practices Revisited,9,0.043745,Theory of rights,0
+https://openalex.org/W2028501282,"Habermas, 2001",2001,Jürgen Habermas,Constitutional Democracy,12,0.120697,International law,240
+https://openalex.org/W2029888259,"Bentham, 1970",1970,Jeremy Bentham,Of laws in general,5,0.198176,General jurisprudence,0
+https://openalex.org/W2030110443,"Chau, 2012",2012,Peter Chau,Duff on the Legitimacy of Punishment of Socially Deprived Offenders,6,9.95e-4,NA,0
+https://openalex.org/W2032902905,"Christiano, 2004",2004,Thomas Christiano,The Authority of Democracy*,4,0.078328,Law and political theory,247
+https://openalex.org/W2032998746,"Pineau, 1989",1989,Lois Pineau,Date rape: A feminist analysis,18,6.22e-4,Consent,0
+https://openalex.org/W2034234218,"Brison, 1998",1998,Susan J. Brison,The Autonomy Defense of Free Speech,13,0.020887,Hate speech,706
+https://openalex.org/W2034903527,"Bennett, 2002",2002,Christopher Bennett,The Varieties of Retributive Experience,2,0.038636,Responsibility,0
+https://openalex.org/W2035148892,"Shapiro, 2000",2000,Scott Shapiro,"LAW, MORALITY, AND THE GUIDANCE OF CONDUCT",5,0.042872,General jurisprudence,0
+https://openalex.org/W2037679771,"Thomson, 1999",1999,James Thomson,Physician‐Assisted Suicide: Two Moral Arguments,8,0.010746,War and killing,708
+https://openalex.org/W2038041537,"Epstein, 1973",1973,Richard A. Epstein,A Theory of Strict Liability,19,0.171348,Torts / causation,2131
+https://openalex.org/W2038608783,"Barnett, 1977",1977,Randy E. Barnett,Restitution: A New Paradigm of Criminal Justice,15,0.036021,Punishment,708
+https://openalex.org/W2038692525,"Davis, 1986",1986,Michael Davis,Why attempts deserve less punishment than complete crimes,2,0.002824,Responsibility,0
+https://openalex.org/W2038736395,"Scoccia, 2007",2007,Danny Scoccia,In Defense of Hard Paternalism,4,8.27e-4,Law and political theory,0
+https://openalex.org/W2039168968,"Hare, 1982",1982,R. M. Hare,"Moral Thinking: Its Levels, Methods and Point",5,0.106192,General jurisprudence,0
+https://openalex.org/W2039237131,"Alexy, 2008",2008,Robert Alexy,On the Concept and the Nature of Law,7,0.081769,Non-positivism (Alexy & Radbruch),6
+https://openalex.org/W2039676139,"Montague, 1981",1981,Phillip Montague,Self-defense and choosing between lives,8,0.007391,War and killing,0
+https://openalex.org/W2039760166,"Davis, 1983",1983,Michael Davis,How to Make the Punishment Fit the Crime,15,0.041452,Punishment,0
+https://openalex.org/W2039981008,"Grimm, 2007",2007,Dieter Grimm,Proportionality in Canadian and German Constitutional Jurisprudence,0,0.01922,Judicial review and constitutional rights,0
+https://openalex.org/W2040207198,"Inerny, 1980",1980,Ralph McInerny,The Principles of Natural Law,17,0.020028,Natural law,708
+https://openalex.org/W2040210902,"Posner, 1972",1972,Richard A. Posner,A Theory of Negligence,19,0.066448,Torts / causation,303
+https://openalex.org/W2040525195,"Malcolm, 1968",1968,Norman Malcolm,The Conceivability of Mechanism,19,0.006352,Torts / causation,0
+https://openalex.org/W2040603703,"Hirsch, 1991",1991,Andrew von Hirsch,Gauging Criminal Harm: A Living-Standard Analysis,15,0.005477,Punishment,0
+https://openalex.org/W2041009095,"Copp, 1999",1999,David Copp,The Idea of a Legitimate State,4,0.070071,Law and political theory,0
+https://openalex.org/W2041466501,"Raz, 1984",1984,Joseph Raz,HART ON MORAL RIGHTS AND LEGAL DUTIES,7,0.055084,Non-positivism (Alexy & Radbruch),0
+https://openalex.org/W2041607960,"Raz, 1986",1986,Joseph Raz,The Morality of Freedom,5,0.735374,General jurisprudence,47557
+https://openalex.org/W2041824782,"Lefkowitz, 2007",2007,David Lefkowitz,On a Moral Right to Civil Disobedience,14,0.016032,NA,0
+https://openalex.org/W2041839855,"Cohen, 1937",1937,Fred Cohen,THE PROBLEMS OF A FUNCTIONAL JURISPRUDENCE,5,0.019761,General jurisprudence,0
+https://openalex.org/W204205356,"Husak, 1989",1989,Douglas Husak,Justifications and the Criminal Liability of Accessories,20,0.004213,Justifications and excuses,0
+https://openalex.org/W2042727912,"Hershovitz, 2003",2003,Scott Hershovitz,"LEGITIMACY, DEMOCRACY, AND RAZIAN AUTHORITY",4,0.016376,Law and political theory,0
+https://openalex.org/W2044376112,"Davis, 1993",1993,Michael Davis,Criminal desert and unfair advantage: What's the connection?,15,0.007382,Punishment,0
+https://openalex.org/W2044818626,"Smith, 2005",2005,Angela M. Smith,Responsibility for Attitudes: Activity and Passivity in Mental Life,2,0.054831,Responsibility,4
+https://openalex.org/W2044908625,"Fischer, 1998",1998,John Martin Fischer,Responsibility and Control,2,0.155217,Responsibility,41161
+https://openalex.org/W2045052834,"Waldron, 1994",1994,Jeremy Waldron,Freeman's defense of Judicial Review,0,0.015617,Judicial review and constitutional rights,0
+https://openalex.org/W2045151352,"Smilansky, 2011",2011,Saul Smilansky,Hard Determinism and Punishment: A Practical Reductio,2,0.01208,Responsibility,0
+https://openalex.org/W2045298523,"Skillen, 1980",1980,Anthony Skillen,How to Say Things with Walls,15,0.02544,Punishment,0
+https://openalex.org/W2045381010,"Kymlicka, 1992",1992,Will Kymlicka,The Rights of Minority Cultures,4,0.070493,Law and political theory,48
+https://openalex.org/W2045894209,"Lenman, 2006",2006,James Lenman,Compatibilism and Contractualism: The Possibility of Moral Responsibility,2,0.026618,Responsibility,0
+https://openalex.org/W2047304938,"Paulson, 1995",1995,Stanley L. Paulson,Radbruch on Unjust Laws: Competing Earlier and Later Views?,5,0.032914,General jurisprudence,0
+https://openalex.org/W2047661196,"Wellman, 2001",2001,Christopher Heath Wellman,Toward a Liberal Theory of Political Obligation,4,0.030579,Law and political theory,0
+https://openalex.org/W2048636620,"Wenar, 2005",2005,Leif Wenar,The Nature of Rights,9,0.114269,Theory of rights,0
+https://openalex.org/W2049126431,"Hoskins, 2010",2010,Zachary Hoskins,"Fair Play, Political Obligation, and Punishment",15,0.018619,Punishment,0
+https://openalex.org/W2049352959,"Simpson, 2012",2012,Robert J. Simpson,"Dignity, Harm, and Hate Speech",13,0.001145,Hate speech,0
+https://openalex.org/W2050227612,"Fair, 1979",1979,David Fair,Causation and the flow of energy,19,0.010777,Torts / causation,0
+https://openalex.org/W2051892360,"Shapiro, 1998",1998,Scott Shapiro,On Hart's Way Out,5,0.132393,General jurisprudence,0
+https://openalex.org/W2051895896,"Lamond, 2000",2000,Grant Lamond,The coerciveness of law,4,0.002282,Law and political theory,0
+https://openalex.org/W2052671436,"Smith, 2011",2011,Holly M. Smith,Non-Tracing Cases of Culpable Ignorance,2,0.01659,Responsibility,0
+https://openalex.org/W2053588557,"Wellman, 2004",2004,Christopher Heath Wellman,POLITICAL OBLIGATION AND THE PARTICULARITY REQUIREMENT,4,0.013891,Law and political theory,0
+https://openalex.org/W2053800960,"Raz, 1984",1984,Joseph Raz,On the Nature of Rights,9,0.089036,Theory of rights,0
+https://openalex.org/W2054081676,"Nagel, 2005",2005,Thomas Nagel,The Problem of Global Justice,4,0.271018,Law and political theory,26757
+https://openalex.org/W2055157079,"Boyle, 1980",1980,Jr. Joseph M. Boyle,Toward Understanding the Principle of Double Effect,8,0.009433,War and killing,0
+https://openalex.org/W2055244532,"Raz, 1974",1974,Joseph Raz,Kelsen's theory of the Basic Norm,5,0.029556,General jurisprudence,0
+https://openalex.org/W2057140318,"Zurn, 2007",2007,Christopher F. Zurn,Deliberative Democracy and the Institutions of Judicial Review,0,0.039792,Judicial review and constitutional rights,0
+https://openalex.org/W2058150518,"Fuller, 1964",1964,Lon L. Fuller,The morality of law,5,0.363439,General jurisprudence,0
+https://openalex.org/W2060483271,"Radbruch, 2006",2006,Gustav Radbruch,Statutory Lawlessness and Supra-Statutory Law (1946),7,0.135065,Non-positivism (Alexy & Radbruch),709
+https://openalex.org/W2060498353,"Waldron, 1999",1999,Jeremy Waldron,Law and Disagreement,0,0.582291,Judicial review and constitutional rights,10909
+https://openalex.org/W2061189098,"Freeman, 1990",1990,Samuel S. Freeman,Constitutional democracy and the legitimacy of judicial review,0,0.048237,Judicial review and constitutional rights,0
+https://openalex.org/W2061272009,"Dolinko, 1991",1991,David Dolinko,Some Thoughts About Retributivism,15,0.076239,Punishment,0
+https://openalex.org/W2061940329,"Hart, 1963",1963,H. L. A. Hart,"Law, Liberty, and Morality",5,0.275835,General jurisprudence,1437
+https://openalex.org/W2062788414,"Fletcher, 1980",1980,George P. Fletcher,Rethinking Criminal Law,15,0.060796,Punishment,0
+https://openalex.org/W2063372819,"Husak, 2011",2011,Douglas Husak,"Negligence, Belief, Blame and Criminal Liability: The Special Case of Forgetting",2,0.010391,Responsibility,0
+https://openalex.org/W2063755273,"Simons, 2005",2005,Kenneth W. Simons,Exploring the Intricacies of the Lesser Evils Defense,20,0.002165,Justifications and excuses,0
+https://openalex.org/W2064068631,"Waldron, 1989",1989,Jeremy Waldron,Rights in Conflict,9,0.083452,Theory of rights,0
+https://openalex.org/W2064070332,"Tadros, 2009",2009,Victor Tadros,Poverty and Criminal Responsibility,6,0.00824,NA,1127
+https://openalex.org/W2064238556,"Hirsch, 1992",1992,Andrew von Hirsch,Proportionality in the Philosophy of Punishment,15,0.032924,Punishment,0
+https://openalex.org/W2065800506,"Patterson, 1992",1992,Dennis Patterson,The value of a promise,9,0.015089,Theory of rights,0
+https://openalex.org/W2065946385,"Raz, 2010",2010,Joseph Raz,"On Respect, Authority, and Neutrality: A Response",5,0.05117,General jurisprudence,0
+https://openalex.org/W2066750905,"Dworkin, 1982",1982,Ronald Dworkin,Law as Interpretation,5,0.044464,General jurisprudence,0
+https://openalex.org/W2067074281,"Darwall, 2010",2010,Stephen Darwall,Authority and Reasons: Exclusionary and Second‐Personal,5,0.035815,General jurisprudence,0
+https://openalex.org/W2067393911,"Perry, 1998",1998,Stephen D. Perry,Hart's Methodological Positivism,5,0.130979,General jurisprudence,0
+https://openalex.org/W2069476460,"Gallie, 1994",1994,W. B. Gallie,Essentially Contested Concepts,5,0.22491,General jurisprudence,790
+https://openalex.org/W2070486087,"Feinberg, 1965",1965,Joel Feinberg,The Expressive Function of Punishment,15,0.122852,Punishment,7902
+https://openalex.org/W2071578102,"Waldron, 1981",1981,Jeremy Waldron,A Right to Do Wrong,9,0.0694,Theory of rights,0
+https://openalex.org/W2072078569,"Rawls, 1968",1968,John Rawls,Distributive Justice: Some Addenda,4,0.015734,Law and political theory,0
+https://openalex.org/W2072229209,"Raz, 1999",1999,Joseph Raz,Practical Reason and Norms,5,0.578988,General jurisprudence,5268
+https://openalex.org/W2073421736,"Bayles, 1982",1982,Michael D. Bayles,"Character, purpose, and criminal responsibility",20,0.001945,Justifications and excuses,524
+https://openalex.org/W2073540959,"Waldron, 1989",1989,Jeremy Waldron,The Rule of Law in Contemporary Liberal Theory,5,0.111767,General jurisprudence,0
+https://openalex.org/W2073541500,"Quong, 2009",2009,Jonathan Quong,Killing in Self‐Defense,8,0.013706,War and killing,2
+https://openalex.org/W2074687777,"Narayan, 1993",1993,Uma Narayan,Appropriate Responses and Preventive Benefits: Justifying Censure and Hard Treatment in Legal Punishment.,15,0.014865,Punishment,0
+https://openalex.org/W2074839066,"Alexander, 1990",1990,Larry Alexander,Law and Exclusionary Reasons,19,0.001834,Torts / causation,0
+https://openalex.org/W2076149379,"Posner, 1981",1981,Richard A. Posner,The Concept of Corrective Justice in Recent Theories of Tort Law,19,0.037822,Torts / causation,0
+https://openalex.org/W2076269841,"Estlund, 1998",1998,David Estlund,The Insularity of the Reasonable: Why Political Liberalism Must Admit the Truth,4,0.014976,Law and political theory,0
+https://openalex.org/W2077850682,"Shavell, 1980",1980,Steven Shavell,An Analysis of Causation and the Scope of Liability in the Law of Torts,19,0.039597,Torts / causation,0
+https://openalex.org/W2078546388,"Newman, 2004",2004,Dwight G. Newman,Collective Interests and Collective Rights,4,0.019587,Law and political theory,0
+https://openalex.org/W2078644730,"Raz, 1998",1998,Joseph Raz,Disagreement in Politics,4,0.064137,Law and political theory,0
+https://openalex.org/W2079849494,"Ashworth, 2006",2006,Andrew Ashworth,Four Threats to the Presumption of Innocence,10,8.83e-4,Evidence and proof,2127
+https://openalex.org/W2080406782,"Byrd, 1989",1989,B. Sharon Byrd,"Kant's theory of punishment: Deterrence in its threat, retribution in its execution",15,0.032677,Punishment,0
+https://openalex.org/W2080433285,"Grisez, 1987",1987,Germain Grisez,"Practical Principles, Moral Truth, and Ultimate Ends",17,0.071268,Natural law,2129
+https://openalex.org/W2081003234,"Waldron, 1994",1994,Jeremy Waldron,"Why law ? Efficacy, freedom, or fidelity?",5,0.034102,General jurisprudence,0
+https://openalex.org/W2081343895,"Sreenivasan, 2010",2010,Gopal Sreenivasan,Duties and Their Direction,9,0.035587,Theory of rights,0
+https://openalex.org/W2081983014,"Greer, 2004",2004,Steven Greer,“BALANCING” AND THE EUROPEAN COURT OF HUMAN RIGHTS: A CONTRIBUTION TO THE HABERMAS-ALEXY DEBATE,0,0.075963,Judicial review and constitutional rights,0
+https://openalex.org/W2082455105,"Raz, 1998",1998,Joseph Raz,Two Views of the Nature of the Theory of Law: <i>A Partial Comparison</i>,5,0.070709,General jurisprudence,0
+https://openalex.org/W2082605766,"Blake, 2001",2001,Michael Blake,"Distributive Justice, State Coercion, and Autonomy",4,0.130535,Law and political theory,560
+https://openalex.org/W2083201648,"Lyons, 1982",1982,David Lyons,The Authority of Law: Essays on Law and Morality.,5,0.43121,General jurisprudence,0
+https://openalex.org/W2083223897,"Gans, 1986",1986,Chaim Gans,Mandatory rules and exclusionary reasons,19,0.014203,Torts / causation,0
+https://openalex.org/W2085537356,"Waluchow, 1997",1997,Wilfrid J. Waluchow,Inclusive Legal Positivism.,5,0.335105,General jurisprudence,0
+https://openalex.org/W2086064262,"Sigmund, 2001",2001,Paul E. Sigmund,"Aquinas: Moral, Political, and Legal Theory",17,0.08265,Natural law,0
+https://openalex.org/W2086581722,"Shue, 1997",1997,Henry Shue,Ethics in the Public Domain: Essays in the Morality of Law and Politics.,5,0.276671,General jurisprudence,0
+https://openalex.org/W2086841517,"Dicey, 1979",1979,A. V. Dicey,Introduction to the Study of the Law of the Constitution,5,0.406271,General jurisprudence,23
+https://openalex.org/W2086971778,"Mackie, 1982",1982,J. L. Mackie,Morality and the retributive emotions,15,0.04576,Punishment,0
+https://openalex.org/W2087913450,"Mahan, 2005",2005,Jeff McMahan,Self-Defense and Culpability,8,0.002797,War and killing,0
+https://openalex.org/W2087972849,"Geach, 1956",1956,P. T. Geach,Good and Evil,4,0.044411,Law and political theory,0
+https://openalex.org/W2088719245,"Bose, 1981",1981,Prosenjit Bose,The Basic Principles of Natural Law: A Reply to Ralph McInerny,17,0.001569,Natural law,0
+https://openalex.org/W2089446476,"Landes, 1983",1983,William M. Landes,Causation in Tort Law: An Economic Approach,19,0.036784,Torts / causation,0
+https://openalex.org/W2090349367,"Wright, 1985",1985,Richard W. Wright,Actual Causation vs. Probabilistic Linkage: The Bane of Economic Analysis,19,0.03391,Torts / causation,0
+https://openalex.org/W2090724354,"Alexander, 1985",1985,Larry Alexander,Pursuing the Good-Indirectly,15,0.017868,Punishment,0
+https://openalex.org/W2092575672,"Holroyd, 2010",2010,Jules Holroyd,Punishment and Justice,6,0.003917,NA,0
+https://openalex.org/W2092658469,"Gilbert, 1990",1990,Margaret Gilbert,Walking Together,19,0.016886,Torts / causation,0
+https://openalex.org/W2093052290,"Allan, 2006",2006,T. R. S. Allan,HUMAN RIGHTS AND JUDICIAL REVIEW: A CRITIQUE OF “DUE DEFERENCE”,0,0.048846,Judicial review and constitutional rights,0
+https://openalex.org/W2094015814,"Lindahl, 2004",2004,Lars Lindahl,Deduction and Justification in the Law. The Role of Legal Terms and Concepts,3,0.002227,Legal reasoning,0
+https://openalex.org/W2094073190,"Alexy, 2000",2000,Robert Alexy,On the Structure of Legal Principles,0,0.081834,Judicial review and constitutional rights,0
+https://openalex.org/W2094143258,"Gardner, 1998",1998,John Gardner,The Gist of Excuses,20,0.014702,Justifications and excuses,893
+https://openalex.org/W2094397223,"Alexander, 2005",2005,Larry Alexander,Lesser Evils: A Closer Look at the Paradigmatic Justification,20,0.004894,Justifications and excuses,0
+https://openalex.org/W2094636508,"Alexy, 1996",1996,Robert Alexy,Discourse Theory and Human Rights*,7,0.004441,Non-positivism (Alexy & Radbruch),0
+https://openalex.org/W2095259447,"Arneson, 1982",1982,Richard J. Arneson,The Principle of Fairness and Free-Rider Problems,9,0.053285,Theory of rights,0
+https://openalex.org/W2096945010,"Greene, 2004",2004,Joshua D. Greene,"For the law, neuroscience changes nothing and everything",2,0.018844,Responsibility,736
+https://openalex.org/W2099136196,"Tadros, 2006",2006,Victor Tadros,Rethinking the presumption of innocence,10,8.85e-4,Evidence and proof,1420
+https://openalex.org/W2100444068,"Alexy, 2010",2010,Robert Alexy,The Dual Nature of Law,7,0.083114,Non-positivism (Alexy & Radbruch),1413
+https://openalex.org/W2101637700,"Primoratz, 1989",1989,Igor Primoratz,Punishment as Language,15,0.040782,Punishment,0
+https://openalex.org/W2102730207,"Coleman, 2007",2007,Jules L. Coleman,Beyond the Separability Thesis: Moral Semantics and the Methodology of Jurisprudence,5,0.012917,General jurisprudence,0
+https://openalex.org/W2103086931,"Varden, 2008",2008,Helga Varden,Kant's Non-Voluntarist Conception of Political Obligations: Why Justice is Impossible in the State of Nature,4,0.004206,Law and political theory,0
+https://openalex.org/W2104421108,"Kelsen, 1942",1942,Hans Kelsen,Judicial Review of Legislation: A Comparative Study of the Austrian and the American Constitution,0,0.018031,Judicial review and constitutional rights,0
+https://openalex.org/W2106326665,"Nagel, 1995",1995,Thomas Nagel,Personal Rights and Public Space,13,0.061656,Hate speech,0
+https://openalex.org/W2109407406,"Hurd, 1996",1996,Heidi M. Hurd,The Moral Magic of Consent,18,0.023712,Consent,3941
+https://openalex.org/W2110037293,"Bulygin, 1987",1987,Eugenio Bulygin,Introducción a la metodología de las ciencias jurídicas y sociales,5,0.024599,General jurisprudence,0
+https://openalex.org/W2110474404,"Moore, 1990",1990,Michael S. Moore,"Choice, Character, and Excuse",20,0.001479,Justifications and excuses,0
+https://openalex.org/W2112593361,"Nussbaum, 2011",2011,Martha C. Nussbaum,Perfectionist Liberalism and Political Liberalism,4,0.082845,Law and political theory,4235
+https://openalex.org/W2116057227,"Bingham, 2007",2007,Lord Bingham,THE RULE OF LAW,5,0.232553,General jurisprudence,228
+https://openalex.org/W2116356939,"Vargas, 2005",2005,Manuel Vargas,The Trouble with Tracing,2,0.043358,Responsibility,0
+https://openalex.org/W2116645954,"Abizadeh, 2008",2008,Arash Abizadeh,Democratic Theory and Border Coercion,4,0.074974,Law and political theory,1422
+https://openalex.org/W2117090172,"Alexy, 2003",2003,Robert Alexy,On Balancing and Subsumption. A Structural Comparison,0,0.126226,Judicial review and constitutional rights,200
+https://openalex.org/W2119540646,"Crudden, 2008",2008,Christopher McCrudden,Human Dignity and Judicial Interpretation of Human Rights,9,0.076192,Theory of rights,1960
+https://openalex.org/W2119686943,"Hanna, 2007",2007,Nathan Hanna,Say What? A Critique of Expressive Retributivism,15,0.009566,Punishment,0
+https://openalex.org/W2119912892,"Benn, 1958",1958,Stanley I. Benn,An Approach To The Problems Of Punishment,15,0.039544,Punishment,0
+https://openalex.org/W2120225427,"Moore, 2011",2011,Michael Moore,"Punishing the Awkward, the Stupid, the Weak, and the Selfish: The Culpability of Negligence",2,0.012913000000000001,Responsibility,0
+https://openalex.org/W2120413618,"Moore, 2001",2001,Michael S. Moore,LAW AS JUSTICE,7,0.006031,Non-positivism (Alexy & Radbruch),0
+https://openalex.org/W2122055745,"Konvitz, 1947",1947,Milton R. Konvitz,General Theory of Law and State.,5,0.375975,General jurisprudence,2
+https://openalex.org/W2122165510,"Coleman, 1978",1978,Jules L. Coleman,Taking Rights Seriously,5,0.831872,General jurisprudence,26121
+https://openalex.org/W2122473296,"Gardner, 2006",2006,John Gardner,Complicity and causality,19,0.009274,Torts / causation,0
+https://openalex.org/W2123950939,"Dagger, 2008",2008,Richard Dagger,Punishment as Fair Play,15,0.022319,Punishment,0
+https://openalex.org/W2126737162,"Barber, 2006",2006,Nicholas W. Barber,Legal Pluralism and the European Union,12,0.005295,International law,0
+https://openalex.org/W2127233441,"Bose, 2003",2003,Prosenjit Bose,Law and What I Truly Should Decide,5,0.058351,General jurisprudence,0
+https://openalex.org/W2129016947,"Rostow, 1960",1960,Eugene V. Rostow,The Enforcement of Morals,5,0.190551,General jurisprudence,0
+https://openalex.org/W2129177500,"Tasioulas, 2006",2006,John Tasioulas,Punishment and Repentance,15,0.007964,Punishment,0
+https://openalex.org/W2131067302,"Dickson, 2007",2007,Julie Dickson,Is the Rule of Recognition Really a Conventional Rule?,5,0.011186,General jurisprudence,0
+https://openalex.org/W2131993200,"Beckman, 2008",2008,Ludvig Beckman,"Democratic Inclusion, Law, and Causes",4,0.002515,Law and political theory,0
+https://openalex.org/W2132760821,"Williams, 1982",1982,Glanville Williams,Offences and defences,20,0.010325,Justifications and excuses,0
+https://openalex.org/W2134200725,"Tsakyrakis, 2009",2009,Stavros Tsakyrakis,Proportionality: An assault on human rights?,0,0.122643,Judicial review and constitutional rights,710
+https://openalex.org/W2136970245,"Shapiro, 2002",2002,Scott Shapiro,"LAW, PLANS, AND PRACTICAL REASON",5,0.012551,General jurisprudence,0
+https://openalex.org/W2136979587,"Held, 2002",2002,David Held,"LAW OF STATES, LAW OF PEOPLES: Three Models of Sovereignty",4,0.006889,Law and political theory,0
+https://openalex.org/W2137074370,"Arneson, 2005",2005,Richard J. Arneson,JOEL FEINBERG AND THE JUSTIFICATION OF HARD PATERNALISM,4,0.00138,Law and political theory,0
+https://openalex.org/W2138878586,"Kenna, 2008",2008,Michael McKenna,A Hard-line Reply to Perebooms Four-Case Manipulation Argument<sup>1</sup>,2,0.032212,Responsibility,0
+https://openalex.org/W2138889939,"Alexy, 2003",2003,Robert Alexy,"Constitutional Rights, Balancing, and Rationality",0,0.082031,Judicial review and constitutional rights,0
+https://openalex.org/W2139276293,"Dworkin, 2013",2013,Ronald Dworkin,A New Philosophy for International Law,5,0.055791,General jurisprudence,0
+https://openalex.org/W2140125709,"Wellman, 1996",1996,Christopher Heath Wellman,"Liberalism, Samaritanism, and Political Legitimacy",4,0.02963,Law and political theory,0
+https://openalex.org/W2140221247,"Legrand, 1996",1996,Pierre Legrand,European Legal Systems are not Converging,11,0.02516,NA,0
+https://openalex.org/W2142352953,"Murphy, 2003",2003,Mark Murphy,NATURAL LAW JURISPRUDENCE,7,0.090312,Non-positivism (Alexy & Radbruch),0
+https://openalex.org/W2142954222,"Lamond, 2005",2005,Grant Lamond,DO PRECEDENTS CREATE RULES?,3,0.072314,Legal reasoning,700
+https://openalex.org/W2143509960,"Malm, 1996",1996,H. M. Malm,The Ontological Status of Consent and its Implications for the Law on Rape,18,0.001681,Consent,0
+https://openalex.org/W2143661992,"Domsky, 2004",2004,Darren Domsky,There Is No Door,2,0.016461,Responsibility,0
+https://openalex.org/W2143936337,"Otsuka, 1994",1994,Michael Otsuka,Killing the Innocent in Self-Defense,8,0.017939,War and killing,0
+https://openalex.org/W2146324225,"Ruiter, 1997",1997,Dick W.P. Ruiter,A Basic Classification of Legal Institutions,5,0.031089,General jurisprudence,0
+https://openalex.org/W2148041267,"Vernon, 2002",2002,Richard Vernon,What is Crime against Humanity?,15,2.9e-4,Punishment,0
+https://openalex.org/W2148456701,"Thomson, 2008",2008,James Thomson,Turning the Trolley,8,0.012108,War and killing,0
+https://openalex.org/W2148721472,"Shiffrin, 2008",2008,Seana Valentine Shiffrin,"Promising, Intimate Relationships, and Conventionalism",9,0.034232,Theory of rights,707
+https://openalex.org/W2151540362,"Gardner, 2004",2004,John Gardner,The Legality of Law,17,0.02074,Natural law,0
+https://openalex.org/W2152710718,"Schaffer, 2012",2012,Jonathan L. Schaffer,DISCONNECTION AND RESPONSIBILITY,19,0.003782,Torts / causation,0
+https://openalex.org/W2152723158,"Cohen, 1984",1984,Meir Dan-Cohen,Decision Rules and Conduct Rules: On Acoustic Separation in Criminal Law,20,0.049862,Justifications and excuses,4840
+https://openalex.org/W2155227601,"NA, 2007",2007,Kai Möller,Balancing and the structure of constitutional rights,0,0.021695,Judicial review and constitutional rights,0
+https://openalex.org/W2157218228,"Kramer, 2005",2005,Matthew H. Kramer,Theories of Rights: Is There a Third Way?,9,0.056422,Theory of rights,0
+https://openalex.org/W2158052114,"Landau, 2005",2005,Russ Shafer-Landau,LIBERALISM AND PATERNALISM,4,8.27e-4,Law and political theory,0
+https://openalex.org/W2158899378,"Radbruch, 2006",2006,Gustav Radbruch,Five Minutes of Legal Philosophy (1945),7,0.021788,Non-positivism (Alexy & Radbruch),0
+https://openalex.org/W2159932289,"Lamond, 2001",2001,Grant Lamond,COERCION AND THE NATURE OF LAW,4,0.017592,Law and political theory,0
+https://openalex.org/W2160361145,"Horty, 2004",2004,John F. Horty,THE RESULT MODEL OF PRECEDENT,3,0.004652,Legal reasoning,0
+https://openalex.org/W2165829448,"Mahan, 2005",2005,Jeff McMahan,The Basis of Moral Liability to Defensive Killing,8,0.019118,War and killing,1385
+https://openalex.org/W2166115596,"Cormick, 1994",1994,Neil MacCormick,Legal Reasoning and Legal Theory,5,0.371928,General jurisprudence,1409
+https://openalex.org/W2166390884,"Firth, 2012",2012,Joanna Mary Firth,"Necessity, Moral Liability, and Defensive Harm",8,0.00228,War and killing,0
+https://openalex.org/W2167665920,"Rivers, 2006",2006,A J Rivers,PROPORTIONALITY AND VARIABLE INTENSITY OF REVIEW,0,0.148753,Judicial review and constitutional rights,0
+https://openalex.org/W2170244904,"Horty, 2011",2011,John F. Horty,RULES AND REASONS IN THE THEORY OF PRECEDENT,3,0.010399,Legal reasoning,0
+https://openalex.org/W2174305652,"Coleman, 1993",1993,Jules L. Coleman,"Determinacy, Objectivity, and Authority",5,0.041319,General jurisprudence,0
+https://openalex.org/W2210378618,"Gardner, 2001",2001,John Gardner,Legal Positivism: 51/2 Myths,5,0.254448,General jurisprudence,108
+https://openalex.org/W2221625539,"Toh, 2011",2011,Kevin Toh,Legal Judgments as Plural Acceptances of Norms,5,0.006062,General jurisprudence,0
+https://openalex.org/W2224287703,"Kenna, 2016",2016,Michael J. McKenna,"Manipulation Arguments, Basic Desert, and Moral Responsibility: Assessing Derk Pereboom’s Free Will, Agency, and Meaning in Life",2,0.010569,Responsibility,0
+https://openalex.org/W222564579,"Hogg, 2017",2017,Peter W. Hogg,The Charter Dialogue Between Courts and Legislatures©,0,0.122918,Judicial review and constitutional rights,0
+https://openalex.org/W2226373706,"Green, 1996",1996,Leslie Green,The Concept of Law Revisited,5,0.059296,General jurisprudence,0
+https://openalex.org/W224059125,"Dubber, 2005",2005,Markus D. Dubber,The Police Power,16,9.74e-4,Risk and prevention in criminal law,711
+https://openalex.org/W2272983765,"Raz, 2009",2009,Joseph Raz,Between Authority and Interpretation,5,0.26869,General jurisprudence,711
+https://openalex.org/W2306435137,"Green, 1999",1999,Leslie Green,Positivism and Conventionalism,5,0.041673,General jurisprudence,0
+https://openalex.org/W2311923057,"Austin, 1971",1971,John Austin,A plea for excuses,5,0.088794,General jurisprudence,0
+https://openalex.org/W2313248468,"Regan, 1980",1980,Donald H. Regan,Utilitarianism and Co-operation,2,0.029371,Responsibility,0
+https://openalex.org/W2314904110,"Broiles, 1969",1969,R. David Broiles,The Morality of Law.,5,0.445714,General jurisprudence,0
+https://openalex.org/W2317886590,"Farrell, 1985",1985,Daniel M. Farrell,The Justification of General Deterrence,15,0.016764,Punishment,0
+https://openalex.org/W2320881999,"Woozley, 1968",1968,A. D. Woozley,The Pure Theory of Law.,5,0.183752,General jurisprudence,0
+https://openalex.org/W2321903117,"Rawls, 1951",1951,John Rawls,Outline of a Decision Procedure for Ethics,4,0.202734,Law and political theory,228
+https://openalex.org/W2324706981,"Gewirth, 1981",1981,Alan Gewirth,Are There Any Absolute Rights?,9,0.054463,Theory of rights,0
+https://openalex.org/W2325114484,"Cottingham, 1979",1979,John Cottingham,Varieties of Retribution,15,0.072237,Punishment,0
+https://openalex.org/W2326201171,"Waldron, 1987",1987,Jeremy Waldron,Theoretical Foundations of Liberalism,4,0.16653,Law and political theory,0
+https://openalex.org/W2326580376,"Hart, 1955",1955,H. L. A. Hart,Are There Any Natural Rights?,9,0.511508,Theory of rights,15554
+https://openalex.org/W2328389233,"Husak, 1992",1992,Douglas Husak,Why Punish the Deserving?,15,0.016594,Punishment,0
+https://openalex.org/W2330528382,"Kavka, 1983",1983,Gregory S. Kavka,The toxin puzzle,2,0.033216,Responsibility,671
+https://openalex.org/W2331633396,"Smilansky, 1990",1990,Saul Smilansky,Utilitarianism and the 'punishment' of the innocent: the general problem,2,0.005146,Responsibility,0
+https://openalex.org/W2333427991,"Alexy, 1998",1998,Robert Alexy,Law and Correctness,7,0.022839,Non-positivism (Alexy & Radbruch),0
+https://openalex.org/W2333564218,"Rawls, 1955",1955,John Rawls,Two Concepts of Rules,15,0.408579,Punishment,49278
+https://openalex.org/W2334621027,"Hart, 1960",1960,H. L. A. Hart,The Presidential Address: I—Prolegomenon to the Principles of Punishment,15,0.014028,Punishment,0
+https://openalex.org/W2335440893,"Kumm, 2010",2010,Mattias Kumm,The Idea of Socratic Contestation and the Right to Justification: The Point of Rights-Based Proportionality Review,0,0.033495,Judicial review and constitutional rights,0
+https://openalex.org/W2342553802,"Austin, 1957",1957,Jesse Austin,I.—A Plea for Excuses: The Presidential Address,20,0.117765,Justifications and excuses,8895
+https://openalex.org/W2343217140,"Wringe, 2016",2016,Bill Wringe,An Expressive Theory of Punishment,15,0.007446,Punishment,0
+https://openalex.org/W2345486291,"Smilansky, 2016",2016,Saul Smilansky,"Pereboom on Punishment: Funishment, Innocence, Motivation, and Other Difficulties",2,0.007321,Responsibility,0
+https://openalex.org/W2352829877,"Mahan, 2004",2004,Jeff McMahan,The Ethics of Killing in War,8,0.00665,War and killing,1
+https://openalex.org/W2399925489,"Shoemaker, 2015",2015,David Shoemaker,Responsibility from the Margins,2,0.057618,Responsibility,0
+https://openalex.org/W2404560997,"Tadros, 2016",2016,Victor Tadros,Doing Without Desert,2,0.005565,Responsibility,0
+https://openalex.org/W2478327607,"Waldron, 2001",2001,Jeremy Waldron,Normative (or Ethical) Positivism,5,0.096709,General jurisprudence,0
+https://openalex.org/W2479792795,"Lagerspetz, 1995",1995,Eerik Lagerspetz,The Opposite Mirrors,5,0.011297,General jurisprudence,0
+https://openalex.org/W2480782842,"Hart, 1982",1982,H. L. A. Hart,Essays on BenthamJurisprudence and Political Philosophy,9,0.132072,Theory of rights,0
+https://openalex.org/W2481681925,"Scanlon, 1975",1975,T. M. Scanlon,Preference and Urgency,4,0.064028,Law and political theory,119
+https://openalex.org/W2481949471,"Wechsler, 1959",1959,Herbert Wechsler,Toward Neutral Principles of Constitutional Law,0,0.181873,Judicial review and constitutional rights,0
+https://openalex.org/W2482647176,"Arye, 1992",1992,Miriam Gur-Arye,Should a Criminal Code Distinguish Between Justification and Excuse?,20,0.003781,Justifications and excuses,0
+https://openalex.org/W2483354270,"Lindahl, 1977",1977,Lars Lindahl,Position and Change,3,0.039321,Legal reasoning,0
+https://openalex.org/W2483508289,"Ho, 2008",2008,H. L. Ho,A Philosophy of Evidence Law,10,0.005744,Evidence and proof,0
+https://openalex.org/W2485474302,"Culver, 2010",2010,Keith Culver,Legality's Borders,5,0.040592,General jurisprudence,0
+https://openalex.org/W2486437090,"Hart, 1973",1973,H. L. A. Hart,Rawls on Liberty and Its Priority,4,0.044373,Law and political theory,0
+https://openalex.org/W2486575464,"Fingarette, 1977",1977,Herbert Fingarette,Punishment and Suffering,15,0.029707,Punishment,0
+https://openalex.org/W2489309746,"Murphy, 2002",2002,Liam Murphy,The Myth of Ownership,9,0.076036,Theory of rights,1086
+https://openalex.org/W2494532817,"Brink, 1988",1988,David O. Brink,"Legal Theory, Legal Interpretation, and Judicial Review",5,0.044464,General jurisprudence,0
+https://openalex.org/W2494846613,"Pratt, 2001",2001,Michael Pratt,Scanlon on Promising,9,0.00712,Theory of rights,0
+https://openalex.org/W2494906225,"Nance, 2016",2016,Dale A. Nance,The Burdens of Proof,10,0.00357,Evidence and proof,0
+https://openalex.org/W2495620656,"Raz, 2017",2017,Joseph Raz,The Rule of Law and its Virtue*,5,0.20447100000000001,General jurisprudence,0
+https://openalex.org/W2495969500,"Cormick, 2007",2007,Neil MacCormick,Institutions of Law,5,0.19761,General jurisprudence,1422
+https://openalex.org/W2496515953,"Boudin, 1981",1981,Michael Boudin,Democracy and Distrust: A Theory of Judicial Review,0,0.290576,Judicial review and constitutional rights,0
+https://openalex.org/W2499586832,"Kelman, 1981",1981,Mark Kelman,Interpretive Construction in the Substantive Criminal Law,20,0.038297,Justifications and excuses,0
+https://openalex.org/W250494237,"NA, 1937",1937,Jørgen Jørgensen,Imperatives and logic,3,0.003769,Legal reasoning,0
+https://openalex.org/W2505082533,"Kant, 1996",1996,Immanuel Kant,Immanuel Kant: Practical philosophy,4,0.00282,Law and political theory,0
+https://openalex.org/W2506502828,"Hart, 1983",1983,H. L. A. Hart,Definition and Theory in Jurisprudence,5,0.070021,General jurisprudence,0
+https://openalex.org/W2556643168,"Hart, 1949",1949,H. L. A. Hart,XI.—The Ascription of Responsibility and Rights,3,0.142786,Legal reasoning,0
+https://openalex.org/W2583201607,"Sunstein, 1988",1988,Cass R. Sunstein,Beyond the Republican Revival,12,0.033947,International law,0
+https://openalex.org/W2583925548,"Pereboom, 2017",2017,Derk Pereboom,"A Defense of Free Will Skepticism: Replies to Commentaries by Victor Tadros, Saul Smilansky, Michael McKenna, and Alfred R. Mele on Free Will, Agency, and Meaning in Life",2,0.006634,Responsibility,0
+https://openalex.org/W2589125386,"Tadros, 2016",2016,Victor Tadros,Wrongs and Crimes,18,0.007144,Consent,1006
+https://openalex.org/W2600325764,"Alexander, 2009",2009,Larry Alexander,Crime and Culpability,2,0.018089,Responsibility,0
+https://openalex.org/W2602326674,"Brown, 2017",2017,Alexander Brown,What is hate speech? Part 1: The Myth of Hate,13,0.002455,Hate speech,0
+https://openalex.org/W2606754711,"Brown, 2017",2017,Alexander Brown,What is Hate Speech? Part 2: Family Resemblances,13,0.001547,Hate speech,0
+https://openalex.org/W2606827339,"Pritchard, 2017",2017,Duncan Pritchard,"Legal risk, legal evidence and the arithmetic of criminal justice",10,0.00348,Evidence and proof,0
+https://openalex.org/W2609779437,"Shapiro, 2007",2007,Scott J. Shapiro,The “Hart–Dworkin” Debate: A Short Guide for the Perplexed,5,0.076614,General jurisprudence,0
+https://openalex.org/W2734673746,"Waldron, 2008",2008,Jeremy Waldron,The Concept and the Rule of Law,5,0.155984,General jurisprudence,0
+https://openalex.org/W2762733821,"Hurd, 1992",1992,Heidi M. Hurd,Justifiably Punishing the Justified,19,0.030276,Torts / causation,0
+https://openalex.org/W2773252140,"Dyzenhaus, 1998",1998,David Dyzenhaus,Law as Justification: Etienne Mureinik's Conception of Legal Culture,0,0.012302,Judicial review and constitutional rights,0
+https://openalex.org/W2773639084,"Goodhart, 1930",1930,Arthur L. Goodhart,Determining the Ratio Decidendi of a Case,3,0.010351,Legal reasoning,710
+https://openalex.org/W2781197005,"Dworkin, 2006",2006,Ronald Dworkin,Is Democracy Possible Here?,5,0.06867,General jurisprudence,0
+https://openalex.org/W2794477696,"Kelsen, 1948",1948,Hans Kelsen,"Law, State and Justice in the Pure Theory of Law",5,0.032914,General jurisprudence,0
+https://openalex.org/W2795539502,"Kidd, 1923",1923,A. M. Kidd,Fundamental Legal Conceptions,9,0.102598,Theory of rights,0
+https://openalex.org/W2795587260,"Fuller, 1958",1958,Lon L. Fuller,Positivism and Fidelity to Law: A Reply to Professor Hart,5,0.615356,General jurisprudence,411
+https://openalex.org/W2795655825,"Soper, 1977",1977,E. Philip Soper,Legal Theory and the Obligation of a Judge: The Hart/Dworkin Dispute,5,0.119035,General jurisprudence,0
+https://openalex.org/W2795724202,"Cover, 1983",1983,Robert M. Cover,"The Supreme Court, 1982 Term",12,0.045178,International law,907
+https://openalex.org/W2795733956,"Weinrib, 1988",1988,Ernest J. Weinrib,Legal Formalism: On the Immanent Rationality of Law,5,0.03247,General jurisprudence,0
+https://openalex.org/W2795796782,"Greenawalt, 1984",1984,Kent Greenawalt,The Perplexing Borders of Justification and Excuse,20,0.044944,Justifications and excuses,2640
+https://openalex.org/W2795915211,"Raz, 1972",1972,Joseph Raz,Legal Principles and the Limits of Law,5,0.256441,General jurisprudence,0
+https://openalex.org/W2796028726,"Beale, 1920",1920,Joseph Henry Beale,The Proximate Consequences of an Act,19,0.027232,Torts / causation,0
+https://openalex.org/W2796173346,"Aleinikoff, 1987",1987,T. Alexander Aleinikoff,Constitutional Law in the Age of Balancing,0,0.12078,Judicial review and constitutional rights,1536
+https://openalex.org/W2796415624,"Sartorius, 1981",1981,Rolf Sartorius,Political Authority and Political Obligation,4,0.018754,Law and political theory,0
+https://openalex.org/W2796431936,"Moore, 1989",1989,Michael S. Moore,The Interpretive Turn in Modern Theory: A Turn for the Worse?,19,0.061445,Torts / causation,0
+https://openalex.org/W2796528567,"Rawls, 1980",1980,John Rawls,Kantian Constructivism in Moral Theory,4,0.218284,Law and political theory,4521
+https://openalex.org/W2796554849,"Michelman, 1988",1988,Frank I. Michelman,Law's Republic,12,0.0537,International law,0
+https://openalex.org/W2796683039,"Moore, 1992",1992,Michael S. Moore,Moral Reality Revisited,19,0.052617,Torts / causation,0
+https://openalex.org/W2796927986,"Craswell, 1989",1989,Richard Craswell,"Contract Law, Default Rules, and the Philosophy of Promising",9,0.018907,Theory of rights,0
+https://openalex.org/W2797131397,"Smith, 1973",1973,Martha Smith,Is There a Prima Facie Obligation to Obey the Law?,15,0.194042,Punishment,0
+https://openalex.org/W2797203174,"Malone, 1956",1956,Wex S. Malone,Ruminations on Cause-in-Fact,19,0.052446,Torts / causation,0
+https://openalex.org/W2797213284,"Fuller, 1978",1978,Lon L. Fuller,The Forms and Limits of Adjudication,0,0.278657,Judicial review and constitutional rights,792
+https://openalex.org/W2797339575,"Cohen, 1935",1935,Fred Cohen,Transcendental Nonsense and the Functional Approach,5,0.282053,General jurisprudence,2264
+https://openalex.org/W2797344853,"NA, 1997",1997,Richard H. Fallon join(,"""The Rule of Law"" as a Concept in Constitutional Discourse",5,0.181232,General jurisprudence,0
+https://openalex.org/W2797387575,"Fletcher, 1972",1972,George P. Fletcher,Fairness and Utility in Tort Theory,19,0.147667,Torts / causation,711
+https://openalex.org/W2797629819,"Raz, 1982",1982,Joseph Raz,Promises in Morality and Law,9,0.046599,Theory of rights,708
+https://openalex.org/W2797784986,"Thomson, 1985",1985,James Thomson,The Trolley Problem,8,0.071735,War and killing,10831
+https://openalex.org/W2797818557,"Williams, 1956",1956,Glanville Williams,The Concept of Legal Liberty,9,0.030332,Theory of rights,0
+https://openalex.org/W2797910919,"Singer, 1988",1988,Joseph William Singer,The Reliance Interest in Property,9,0.034009,Theory of rights,0
+https://openalex.org/W2798002542,"Rawls, 1974",1974,John Rawls,The Independence of Moral Theory,4,0.070818999999999993,Law and political theory,0
+https://openalex.org/W2798106685,"Scalia, 1989",1989,Antonin Scalia,The Rule of Law as a Law of Rules,5,0.174496,General jurisprudence,0
+https://openalex.org/W2800616481,"Fletcher, 1973",1973,George P. Fletcher,Proportionality and the Psychotic Aggressor: A Vignette in Comparative Criminal Theory,20,0.026453,Justifications and excuses,5
+https://openalex.org/W2800660311,"Kornhauser, 1986",1986,Lewis A. Kornhauser,Unpacking the Court,19,0.005092,Torts / causation,0
+https://openalex.org/W2801922534,"Kelsen, 1966",1966,Hans Kelsen,On The Pure Theory of Law,5,0.035756,General jurisprudence,0
+https://openalex.org/W2802748901,"Thomson, 1986",1986,James Thomson,Liability and Individualized Evidence,10,0.010768,Evidence and proof,0
+https://openalex.org/W2888970791,"Laborde, 2017",2017,Cécile Laborde,Liberalism’s Religion,4,0.010661,Law and political theory,0
+https://openalex.org/W2889796974,"Singer, 1984",1984,Joseph William Singer,The Player and the Cards: Nihilism and Legal Theory,5,0.085186,General jurisprudence,0
+https://openalex.org/W2899341281,"Scanlon, 2003",2003,T. M. Scanlon,The Difficulty of Tolerance,13,0.002623,Hate speech,0
+https://openalex.org/W2912023684,"Gelber, 2019",2019,Katharine Gelber,Differentiating hate speech: a systemic discrimination approach,13,0.001547,Hate speech,0
+https://openalex.org/W2945922253,"Howard, 2019",2019,J. Woodford Howard,Free Speech and Hate Speech,13,0.001113,Hate speech,0
+https://openalex.org/W2978527163,"Radin, 1982",1982,Margaret Jane Radin,Property and Personhood,9,0.051093,Theory of rights,0
+https://openalex.org/W2989863638,"Hart, 1958",1958,H. L. A. Hart,Positivism and the Separation of Law and Morals,5,0.756033,General jurisprudence,22026
+https://openalex.org/W3023063752,"Calabresi, 1972",1972,Guido Calabresi,"Property Rules, Liability Rules, and Inalienability: One View of the Cathedral",19,0.2926,Torts / causation,28977
+https://openalex.org/W3023778025,"Himma, 2020",2020,Kenneth Einar Himma,Coercion and the Nature of Law,5,0.042914,General jurisprudence,0
+https://openalex.org/W3081207992,"Bickel, 2017",2017,Alexander M. Bickel,The Least Dangerous Branch,0,0.125598,Judicial review and constitutional rights,0
+https://openalex.org/W3121169026,"Payandeh, 2010",2010,Mehrdad Payandeh,The Concept of International Law in the Jurisprudence of H.L.A. Hart,5,0.026123,General jurisprudence,0
+https://openalex.org/W3121512706,"Pratt, 2007",2007,Michael Pratt,"Promises, Contracts and Voluntary Obligations",9,0.020116,Theory of rights,0
+https://openalex.org/W3121531415,"Berman, 2008",2008,Mitchell N. Berman,Punishment and Justification,15,0.024034,Punishment,0
+https://openalex.org/W3121839468,"Simmons, 1996",1996,A. John Simmons,Associative Political Obligations,4,0.091418,Law and political theory,706
+https://openalex.org/W3121890212,"Pardo, 2007",2007,Michael S. Pardo,Juridical Proof and the Best Explanation,10,0.005993,Evidence and proof,3
+https://openalex.org/W3121930290,"Murphy, 2005",2005,Colleen Murphy,Lon Fuller and the Moral Value of the Rule of Law,5,0.041102,General jurisprudence,0
+https://openalex.org/W3121990328,"Redmayne, 2008",2008,Mike Redmayne,EXPLORING THE PROOF PARADOXES,10,0.006513,Evidence and proof,0
+https://openalex.org/W3122031927,"Eliya, 2010",2010,Moshe Cohen-Eliya,American balancing and German proportionality: The historical origins,0,0.041823,Judicial review and constitutional rights,0
+https://openalex.org/W3122136899,"Raz, 2004",2004,Joseph Raz,INCORPORATION BY LAW,5,0.032225,General jurisprudence,0
+https://openalex.org/W3122247257,"Gardbaum, 2001",2001,Stephen Gardbaum,The New Commonwealth Model of Constitutionalism,0,0.125437,Judicial review and constitutional rights,0
+https://openalex.org/W3122357978,"Pardo, 2018",2018,Michael S. Pardo,SAFETY VS. SENSITIVITY: POSSIBLE WORLDS AND THE LAW OF EVIDENCE,10,0.004367,Evidence and proof,0
+https://openalex.org/W3122365267,"Leiter, 2011",2011,Brian Leiter,The Demarcation Problem in Jurisprudence: A New Case for Scepticism,17,0.047312,Natural law,0
+https://openalex.org/W3122410589,"Trout, 2005",2005,John F. Trout,Paternalism and Cognitive Bias,4,8.27e-4,Law and political theory,709
+https://openalex.org/W3122417052,"Webber, 2010",2010,Grégoire Webber,"Proportionality, Balancing, and the Cult of Constitutional Rights Scholarship",0,0.01528,Judicial review and constitutional rights,0
+https://openalex.org/W3122468307,"Alexander, 2014",2014,Larry Alexander,The Ontology of Consent,18,0.001681,Consent,0
+https://openalex.org/W3122589931,"Greenberg, 2004",2004,Mark T. Greenberg,HOW FACTS MAKE LAW,5,0.107409,General jurisprudence,0
+https://openalex.org/W3122624017,"Ripstein, 2004",2004,Arthur Ripstein,Authority and Coercion,4,0.062977,Law and political theory,690
+https://openalex.org/W3122631380,"Anderson, 2000",2000,Elizabeth Anderson,Expressive Theories of Law: A General Restatement,15,0.015724,Punishment,0
+https://openalex.org/W3122854567,"Ripstein, 2006",2006,Arthur Ripstein,Beyond the Harm Principle,4,0.021123,Law and political theory,711
+https://openalex.org/W3122931570,"Oberdiek, 2008",2008,John Oberdiek,Towards a Right Against Risking,16,6.35e-4,Risk and prevention in criminal law,0
+https://openalex.org/W3122943504,"Robinson, 1982",1982,Paul H. Robinson,Criminal Law Defenses: A Systematic Analysis,20,0.022363,Justifications and excuses,1459
+https://openalex.org/W3122980423,"Raz, 2009",2009,Joseph Raz,The Problem of Authority: Revisiting the Service Conception,5,0.111861,General jurisprudence,0
+https://openalex.org/W3122983803,"Kumm, 2005",2005,Mattias Kumm,The Jurisprudence of Constitutional Conflict: Constitutional Supremacy in Europe before and after the Constitutional Treaty,12,0.005936,International law,0
+https://openalex.org/W3123212178,"Dworkin, 1986",1986,Ronald Dworkin,Law's Empire,5,0.832623,General jurisprudence,5899
+https://openalex.org/W3123542286,"Enoch, 2006",2006,David Enoch,The Case Against Moral Luck,2,0.024629,Responsibility,0
+https://openalex.org/W3123575465,"Thorburn, 2008",2008,Malcolm Thorburn,"Justifications, Powers, and Authority",15,0.008248,Punishment,0
+https://openalex.org/W3123578711,"Teubner, 2003",2003,Gunther Teubner,Legal Irritants: Good Faith in British Law or How Unifying Law Ends Up in New Divergencies,11,0.01354,NA,0
+https://openalex.org/W3123600108,"Toh, 2005",2005,Kevin Toh,HART'S EXPRESSIVISM AND HIS BENTHAMITE PROJECT,5,0.033664,General jurisprudence,0
+https://openalex.org/W3123624702,"Ferzan, 2005",2005,Kimberly Kessler Ferzan,Justifying Self-Defense,8,0.007447,War and killing,0
+https://openalex.org/W3124236532,"Caruso, 2016",2016,Gregg D. Caruso,Free Will Skepticism and Criminal Behavior,2,0.023807,Responsibility,0
+https://openalex.org/W3124392593,"Roberts, 2005",2005,Simon Roberts,After Government? On Representing Law Without the State,5,0.028992,General jurisprudence,0
+https://openalex.org/W3124411835,"Allen, 2001",2001,Ronald J. Allen,Naturalized Epistemology and the Law of Evidence,10,0.005293,Evidence and proof,0
+https://openalex.org/W3124454284,"Volokh, 1997",1997,Alexander Volokh,n Guilty Men,10,0.002144,Evidence and proof,3511
+https://openalex.org/W3124573500,"Walker, 2002",2002,Neil Walker,The Idea of Constitutional Pluralism,12,0.0748,International law,981
+https://openalex.org/W3124588059,"Guerrero, 2007",2007,Alexander A. Guerrero,"Don’t Know, Don’t Kill: Moral Ignorance, Culpability, and Caution",2,0.015393,Responsibility,0
+https://openalex.org/W3124856616,"Dubber, 2001",2001,Markus D. Dubber,Policing Possession: The War on Crime and the End of Criminal Law,16,9.92e-4,Risk and prevention in criminal law,4445
+https://openalex.org/W3124949875,"Marmor, 2006",2006,Andrei Marmor,Legal Positivism: Still Descriptive and Morally Neutral,5,0.012917,General jurisprudence,0
+https://openalex.org/W3125305558,"Shiffrin, 2000",2000,Seana Valentine Shiffrin,"Paternalism, Unconscionability Doctrine, and Accommodation",4,0.00647,Law and political theory,2835
+https://openalex.org/W3125380225,"Leiter, 2003",2003,Brian Leiter,Beyond the Hart/Dworkin Debate: The Methodology Problem in Jurisprudence,5,0.136189,General jurisprudence,0
+https://openalex.org/W3125598080,"Schauer, 2005",2005,Frederick Schauer,The Social Construction of the Concept of Law: A Reply to Julie Dickson,5,0.053355,General jurisprudence,0
+https://openalex.org/W3125637819,"Solum, 1987",1987,Lawrence B. Solum,On the Indeterminacy Crisis: Critiquing Critical Dogma,5,0.053698,General jurisprudence,0
+https://openalex.org/W3125759286,"Morse, 2002",2002,Stephen J. Morse,Uncontrollable Urges and Irrational People,20,0.001663,Justifications and excuses,0
+https://openalex.org/W3125830443,"Stuntz, 2001",2001,William J. Stuntz,The Pathological Politics of Criminal Law,16,0.001419,Risk and prevention in criminal law,5141
+https://openalex.org/W3125839842,"Simmons, 1999",1999,A. John Simmons,Justification and Legitimacy,4,0.15118,Law and political theory,1
+https://openalex.org/W3145343791,"Kingsbury, 2009",2009,Benedict Kingsbury,The Concept of 'Law' in Global Administrative Law,12,0.015286,International law,925
+https://openalex.org/W3155306005,"Drumbl, 2007",2007,Mark A. Drumbl,"Atrocity, Punishment, and International Law",15,5.77e-4,Punishment,711
+https://openalex.org/W3160849725,"Bennett, 2008",2008,Christopher Bennett,The Apology Ritual,15,0.024494,Punishment,0
+https://openalex.org/W3188813614,"Kutz, 2007",2007,Christopher Kutz,Causeless complicity,19,0.002777,Torts / causation,0
+https://openalex.org/W3197242048,"Dickson, 2004",2004,Julie Dickson,METHODOLOGY IN JURISPRUDENCE: A Critical Survey,5,0.043959,General jurisprudence,0
+https://openalex.org/W3216089140,"Murphy, 2006",2006,Mark C. Murphy,Natural Law in Jurisprudence and Politics,7,0.148944,Non-positivism (Alexy & Radbruch),711
+https://openalex.org/W374469591,"Marmor, 2001",2001,Andrei Marmor,Positive Law and Objective Values,5,0.286532,General jurisprudence,1311
+https://openalex.org/W37731837,"Larmore, 1999",1999,Charles Larmore,The Moral Basis of Political Liberalism,4,0.130193,Law and political theory,0
+https://openalex.org/W4205319615,"Pettit, 1999",1999,Philip Pettit,Republicanism,0,0.02092,Judicial review and constitutional rights,0
+https://openalex.org/W4205375815,"Stein, 2005",2005,Alex Stein,Foundations of Evidence Law,10,0.00655,Evidence and proof,0
+https://openalex.org/W4205462847,"Ripstein, 2009",2009,Arthur Ripstein,Force and Freedom,4,0.083035,Law and political theory,1952
+https://openalex.org/W4205848940,"Galeotti, 2002",2002,Anna Elisabetta Galeotti,Toleration as Recognition,13,0.001047,Hate speech,0
+https://openalex.org/W4206399531,"Krisch, 2010",2010,Nico Krisch,Beyond Constitutionalism,12,0.010272,International law,13
+https://openalex.org/W4210969292,"Waldron, 2002",2002,Jeremy Waldron,"God, Locke, and Equality",4,0.018341,Law and political theory,0
+https://openalex.org/W4211159393,"Elster, 2004",2004,Jon Elster,Closing the Books,15,0.001314,Punishment,1420
+https://openalex.org/W4212786638,"Christiano, 2008",2008,Thomas Christiano,The Constitution of Equality,4,0.085965,Law and political theory,1700
+https://openalex.org/W4212818722,"Ross, 2002",2002,David A. Ross,The Right and the Good,2,0.016799,Responsibility,106
+https://openalex.org/W4212930981,"Eisgruber, 2007",2007,Christopher L. Eisgruber,Religious Freedom and the Constitution,4,0.001112,Law and political theory,0
+https://openalex.org/W4230145277,"Sher, 1987",1987,George Sher,Desert,15,0.005994,Punishment,0
+https://openalex.org/W4230281441,"Waldron, 2012",2012,Jeremy Waldron,The Harm in Hate Speech,13,0.013999,Hate speech,4947
+https://openalex.org/W4230723318,"Klosko, 2005",2005,George Klosko,Political Obligations,4,0.022187,Law and political theory,4
+https://openalex.org/W4230729752,"Cormick, 1999",1999,Neil MacCormick,Questioning Sovereignty,12,0.038987,International law,1688
+https://openalex.org/W4231092269,"Feinberg, 1980",1980,Joel Feinberg,"Rights, Justice, and the Bounds of Liberty",9,0.02047,Theory of rights,0
+https://openalex.org/W4231383638,"Peczenik, 1989",1989,Aleksander Peczenik,On Law and Reason,5,0.02058,General jurisprudence,0
+https://openalex.org/W4231732579,"Greenawalt, 1986",1986,Kent Greenawalt,Distinguishing Justifications from Excuses,20,0.003781,Justifications and excuses,0
+https://openalex.org/W4232037086,"Rawls, 1997",1997,John Rawls,The Idea of Public Reason Revisited,4,0.243559,Law and political theory,7914
+https://openalex.org/W4232486214,"Brownlee, 2012",2012,Kimberley Brownlee,Conscience and Conviction,14,0.016032,NA,0
+https://openalex.org/W4232741853,"Fuller, 1936",1936,L. L. Fuller,The Reliance Interest in Contract Damages: 1,9,0.003444,Theory of rights,2
+https://openalex.org/W4232984104,"Wright, 1985",1985,Richard W. Wright,Causation in Tort Law,19,0.057197,Torts / causation,51
+https://openalex.org/W4233237171,"Hart, 2012",2012,HLA Hart,The Concept of Law,5,1,General jurisprudence,80561
+https://openalex.org/W4233400003,"Ashworth, 2014",2014,Andrew Ashworth,Preventive Justice,16,6.79e-4,Risk and prevention in criminal law,0
+https://openalex.org/W4233546382,"Uniacke, 1994",1994,Suzanne Uniacke,Permissible Killing,8,0.007846,War and killing,0
+https://openalex.org/W4233886633,"Zimmerman, 2008",2008,Michael J. Zimmerman,Living with Uncertainty,2,0.024258,Responsibility,0
+https://openalex.org/W4234673375,"Wellman, 2005",2005,Christopher Heath Wellman,Is There a Duty to Obey the Law?,4,0.019181,Law and political theory,0
+https://openalex.org/W4235023594,"NA, 1897",1897,NA,The Path of the Law,5,0.536869,General jurisprudence,18192
+https://openalex.org/W4235314030,"Brown, 2015",2015,Alexander Brown,Hate Speech Law,13,0.003196,Hate speech,0
+https://openalex.org/W4235738654,"Waldron, 1994",1994,Jeremy Waldron,Vagueness in Law and Language: Some Philosophical Issues,5,0.022603,General jurisprudence,0
+https://openalex.org/W4236123093,"Slavny, 2015",2015,Adam Slavny,HARMLESS DISCRIMINATION,2,0.005148,Responsibility,0
+https://openalex.org/W4236324580,"Dworkin, 1975",1975,Ronald Dworkin,Hard Cases,5,0.0701,General jurisprudence,0
+https://openalex.org/W4237015412,"Sadurski, 1985",1985,Wojciech Sadurski,Giving Desert Its Due,15,0.006813,Punishment,0
+https://openalex.org/W4237034108,"Hart, 1985",1985,H. L. A. Hart,Causation in the Law,19,0.257306,Torts / causation,22989
+https://openalex.org/W4237574036,"Raz, 1979",1979,Joseph Raz,The authority of lawEssays on law and morality,5,0.648775,General jurisprudence,4136
+https://openalex.org/W423791822,"Unger, 1983",1983,Roberto Mangabeira Unger,The Critical Legal Studies Movement,5,0.26536,General jurisprudence,10
+https://openalex.org/W4237918656,"Scanlon, 2008",2008,T. M. Scanlon,Moral Dimensions,2,0.140379,Responsibility,18478
+https://openalex.org/W4237939084,"Murphy, 1988",1988,Jeffrie G. Murphy,Forgiveness and Mercy,15,0.027542,Punishment,2127
+https://openalex.org/W4238122577,"Llewellyn, 1931",1931,Karl N. Llewellyn,Some Realism about Realism: Responding to Dean Pound,5,0.083993,General jurisprudence,0
+https://openalex.org/W4239043303,"Mele, 2006",2006,Alfred R. Mele,Free Will and Luck,2,0.043096,Responsibility,74
+https://openalex.org/W4239664074,"NA, 1971",1971,Carlos E. Alchourrón,Normative Systems,3,0.046454,Legal reasoning,0
+https://openalex.org/W4240161594,"Levy, 2011",2011,Neil Levy,Hard Luck,2,0.061132,Responsibility,2
+https://openalex.org/W4240540997,"Kant, 1997",1997,Immanuel Kant,Lectures on Ethics,4,0.004533,Law and political theory,0
+https://openalex.org/W4240732435,"Dworkin, 1967",1967,Ronald Dworkin,The Model of Rules,5,0.219895,General jurisprudence,0
+https://openalex.org/W4241148440,"Vargas, 2013",2013,Manuel Vargas,Building Better Beings,2,0.052998,Responsibility,0
+https://openalex.org/W4241748390,"Kutz, 2000",2000,Christopher Kutz,Complicity,19,0.028099,Torts / causation,710
+https://openalex.org/W4241981878,"Rodin, 2002",2002,David Rodin,War and Self-Defense,8,0.008885,War and killing,3
+https://openalex.org/W4242091048,"Moore, 2009",2009,Michael S. Moore,Causation and Responsibility,19,0.026905,Torts / causation,0
+https://openalex.org/W4242253440,"Ehrenberg, 2016",2016,Kenneth M. Ehrenberg,The Functions of Law,5,0.018914,General jurisprudence,0
+https://openalex.org/W4242431379,"NA, 1986",1986,RONALD DWORKIN,A Matter of Principle,5,0.634463,General jurisprudence,2242
+https://openalex.org/W4242437658,"Raz, 1980",1980,Joseph Raz,The Concept of a Legal System,5,0.10654,General jurisprudence,0
+https://openalex.org/W4242728701,"Griffin, 2008",2008,James Griffin,On Human Rights,9,0.106199,Theory of rights,790
+https://openalex.org/W4243028012,"Elster, 2000",2000,Jon Elster,Ulysses Unbound,12,0.018533,International law,0
+https://openalex.org/W4244512580,"Kadish, 1985",1985,Sanford H. Kadish,"Complicity, Cause and Blame: A Study in the Interpretation of Doctrine",19,0.026927,Torts / causation,0
+https://openalex.org/W4244688936,"Gardner, 2012",2012,John Gardner,Law as a Leap of Faith,5,0.07839,General jurisprudence,0
+https://openalex.org/W4245950606,"Schauer, 1993",1993,Frederick Schauer,Playing by the Rules,5,0.355942,General jurisprudence,0
+https://openalex.org/W4246185708,"Stilz, 2009",2009,Anna Stilz,Liberal Loyalty,4,0.038583,Law and political theory,0
+https://openalex.org/W4246409490,"Shapiro, 2011",2011,Scott J. Shapiro,Legality,5,0.200107,General jurisprudence,2129
+https://openalex.org/W4247016965,"Sher, 2009",2009,George Sher,Who Knew?,2,0.040889,Responsibility,607
+https://openalex.org/W4247328545,"Leiter, 2007",2007,Brian Leiter,Naturalizing Jurisprudence,5,0.158966,General jurisprudence,0
+https://openalex.org/W4247705233,"Cormick, 2005",2005,Neil MacCormick,Rhetoric and The Rule of Law,5,0.147091,General jurisprudence,0
+https://openalex.org/W4249137940,"Kamm, 2007",2007,F. M. Kamm,Intricate Ethics,8,0.019823,War and killing,0
+https://openalex.org/W4249660273,"Marmor, 2009",2009,Andrei Marmor,Social Conventions,5,0.026388000000000002,General jurisprudence,0
+https://openalex.org/W4250874723,"Kleinig, 1973",1973,John Kleinig,Punishment and Desert,15,0.008401,Punishment,0
+https://openalex.org/W4252041694,"Katz, 1987",1987,Leo Katz,Bad Acts and Guilty Minds,19,0.017239,Torts / causation,708
+https://openalex.org/W4252382080,"Mahan, 2009",2009,Jeff McMahan,Killing in War,8,0.027638,War and killing,3775
+https://openalex.org/W4252746852,"Hirsch, 2005",2005,Andrew von Hirsch,Proportionate Sentencing,15,0.027788,Punishment,5836
+https://openalex.org/W4253213974,"Tadros, 2011",2011,Victor Tadros,The Ends of HarmThe Moral Foundations of Criminal Law,8,0.024227,War and killing,51
+https://openalex.org/W4256146388,"Barak, 2012",2012,Aharon Barak,Proportionality (2),0,0.017248,Judicial review and constitutional rights,0
+https://openalex.org/W4256187362,"Smith, 1983",1983,Holly M. Smith,Culpable Ignorance,2,0.031324,Responsibility,0
+https://openalex.org/W4256377232,"Lippke, 2007",2007,Richard L. Lippke,Rethinking Imprisonment,15,0.003128,Punishment,0
+https://openalex.org/W4299576614,"Kenna, 2012",2012,Michael McKenna,Conversation and Responsibility,2,0.060672,Responsibility,110
+https://openalex.org/W4300183020,"NA, 2012",2012,Kai Möller,The Global Model of Constitutional Rights,0,0.010341,Judicial review and constitutional rights,0
+https://openalex.org/W566113205,"Eberle, 2001",2001,Christopher J. Eberle,Religious Conviction in Liberal Politics,4,0.044211,Law and political theory,0
+https://openalex.org/W591567873,"Dworkin, 2006",2006,Ronald Dworkin,Justice in Robes,5,0.335501,General jurisprudence,0
+https://openalex.org/W591898085,"Tamanaha, 2004",2004,Brian Z. Tamanaha,"On the Rule of Law: History, Politics, Theory",5,0.298743,General jurisprudence,64
+https://openalex.org/W601080578,"Schulhofer, 1974",1974,Stephen J. Schulhofer,Harm and Punishment: A Critique of Emphasis on the Results of Conduct in the Criminal Law,2,0.003799,Responsibility,483
+https://openalex.org/W602185764,"Tamanaha, 2001",2001,Brian Z. Tamanaha,A General Jurisprudence of Law and Society,5,0.181656,General jurisprudence,703
+https://openalex.org/W608166339,"Pereboom, 2014",2014,Derk Pereboom,"Free Will, Agency, and Meaning in Life",2,0.069963,Responsibility,358
+https://openalex.org/W624738686,"Waldron, 1984",1984,Jeremy Waldron,Theories of rights,0,0.180311,Judicial review and constitutional rights,0
+https://openalex.org/W641694425,"Waller, 2011",2011,Bruce N. Waller,Against Moral Responsibility,2,0.03822,Responsibility,0
+https://openalex.org/W780916835,"Morse, 1994",1994,Stephen J. Morse,Culpability and Control,20,0.016745,Justifications and excuses,0
+https://openalex.org/W931101581,"Glasgow, 2015",2015,Joshua Glasgow,The Expressivist Theory of Punishment Defended,15,0.005803,Punishment,0
+https://openalex.org/W612439035,"NA, 2008",2008,NA,Democratic authority: a philosophical framework,4,0.176251,Law and political theory,0
+https://openalex.org/W2125760001,"Alexy, 2005",2005,Robert Alexy,"Balancing, constitutional review, and representation",0,0.033104,Judicial review and constitutional rights,0
+https://openalex.org/W4214714296,"Waldron, 1999",1999,Jeremy Waldron,The Dignity of Legislation,0,0.033855,Judicial review and constitutional rights,0
+https://openalex.org/W4243106458,"Waldron, 2017",2017,Jeremy Waldron,A Right-Based Critique of Constitutional Rights†,0,0.029187,Judicial review and constitutional rights,0
+https://openalex.org/W631662096,"Kavanagh, 2009",2009,Aileen Kavanagh,Constitutional Review under the UK Human Rights Act,0,0.124261,Judicial review and constitutional rights,0
+https://openalex.org/W36181781,"Corrado, 1991",1991,Michael Louis Corrado,Notes on the Structure of a Theory of Excuses,20,0.017253,Justifications and excuses,0
+https://openalex.org/W55672654,"Barnett, 1986",1986,Randy E. Barnett,A Consent Theory of Contract,9,0.020608,Theory of rights,709
+https://openalex.org/W2500852618,"Marshall, 1998",1998,S. L. Marshall,Criminalization and Sharing Wrongs,4,4.53e-4,Law and political theory,0
+https://openalex.org/W2476417175,"Donald, 1991",1991,Mike McDonald,Should Communities Have Rights? Reflections on Liberal Individualism,4,0.050067,Law and political theory,0
+https://openalex.org/W3122213749,"Reaume, 1988",1988,Denise G. Reaume,"Individuals, Groups, and Rights to Public Goods",4,0.022369,Law and political theory,0
+https://openalex.org/W2796328480,"Westen, 1982",1982,Peter Westen,The Empty Idea of Equality,2,0.042809,Responsibility,0
+https://openalex.org/W2156017621,"Cohen, 2003",2003,G. A. Cohen,Facts and Principles,4,0.041976,Law and political theory,0
+https://openalex.org/W4213273311,"Schmitt, 2008",2008,Carl Schmitt,Constitutional Theory,12,0.012368,International law,0
+https://openalex.org/W2601198735,"NA, 2001",2001,Tony Honoré,Responsibility and Fault,5,0.013442,General jurisprudence,0
+https://openalex.org/W937120752,"Kelsen, 1986",1986,Hans Kelsen,Teoría pura del derecho,1,0.025288,NA,0
+https://openalex.org/W2508633680,"Burgh, 1982",1982,Richard Burgh,Do the Guilty Deserve Punishment?,15,0.060676,Punishment,0
+https://openalex.org/W606236685,"Alexander, 2009",2009,Lawrence A. Alexander,Crime and Culpability: A Theory of Criminal Law,15,0.009912,Punishment,0
+https://openalex.org/W4255738592,"Kennedy, 1976",1976,Duncan F. Kennedy,Form and Substance in Private Law Adjudication,5,0.243536,General jurisprudence,0
+https://openalex.org/W3123601285,"Oberdiek, 2012",2012,John Oberdiek,THE MORAL SIGNIFICANCE OF RISKING,16,6.35e-4,Risk and prevention in criminal law,0
+https://openalex.org/W771844476,"Lewis, 2000",2000,David Lewis,Causation as Influence,19,0.041213,Torts / causation,710
+https://openalex.org/W2068516104,"Liao, 2012",2012,S. Matthew Liao,Intentions and Moral Permissibility: The Case of Acting Permissibly with Bad Intentions,8,0.001417,War and killing,0
+https://openalex.org/W4252316183,"List, 2011",2011,Christian List,Group Agency,19,0.043473,Torts / causation,469
+https://openalex.org/W4289790859,"Kant, 1996",1996,Immanuel Kant,Kant: The Metaphysics of Morals,4,0.058716,Law and political theory,89
+https://openalex.org/W2140256766,"Sartor, 1994",1994,Giovanni Sartor,A Formal Model of Legal Argumentation,3,0.003846,Legal reasoning,0
+https://openalex.org/W4241923257,"Hage, 1997",1997,Jaap Hage,Reasoning with Rules,3,0.0067,Legal reasoning,0
+https://openalex.org/W595331111,"Klatt, 2012",2012,Matthias Klatt,The Constitutional Structure of Proportionality,0,0.027466,Judicial review and constitutional rights,0
+https://openalex.org/W580866281,"Campbell, 2016",2016,Tom Campbell,The Legal Theory of Ethical Positivism,5,0.039975,General jurisprudence,0
+https://openalex.org/W596848025,"Dickson, 2001",2001,Julie Dickson,Evaluation and Legal Theory,5,0.172292,General jurisprudence,0
+https://openalex.org/W642225766,"Endicott, 2000",2000,Timothy Endicott,Vagueness in Law,5,0.175481,General jurisprudence,0
+https://openalex.org/W3123084450,"Tadros, 2004",2004,Victor Tadros,The Presumption of Innocence and the Human Rights Act,10,6.06e-4,Evidence and proof,0
+https://openalex.org/W4243740988,"Hart, 1965",1965,H. L. A. Hart,The Morality of Law,5,0.044514,General jurisprudence,0
+https://openalex.org/W561817843,"Coleman, 2001",2001,Jules L. Coleman,Hart’s PostscriptEssays on the Postscript to ‘The Concept of Law’,5,0.044049,General jurisprudence,0
+https://openalex.org/W587172163,"Schauer, 2014",2014,Frederick Schauer,The Force of Law,5,0.106066,General jurisprudence,0
+https://openalex.org/W842137479,"Hart, 1957",1957,H. L. A. Hart,Analytical Jurisprudence in Mid-Twentieth Century: A Reply to Professor Bodenheimer,5,0.036199,General jurisprudence,0
+https://openalex.org/W4247225418,"NA, NA",NA,NA,NA,2,0.018173,Responsibility,0
+https://openalex.org/W798000251,"Kessler, 1994",1994,Kimberly D. Kessler,The Role of Luck in the Criminal Law,2,0.006496,Responsibility,0
+https://openalex.org/W945552348,"Boonin, 2008",2008,David Boonin,The Problem of Punishment,15,0.053112,Punishment,2263
+https://openalex.org/W2162584304,"Duff, 1996",1996,R. A. Duff,Penal Communications: Recent Work in the Philosophy of Punishment,15,0.010189,Punishment,0
+https://openalex.org/W2023314357,"Goldman, 1982",1982,Alan S. Goldman,Toward a new theory of punishment,15,0.005349,Punishment,0
+https://openalex.org/W2107222031,"Fortin, 1982",1982,Ernest L. Fortin,The New Rights Theory and the Natural Law,17,0.030618,Natural law,0
+https://openalex.org/W322154639,"Posner, 1983",1983,Richard A. Posner,Statutory Interpretation: In the Classroom and in the Courtroom,5,0.030332,General jurisprudence,0
+https://openalex.org/W4234943248,"Munzer, 1990",1990,Stephen R. Munzer,A Theory of Property,9,0.021666,Theory of rights,0
+https://openalex.org/W4241062780,"Blackstone, 1769",1769,William Blackstone,Commentaries on The Laws Of England,10,0.012533,Evidence and proof,693
+https://openalex.org/W4248447990,"NA, 1951",1951,G. H. VON WRIGHT,I. DEONTIC LOGIC,3,0.013713,Legal reasoning,0
+https://openalex.org/W4255817502,"Llewellyn, 1930",1930,Karl N. Llewellyn,A Realistic Jurisprudence -- The Next Step,5,0.033881,General jurisprudence,0
+https://openalex.org/W3123292543,"Vincent, 2009",2009,Nicole Vincent,On the Relevance of Neuroscience to Criminal Responsibility,2,0.006734,Responsibility,0
+https://openalex.org/W3123885751,"Enoch, 2019",2019,David Enoch,"SENSITIVITY, SAFETY, AND THE LAW: A REPLY TO PARDO",10,0.0028770000000000002,Evidence and proof,0
+https://openalex.org/W4232839103,"Laudan, 2006",2006,Larry Laudan,"Truth, Error, and Criminal Law",10,0.005903,Evidence and proof,2832
+https://openalex.org/W4232964828,"Nesson, 1985",1985,Charles Nesson,The Evidence or the Event? On Judicial Proof and the Acceptability of Verdicts,10,0.003001,Evidence and proof,0
+https://openalex.org/W4248954475,"Wedgwood, 2007",2007,Ralph Wedgwood,The Nature of Normativity,4,0.023137,Law and political theory,0
+https://openalex.org/W596443701,"Stavropoulos, 1996",1996,Nicos Stavropoulos,Objectivity in Law,5,0.067188,General jurisprudence,0
+https://openalex.org/W839987907,"Kamm, 1994",1994,F. M. Kamm,"Action, Omission, and the Stringency of Duties",19,0.007521,Torts / causation,0
+https://openalex.org/W613866574,"NA, 1992",1992,Jerzy Wróblewski,The Judicial Application of Law,5,0.059045,General jurisprudence,0
+https://openalex.org/W4238254087,"Pettit, 2004",2004,Philip Pettit,Depoliticizing Democracy,0,0.02009,Judicial review and constitutional rights,0
+https://openalex.org/W4252669962,"Edmundson, 1998",1998,William A. Edmundson,Three Anarchical Fallacies,4,0.016056,Law and political theory,0
+https://openalex.org/W2171477498,"Delaney, 2006",2006,Neil Delaney,"Two Cheers for “Closeness”: Terror, Targeting and Double Effect",8,0.001478,War and killing,0
+https://openalex.org/W4213358734,"Wertheimer, 2003",2003,Alan Wertheimer,Consent to Sexual Relations,18,0.002463,Consent,302
+https://openalex.org/W3121722228,"Finnis, 2008",2008,John Finnis,Marriage,17,0.002331,Natural law,0
+https://openalex.org/W2797917190,"Dripps, 1992",1992,Donald A. Dripps,Beyond Rape: An Essay on the Difference between the Presence of Force and the Absence of Consent,18,6.22e-4,Consent,0
+https://openalex.org/W2322510918,"Grisez, 1965",1965,Germain Grisez,"The First Principle of Practical Reason: A Commentary on the Summa theologiae, 1-2, Question 94, Article 2",17,0.022615,Natural law,2
+https://openalex.org/W2335299818,"Alexander, 1980",1980,Lawrence A. Alexander,The Doomsday Machine,15,0.015639,Punishment,0
+https://openalex.org/W2735881786,"Bedau, 1978",1978,Hugo Adam Bedau,Retribution and the Theory of Punishment,15,0.010711,Punishment,0
+https://openalex.org/W4299854466,"Murphy, 1979",1979,Jeffrie G. Murphy,"Retribution, Justice, and Therapy",15,0.015639,Punishment,0
+https://openalex.org/W2055089609,"Hudson, 1994",1994,Brian Hudson,Beyond proportionate punishment: Difficult cases and the 1991 Criminal Justice Act,15,0.001411,Punishment,0
+https://openalex.org/W72162311,"Scanlon, 1982",1982,T. M. Scanlon,Contractualism and utilitarianism,4,0.133334,Law and political theory,745
+https://openalex.org/W2796476225,"Lyons, 1977",1977,David Lyons,"Principles, Positivism, and Legal Theory",5,0.00815,General jurisprudence,0
+https://openalex.org/W4251834772,"Dworkin, 1989",1989,Ronald Dworkin,Liberal Community,4,0.01046,Law and political theory,0
+https://openalex.org/W578225284,"Posner, 1985",1985,Richard A. Posner,An Economic Theory of the Criminal Law,19,0.017537,Torts / causation,30
+https://openalex.org/W3125701050,"Ehrenberg, 2008",2008,Kenneth M. Ehrenberg,Defending the Possibility of a Neutral Functional Theory of Law,17,0.007448,Natural law,0
+https://openalex.org/W2126625678,"Duff, 1993",1993,R. A. Duff,"Choice, character, and criminal liability",20,0.001703,Justifications and excuses,186
+https://openalex.org/W2209158330,"Cormick, 1984",1984,Neil MacCormick,Coherence in Legal Justification,5,0.00939,General jurisprudence,0
+https://openalex.org/W2072355180,"Grisez, 1970",1970,Germain Grisez,Toward a Consistent Natural-Law Ethics of Killing,8,0.016514,War and killing,0
+https://openalex.org/W3125856946,"NA, 2000",2000,NA,10.1023/B:LAPH.0000004356.03016.d5,5,0.026799,General jurisprudence,0
+https://openalex.org/W643806297,"Green, 1929",1929,Leon Green,Are There Dependable Rules of Causation?,19,0.01302,Torts / causation,0
+https://openalex.org/W3124514122,"Prakken, 2004",2004,Henry Prakken,The Three Faces of Defeasibility in the Law,3,0.007666,Legal reasoning,0
+https://openalex.org/W86809718,"Cormick, 1995",1995,Neil MacCormick,Defeasibility in Law and Logic,3,0.059498,Legal reasoning,0
+https://openalex.org/W832967940,"Rigoni, 2015",2015,Adam Rigoni,An improved factor based approach to precedential constraint,3,0.004068,Legal reasoning,0
+https://openalex.org/W4253049892,"Habermas, 1995",1995,Jürgen Habermas,Reconciliation Through the Public use of Reason: Remarks on John Rawls's Political Liberalism,12,0.023503,International law,0
+https://openalex.org/W49647102,"Holmes, 1988",1988,Stephen R. Holmes,Precommitment and the paradox of democracy,12,0.038059,International law,0
+https://openalex.org/W839013238,"Goldman, 1994",1994,Alvin I. Goldman,Action and Crime: A Fine-Grained Approach,19,0.030616,Torts / causation,0
+https://openalex.org/W2134761332,"Alexy, 2000",2000,Robert Alexy,On the Thesis of a Necessary Connection between Law and Morality: Bulygin's Critique,7,0.005595,Non-positivism (Alexy & Radbruch),0
+https://openalex.org/W2327095970,"Anderson, 1990",1990,Clifford B. Anderson,The Economy of the Earth,5,0.037934,General jurisprudence,0
+https://openalex.org/W3123643513,"Berman, 2005",2005,Mitchell E. Berman,Lesser Evils and Justification: A Less Close Look,20,0.002571,Justifications and excuses,0
+https://openalex.org/W3123251767,"Tan, 2006",2006,Kok-Chor Tan,The Boundary of Justice and the Justice of Boundaries: Defending Global Egalitarianism,4,0.010334,Law and political theory,0
+https://openalex.org/W3122769780,"Soper, 2007",2007,Philip Soper,In Defense of Classical Natural Law in Legal Theory: Why Unjust Law is No Law at All,7,0.021869,Non-positivism (Alexy & Radbruch),0
+https://openalex.org/W4256483923,"Estlund, 2009",2009,David Estlund,Democratic Authority,0,0.016777,Judicial review and constitutional rights,0
+https://openalex.org/W2989687078,"Hampton, 1988",1988,Jean Hampton,The retributive idea,15,0.006177,Punishment,0
+https://openalex.org/W3123819108,"Adler, 2000",2000,Matthew D. Adler,Expressive Theories of Law: A Skeptical Overview,15,0.004463,Punishment,0
+https://openalex.org/W4229910647,"Searle, 1964",1964,John R. Searle,"How to Derive ""Ought"" From ""Is""",15,0.037345,Punishment,0
+https://openalex.org/W4239045287,"Hurd, 1991",1991,Heidi M. Hurd,Challenging Authority,19,0.042532,Torts / causation,710
+https://openalex.org/W4250944673,"Marmor, 2011",2011,Andrei Marmor,Philosophy of Law,5,0.044892,General jurisprudence,0
+https://openalex.org/W598719895,"Maclure, 2011",2011,Jocelyn Maclure,Secularism and Freedom of Conscience,4,0.010352,Law and political theory,710
+https://openalex.org/W3122322167,"Westen, 2006",2006,Peter Westen,An Attitudinal Theory of Excuse,20,0.005944,Justifications and excuses,0
+https://openalex.org/W4232603964,"Ross, 1957",1957,Alf Ross,Tu-Tu,3,0.022327,Legal reasoning,0
+https://openalex.org/W2168724035,"Beckman, 2014",2014,Ludvig Beckman,The Subjects of Collectively Binding Decisions: Democratic Inclusion and Extraterritorial Law,4,0.002515,Law and political theory,0
+https://openalex.org/W637633160,"Bix, 1995",1995,Brian H. Bix,"Law, Language, and Legal Determinacy",5,0.064428,General jurisprudence,0
+https://openalex.org/W3122992778,"Urbina, 2012",2012,Francisco Zúñiga Urbina,A Critique of Proportionality,0,0.007952,Judicial review and constitutional rights,0
+https://openalex.org/W3123333684,"Levenbook, 2000",2000,Barbara Baum Levenbook,THE MEANING OF A PRECEDENT,3,0.002619,Legal reasoning,0
+https://openalex.org/W598240946,"Kramer, 2007",2007,Matthew H. Kramer,Objectivity and the Rule of Law,5,0.061202,General jurisprudence,0
+https://openalex.org/W855050863,"Daniels, 1980",1980,Norman Daniels,Reflective Equilibrium and Archimedean Points,4,0.012538,Law and political theory,0
+https://openalex.org/W3123681693,"Edmundson, 2004",2004,William A. Edmundson,STATE OF THE ART:,15,0.017662,Punishment,0
+https://openalex.org/W4247770540,"NA, NA",NA,NA,NA,4,0.016841,Law and political theory,0
+https://openalex.org/W4253759836,"NA, 2002",2002,NA,Convention,5,0.011576,General jurisprudence,0
+https://openalex.org/W4249863207,"Geach, 1960",1960,P. T. Geach,Ascriptivism,3,0.022,Legal reasoning,0
+https://openalex.org/W4241096513,"Matsuda, 1989",1989,Manabu Matsuda,Public Response to Racist Speech: Considering the Victim's Story,13,0.001547,Hate speech,0
+https://openalex.org/W3123835566,"Haldemann, 2005",2005,Frank Haldemann,Gustav Radbruch vs. Hans Kelsen: A Debate on Nazi Law*,5,0.032914,General jurisprudence,0
+https://openalex.org/W4244035258,"Schauer, 1988",1988,Frederick Schauer,Formalism,5,0.0691,General jurisprudence,0
+https://openalex.org/W625842885,"Tamanaha, 2006",2006,Brian Z. Tamanaha,Law as a Means to an End,5,0.089785,General jurisprudence,0
+https://openalex.org/W4253389866,"Hardimon, 1994",1994,Michael O. Hardimon,Role Obligations,4,0.003267,Law and political theory,0
+https://openalex.org/W3126143484,"Shiffrin, 1999",1999,Seana Valentine Shiffrin,"WRONGFUL LIFE, PROCREATIVE RESPONSIBILITY, AND THE SIGNIFICANCE OF HARM",4,7.76e-4,Law and political theory,0
+https://openalex.org/W947116432,"Twining, 2009",2009,William Twining,General Jurisprudence,12,0.005033,International law,0
+https://openalex.org/W4299511094,"Raz, 2017",2017,Joseph Raz,"Authority, Law and Morality 1",5,0.018125,General jurisprudence,0

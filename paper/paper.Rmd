@@ -1,0 +1,384 @@
+---
+title: "Self-absorbed, yet interesting?"
+subtitle: "A study on general jurisprudence"
+author: "Piotr Bystranowski"
+date: "`r Sys.Date()`"
+output: 
+  bookdown::pdf_document2:
+      latex_engine: pdflatex
+      #pandoc_args: "--pdf-engine-opt=--shell-escape"
+      keep_tex: true
+      pandoc_args: [
+         #pandoc_args for page break before H1 heading
+         "-V", "header- 
+  includes:\\usepackage{titlesec}\\newcommand{\\sectionbreak}{\\clearpage}"]
+self_contained: no 
+bibliography: biblio.bib
+header-includes:
+  - \usepackage{svg}
+  - \usepackage{floatrow}
+#  - \usepackage{subfig}
+#  - \usepackage{multicol}
+#  - \newcommand{\btwocol}{\begin{multicols}{2}}
+#  - \newcommand{\etwocol}{\end{multicols}}
+#  - \usepackage{float}
+#  - \floatplacement{figure}{H}
+abstract: "Two kinds of critism can be raised against contemporary general jurisprudence -- the part of legal philosophy dealing with the most general and abstract philosophical questions about law. The more fundamental one claims that questions discussed by general jurisprudence might actually not be interesting. The other one, while not denying the overall utility of general jurisprudence, suspects that, as currently practiced, it suffers from self-referentiality and lack of interest in other related philosophical discources. In this article, I attempt to test both propositions empirically, using bibliometric tools. First, employing co-citation analysis, I identify the set of 169 central texts in general jurisprudence within the broader network of 713 core texts in (mostly Anglophone) legal philosophy. This provides ground for the analysis of citation flows, resulting in the following conclusions: General jurisprudence, when compared to other areas of legal philosophy, *is* distinctively self-referential, yet it still appears to spark *some* interest among other scholars, in legal philosophy and elsewhere."
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(dev = 'pdf')
+options(tinytex.engine_args = '-shell-escape')
+library(kableExtra)
+library(ggplot2)
+library(igraph)
+library(tidyverse)
+
+library(gridExtra)
+library(grid)
+
+source("../src/functions/labelClust.R")
+
+tokenized <- read.csv("../data/text/tokenized_w=6.csv")
+nodes <- read.csv("../data/cits/nodes_w=6.csv") %>% labelClusts() 
+
+source("../src/functions/subgraphCentrality.R")
+
+
+source("../src/make_appendix.R")
+
+source("../src/graph_analysis.R")
+
+
+
+edges <- read.csv("../data/cits/edges.csv")
+works <- read.csv("../data/raw/works_full.csv")
+```
+
+General jurisprudence -- the part of legal philosophy dealing with the most general and abstract questions about law -- is increasingly characterised in terms of stagnation, lack of progress and fixation with decades-long debates. Many have stressed the apparent isolation of this area and, as it often happens, the isolation of a research community can be manifested in two ways: in the community not being interest*ed* in the developments in the outside world as well as in it not being interest*ing* for the outsiders. And so, general jurisprudence has been accused of not being informed or taking inspiration from relevant areas of philosophy, such as metaethics [@plunkett2017law] or not attempting to engage more with philosophical problems arising in specific areas of legal scholarship, while sticking to decades-old debates without noticing that they might have reached a dead end (Hershovitz).
+
+On the other hand, somewhat more fundamentally, some have argued that general jurisprudence is in principle not interesting. One way in which general jurisprudence is not interesting is its putative lack of impact on first-order controversies in specific areas of law [@hershovitz2014end, pp.1200-1201]. Unlike in ethics, where the answer to a question in normative ethics often depends on one's position in metaethics, an analogical dependence is rare in the legal domain^["Hart and Dworkin may differ with regard to the best account of what's going on when a judge exercises (some kind of) discretion, but it's not at all clear that what you should do as a judge in such cases depends on whether Hart of Dworkin are right" [@enoch2019general, p. 82].]. Another way to look at this putative isolation is to draw an analogy with similar yet better analysed research communities. To the extent that general jurisprudence is considered to occupy the centre of legal philosophy, it might parallel the patterns of the core of philosophy: epistemology, metaphysics, philosophy of language. Earlier studies [@kitcher2011philosophy], including ones presenting bibliometric evidence [@chi2022measuring; @higgins2014interdisciplinary], suggested that the core of philosophy, while enjoying much prestige within the discipline, is much less likely to interact with the outside world (scholarly or otherwise) than the seemingly more peripheral areas of philosophy. Philosophy of physics, say, while not being at the centre of philosophy, is more likely to read and be read by scholars from other disciplines than contemporary metaphysics. Should we expect analogical patterns in the case of general jurisprudence?
+
+Following similar studies conducted in other areas of philosophy, here I attempt to assess and analyse the putative isolation of general jurisrpudence using bibliometric tools, primarily: citation analysis. However, to do that in an empirical and rigorous way, one would hope to start with some idea of what the object of study -- general jurisprudence -- is. Some interesting potential definitions have been proposed in the literature^["‘general jurisprudence’ should refer to the subset of meta-legal inquiry that concerns universal legal thought, talk, and reality, that is, the part of legal thought and talk—and what (if anything) they are distinctively about—that is universal across all social/historical contexts where there is such thought and talk" [@plunkett2017law, p. 45];] [blablabla] but many scholars discussing general jurisprudence doubt any such definition is needed. In this study, I will let the data speak in order to determine if there is a bottom-up way of delineating an are of research that would correspond to what scholars have in mind when they discuss general jurisprudence. 
+
+Let me make one important caveat from the start. Whatever evidence based on citation analysis I am going to present, I do not expect all the participants to the debate on the nature and status of general jurisprudence to find it convincing or even relevant. Take scholars who claim that general jurisprudence does not bring valuable arguments to first-order discussions in specific areas of law. Would such a statement be refuted by results showing that legal scholars or more specialized legal philosophers cite general jurisprudence at decent rates? Of course not, scholarly citation patterns depend on many factors, with the actual relevance of the cited work to the citing work being merely one of them^[See the section *Limitations* below for further discussion]. Furthermore, even if a given legal scholar/philosopher *thinks* that general jurisprudence is relevant to their investigations, they might be simply mistaken -- a posssiblity explicitly defended by some of the discussed critics [@enoch2019general, p. 83 ff.]
+
+# Earlier research
+
+Bibliometric tools, such as analysis of citation patterns or coauthorship networks, have traditionally been used in general scientometrics research. Recently, however, they have started to be increasingly used to address questions relevant from the points of view of specific areas of academic research. Take philosophy – over the last couple of years, citation analysis tools have been used to address problems such as: the partition of philosophy into main areas of research [@noichl2021modeling]; the visibility of philosophy of science in the sciences [@khelfaoui2021visibility]; the relative isolation of some areas of philosophy from non-philosophical literature [@chi2022measuring].
+
+To this date, hardly any attempt at using citation analysis to map research communities within legal philosophy or, even much broader, legal scholarship exists. It is so despite the increasing usage of co-authorship [@hayashi2022small], hiring-and-placement [@katz2011reproduction] or acknowledgment [@nunna2023hierarchy] networks in sociological analyses of the structure of legal academia and, even more strikingly, the already established centrality of citation networks as a research tool in empirical analyses of case law across jurisdictions [@derlen2014goodbye; @fowler2007network; @hitt2016measuring; @vsadl2017can; @siems2023network; @smejkalova2020importance]. Despite the methodological parallels, none of these studies addressed the issue central to this paper: the measurement of the degree of isolation of a given fragment of legal scholarship.
+
+In this project, I aim to employ co-citation analysis^[While a *citation* refers to a relation in which one article cites another, a *co-citation* is a relation between two articles that have been jointly cited by at least one third article. For one thing, co-citation, unlike citation, is a symmetrical relation.] -- a tool used to measure subject similarity and intellectual connections between pairs of academic texts [@small1973co] -- to identify the core of contemporary philosophy of law (i.e., a set of legal philosophical texts that are most frequently co-cited with each other) and to partition the graph representing this core into areas representing distinct areas of research and/or distinct epistemic communities in philosophy of law as well as to describe the structure of such a graph, in particular -- the position of the community corresponding to general jurisprudence. Completing those tasks, which might be of some independent value, will prepare ground for addressing two main questions. First, to what extent different areas of philosophy of law, especially general jurisprudence, interact with each other. Second, which areas of philosophy of law are visible in academic literature outside this discipline.
+
+# Network construction
+
+As I intended to start this study with situating general jurisprudence within the core of legal philosophy, the necessary first step was to find a way of delineating the set of texts representing legal philosophy. There are three general (and combinable) approaches in bibliometrics to domain delineation: using ready-made classifications of science, classical information-retrieval searches, mapping and clustering [@zitt2019bibliometric]. The first approach, typically taking advantage of existing categorizations of journals, was not feasible here, for a number of reason. First, which alone would be sufficient, none of the leading journal classification involves a separate category for philosophy of law. Second, even if there were such a classification, I assumed that much of crucial work in legal philosophy is published outside specialist journals (crucially, in books or journals that are not indexed in the leading citation data bases), so such an approach would likely result in a distorted picture of the field. ....
+
+All the citation data used in this project come from *OpenAlex*, an open bibliometric data base [@priem2022openalex]. While *OpenAlex* remains less frequently used in research of the kind I conduct here than its proprietary substitutes (such as *Web of Science*) and it presents some important limitations^[See the section *Limitations* below.], it offers some considerable advantages in the present context. The most important feature is the breadth of its coverage. While any bibliometric analysis of legal philosophy limited to the WoS-indexed journals would present an incomplete if not biased picture, *OpenAlex* covers many non-WoS-indexed journals and books, which, arguably, remain an important venue for work in jurisprudence.
+
+The process of constructing the graph representing the core of legal philosophy, largely inspired by similar work by @truc2022forty, proceeded as follows (Figure \@ref(fig:flowchart)). The first step was to collect available metadata for all articles published in journals publishing work exclusively or primarily in philosophy of law and legal theory. I set a list of 19 such journals, including 13 published outside the English-speaking countries (in an attempt to construct a more diverse data set and to minimize the bias toward legal scholarship published in English).^[As I will discuss in more detail later, this attempt might have been not entirely successful, due to some shortcomings of the employed data based.]  This resulted in a set of over 12.5 thousand papers. As most of those items have not been, according to the employed data base, cited even once, and, thus, were unlikely to play any role in the subsequent analyses, I narrowed down the data set to articles cited at least once, which resulted in a collection of 4,683 items, which I call the ‘Specialist Journal Collection’.
+
+Then, however, I could not limit the study to the Specialist Journal Collection, for at least two reasons. First, one might argue that the most important articles in legal philosophy are often published outside specialist journals. Philosophers of law tend to publish their work in generalist legal journals (such as student-run U.S. law reviews) on the one hand, and in less specialized philosophy journals (say, in moral or political philosophy), on the other. Furthermore, while in many areas, particularly in the sciences, the relevant scientific output is reducible to journal articles, this is not the case with philosophy of law, where books are still very much focal. Not only many contemporary discussions are based on ideas presented in seminal books published in the 1960s or 70s but also many legal philosophical books published today have a greater impact than most journal articles published in the same time.
+
+For those reasons, I expanded the data set in two further steps. First, I assumed that any text that cites a significant number of items published in specialist journals in legal philosophy is likely a text in legal philosophy itself. Hence, I created a collection of papers that cite at least 6 items from the Specialist Journal Collection. The resulting Citing Collection included 923 additional items. Second, I assumed that many classical works in legal philosophy could still be missing from both collections (as they were neither published in specialist journals, nor did they cite specialist journals). To identify such classical works, I created a collection of texts cited at least 6 times in the combined Specialist Journal and Citing collections, resulting in 1,045 additional items. That collection, however, was clearly over-inclusive, as it covered many pieces that are heavily cited across different fields, thus hardly specific to legal philosophy. This was the case of some notable piece from social sciences (such as classical works in psychology by Haidt or Kahneman and Tversky or in economics by Coase), but also for some focal work in philosophy: Even though it was directly relevant to some discussions in jurisprudence, it could not be reasonably called legal even in the broadest sense (take Quine, JL Austin, or Searle). As such items, by definition, are heavily cited, they were likely to affect the analyses to follow. To remedy this issue, I calculated the ratio of the number of citations coming from the Specialist Journal and Citing collections to the overall number of citations for each of the classics papers. The assumption here was that papers for which a significant proportion of citations comes from the former are likely papers in legal philosophy. However, the choice of the exact threshold involves some important trade-offs. As some important works in legal philosophy are heavily cited also outside this specific area, setting the threshold too high would leave such important items (such as, say, *On the Rule of Law* by Tamanaha) out. Ultimately, I decided that all the items for which the said ratio was below 0.015 were to be excluded. Arbitrary as this choice was, it excluded a few important papers in legal philosophy (e.g., *Substantive and Reflexive Elements in Modern Law* by Teubner), while keeping some work more readily belonging to moral or political philosophy (e.g., *Moral Thinking* by Hare or *Contractualism and utilitarianism* by Scanlon). While the impact of such occasional mismatches on the analyses to follow should not be overstated, it is worth keeping in mind. All in all, the resulting Classics Collection, after exclusions, contained 888 items.
+
+The three collections combined (4,077 items) provided the basis for the co-citation analysis, which used all the citations that any of those texts received, according to the employed data base (171,974 citations in total). The co-citation analysis was conducted using the \texttt{biblionetwork} package in R [@biblionetwork]. The most important parameter set by the researcher while running the cocitation analysis is the weight^[In \texttt{biblionetwork}, the weight is the number of times the two items are cited together divided by the square root of the product of the total number of citations of each item – a measure similar to the coupling angle value (@sen1983mathematical)] threshold: Intuitively, the higher the threshold is, the more times two items need to be cited together (other things being equal) to be connected in the resulting co-citation graph. In practical terms, setting a high threshold tends to result in more structured graphs at the expense of lowering the number of items included in the graph (as more items are left unconnected to any other item).
+
+```{r flowchart,eval=TRUE,echo=FALSE,message=FALSE, error=FALSE, warning=FALSE, out.width="100%", fig.cap="The graph construction process"}
+knitr::include_graphics("flowchart.pdf")
+```
+
+In the present context, I set the weight threshold to 6. Furthermore, to avoid the inclusion of items that are items connected to just one other item (which might be might be just a result of noise), I included in the graph only items connected to at least two other items. The resulting graph consisted of 720 nodes (representing 720 texts from the combined collections) and three connected components. Two of those components were extremely small (four and three nodes, respectively)^[Both of the small components appered to represent rather niche discussions in the theory of criminal responsibility.] and were discarded. Thus, only the big component of the co-citation graph, consisting of 713 nodes, was retained and will the object of the analyses to follow (Figure \@ref(fig:figSvg)).
+
+# Network interpretation
+
+One of the main analyses to conduct with a connected graph is to identify its distinct *communities*, that is, sets of nodes that are better connected to each other than they are to the rest of the graph. In the case of cocitation networks, such communities might correspond to different areas of research and/or different epistemic communities. Partitioning a graph into communities is conducted using computational algorithms, which are typically probabilistic and dependent on parameters arbitrarily set by the researcher. Here, I used the Louvain algorithm [@blondel2008fast] as implemented in Gephi [@bastian2009gephi] with the default resolution, which resulted in XXX communities. The communities were rather heterogeneous in terms of their size, with a few big communities and many small ones. As the smallest communities would be hard to interpret or to conduct any meaningful analyses, I retained the 19 biggest communities (with at least XXX members) which I was able to interpret, that is, to map onto discrete areas of legal philosophical research.
+
+In this interpretative process, I used two main tools. First, for each community I identified specific texts that were most important for a given community, as measured by eigenvector centrality^[In graph analysis, eigenvector centrality measures what intuitively could be interpreted as the prestige of a given node within the network, where prestige of a given node is determined by being directly linked to other nodes that are prestigious themselves. For more detail, see Section *Centrality* below.]. Second, for each community I identified the set of most characteristic terms from titles and abstracts of texts in a given community. To characteristic terms I used a classical measure used in text analysis, text frequency-inverse document frequency (tf-idf). Both sets of results for each community can be inspected in the Appendix.
+
+
+```{r figSvg, eval=TRUE,echo=FALSE,message=FALSE, error=FALSE, warning=FALSE, out.width="100%", fig.cap="The big component of the cocitation graph. Edge thicknes is proportional to the cocitation weight, as described in footnote 2. Node size is proportional to the eigenvector centrality. Gephi’s Multigravity ForceAtlas 2 was used for layout rendering."}
+
+knitr::include_graphics("t.pdf")
+```
+
+Let us illustrate the interpretive process by describing in more detail how I interpreted the four most extensive communities. And so, the largest community (spanning well over a fifth of the entire graph) can be interpreted as denoting ***General jurisprudence***. Two central figures of the twentieth-century Anglophone general jurisprudence^[Throughout the article, I use '*General jurisprudence*' (in *italics*) to refer to the specific community (subgraph) detected within the analysed graph and 'general jurisprudence' to refer to the actual research area and scholarly community] -- H.L.A. Hart and Ronald Dworkin -- authored five out of 10 most central texts in this community and their surnames feature among the terms most characteristic for the community. Inasmuch as contemporary general jurisprudence has been focused around debates surrounding legal positivism, so is the analyzed community. All 10 most central texts are written either by notable advocates of positivism -- Hart, John Austin, Joseph Raz -- or its harshest critics -- Dworkin, Lon Fuller, John Finnis. Furthermore, the terms *positivism* and *positivist* are the two terms most characteristic of the community. The remainder of the set of most characteristic terms deals primarily with exactly those concepts that we would associate with the most abstract reflection on law: *judge*, *theory*, *rule*, *jurisprudence*, *interpretation*.
+
+The next largest community appears to deal with issues at the intersection of legal and political philosophy. Many of the authors of the most central texts are more readily labelled as political, rather than legal, philosophers (Thomas Nagel, John Rawls). One can, however, still see the legal dimension of this cluster. The most characteristic terms, even though unmistakably political, largely deal with those concepts that are relevant to law: *legitimacy*, *democratic*, *neutrality*, *global [justice]*. Some of the most prominent authors still can be reliably interpreted as legal philosophers, think of Jeremy Waldron or A. John Simmons. For these reasons, I labelled the community ***Law and political theory***. 
+
+The third community, labelled ***Punishment***, appears very straightforward to interpret, with all ten central texts dealing with legal punishment and characteristic terms such as *restorative*, *punishment*, *desert*, *retributive*, *censure*, *expressive*. This contrasts with the next community, ***Responsibility*** -- here, again, the authors of central texts are mostly philosophers not necessarily associated with law. A closer look at their works, however, as well as at the characteristic terms (such as *responsibility*, *ignorance*, *blameworthiness*, *luck*) suffices to understand that the community deals with the theory of responsibility and other related issues at the intersection of law and moral philosophy (such as moral luck, mental states, moral ignorance, the role of free will).
+
+Let me also notice that, for some smaller communities, I could not easily find one label to capture the apparent object of interest of a given cluster. In some cases, a community appeared to be concerned with two or more distinct yet intrinsically linked constructs (e.g., ***Judicial review and constitutional rights***, ***War, killing, self-defence***), while at other times topics that do not appear necessarily linked were grouped together (e.g., ***Theories of rights / Contract law***, ***Torts / Causation***).
+
+# Network analysis
+
+Some general observations follow from the inspection of this graph. First of all, this study does not bring us much closer to a precise delineation of legal philosophy. As we just saw, some of the analysed communities (such as *Law and political theory* or *Responsibility* feature texts that appear to clearly belong to other areas of practical philosophy. This, however, need not necessarily be interpreted as a shortcoming of this study but rather as evidence of an intense exchange between some areas of philosophy of law and adjacent epistemic communities. What is really striking, then, is that, in contract, we can see many communities in the analyzed grpah that seem distinctly pure in their legal-philosophical profile, and such is the main object of this study, *General jurisprudence*. 
+
+Other initial observations about *General jurisprudence* follow. Most strikingly, while the analyzed graph partition provides an otherwise fine-grained picture of the field, *General jurisprudence* is an outlier in terms of its size and, as it is very well-connected, there appears no obvious way of dividing it further. The two smaller communitites that arguably belong to general jurisprudence, labelled *Natural law* and *Non-positivism*, are very tiny and well-connected to *General jurisprudence* (so that their separation from *General jurisprudence* might be interpreted as an accidental artifact of the community-detection algorithm rather than a reflection of a deeper separation in the real world).^[In the context of *Natural law*, a striking observation is that, even though the community indeed appears to bring together most natural law texts present in the graph, some notable texts in the natural law tradition ended up in the *General jurisprudence* cluster, just think of Finnis' *Natural law and natural rights*. [something about anti-positivism and dworkin being in GJ]] While general jurisprudence is often seen as a field defined by persisting debates and disagreements, this has not seemingly resulted in any kind of division of this area into separate epistemic communities. Notably, even representatives of some heterodox approaches to jurisprudence, such as advocates of the Critical Legal Studies movement, sit solidly in *General jurisprudence* rather than form a community of their own. 
+
+All in all, this partition of the graph suggests a notion of general jurisprudence that is wider from that employed by at least some scholars. It certainly covers 'Oxford jurisprudence', discussion of normativity, rules, and separation of law and morals, but it also shows that all those issues paradigmatically belonging to general jurisprudence are not easily separated from such areas as legal interpretation..
+
+Roughly the same thing can be said about the entire graph -- its partition is almost exclusively based on objects of interest rather than different perspectives or methodologies. For example, while texts written with the law & economics framework are present in the graph (most prominently with the *Causation / Torts* community), they do not come even close to forming a community on their own. 
+
+## Centrality
+
+One of the main upshots of network analysis is the determination of relative importance, or centrality, of nodes within the structure of a given graph. Numerous mathematical tools have been developed to capture differnt aspects of such centrality, two of which will be employed in this study. *Eigenvector centrality* [@bonacich1987power; @kleinberg1999authoritative] assigns high centrality to nodes who have many high-centrality neighbours. In the context of social networks, eigenvector centrality corresponds to the intuition that an important individual is the one who has many direct links to other important individuals. In the present context, it expresses the idea that an important publication is the one that is often co-cited with other important publications. The other centrality measure used here is *betweenness centrality* computes the proportion of the shortest paths between any pair of nodes in the graph that pass through a given node. For social networks, betweenness centrality highlights the importance of individuals who serve as 'bridges' and control the flow of information or other goods between otherwise distant individuals. In the present context, betweenness centrality stresses those publications that might serve as meeting points for otherwise distant areas of legal philosophy.
+
+```{r eigenpaper, message=F, echo=F, warning=F}
+nodes %>%
+left_join(works) %>%
+ select(first_author, display_name, eigencentrality, betweenness, cluster_label) %>%
+ mutate_at(c("eigencentrality", "betweenness"), round, 2) %>% 
+ arrange(desc(eigencentrality))%>%
+  head(10) %>% 
+    rename("First author" = "first_author",
+           "Title" = "display_name",
+           "Eigen- vector centrality" = "eigencentrality",
+           "Between- ness centrality" = "betweenness") %>% 
+  knitr::kable(booktabs = T,
+  caption = '10 texts with the highest eigenvector centrality.') %>% 
+column_spec(c(2,5), width = "5cm") %>% 
+  column_spec(1, width = "3cm") %>% 
+  column_spec(3:4, width = "1.5cm") %>%
+kable_styling(latex_options = c("striped", "hold_position"))
+```
+
+Table \@ref(tab:eigenpaper) presents 10 texts with the highest eigenvector centrality and is overwhelmingly dominated by texts belonging to *General jurisprudence*. Things are slightly more complicated when we move to betweenness centrality, in which case the list of 10 central texts (Table \@ref(tab:betpaper)) is dominated by *General jurisprudence* to a much lower degree. This pattern allows for a speculation that, at least for some publications in *General jurisprudence* are high-prestige mostly because they are often co-cited with other high-prestige publications in *General jurisprudence* rather than because of their links to other communities. Nevertheless, when we look at both measures of centrality averaged across communities (Table \@ref(tab:centcomm)), we can see *General jurisprudence* exceling at both, although with a visibly smaller lead over the other communities in the case of betweenness centrality.
+
+```{r betpaper, message=F, echo=F, warning=F}
+nodes %>%
+ left_join(works) %>%
+ select(first_author, display_name, eigencentrality, betweenness, cluster_label) %>%
+ mutate_at(c("eigencentrality", "betweenness"), round, 2) %>%
+ arrange(desc(betweenness))%>%
+  head(10) %>% 
+    rename("First author" = "first_author",
+           "Title" = "display_name",
+           "Eigen- vector centrality" = "eigencentrality",
+           "Between- ness centrality" = "betweenness") %>% 
+  kbl( booktabs = T,
+  caption = '10 texts with the highest betweenness centrality.') %>% 
+column_spec(c(2,5), width = "5cm") %>% 
+  column_spec(1, width = "3cm") %>% 
+  column_spec(3:4, width = "1.5cm") %>%
+kable_styling(latex_options = c("striped", "hold_position"))
+
+```
+```{r centcomm, message=F, echo=F, warning=F}
+nodes %>%
+  filter(!is.na(cluster_label)) %>% left_join(works, by = c("Id" = "id")) %>% 
+ group_by(cluster_label) %>% 
+summarise(N = n(), year = round(mean(publication_year.x, na.rm=T)), eigen=mean(eigencentrality, na.rm=T), betweenness=mean(betweenness,  na.rm=T))%>% 
+ mutate_at(c("eigen", "betweenness"), round, 2) %>%
+arrange(desc(eigen))%>%
+  head(10) %>% 
+    rename("Eigen- vector centrality" = "eigen",
+           "Between- ness centrality" = "betweenness") %>% 
+  kbl( booktabs = T,
+  caption = '10 communities with the highest average eigenvector centrality.') %>% 
+  column_spec(1, width = "3cm") %>% 
+  column_spec(2:5, width = "1.5cm") %>%
+kable_styling(latex_options = c("striped", "hold_position"))
+```
+
+### Centrality vs. age and type of publication
+
+A critic of general jurisprudence might argue that the centrality of the corresponding community, described above, is just an effect of the centrality of a few old books, written by Hart, Fuller, Dworkin, Raz and others, rather than a reflection of the importance of any contemporary discussions in this area. If this assumption is correct and, indeed, characteristic of this community, we should be able to observe that older items and books are associated with a relatively larger eigenvector centrality within *General jurisprudence* than elsewhere. Hence, I fit a number of linear models predicting the eigenvector centrality of nodes (Table \@ref(tab:anova)). Adding the interaction between Community (i.e., whether a given node belongs to *General jurisprudence*) and publication_year improves the model's fit. Figure \@ref(fig:inter1) depicts the details of this significant interaction: While we observe a negative effect of time across the board (i.e., newer texts enjoy relatively smaller centrality), this negative trend is much more pronounced for *General jurisprudence*. Consistently with the critics' position, older texts are distinctively central within this community.
+
+Similarly, adding the interaction between Community and Type of publication (i.e., whether a given text is a book) significantly improves the model's fit. Again, while we observe a general trend across communities (i.e., a slightly bigger centrality of books), this trend is strikingly larger for *General jurisprudence* (Figure \@ref(fig:inter2)), consistently with the critics' predictions.
+
+```{r anova, echo=FALSE}
+source("../src/centrality_regression.R")
+
+
+anova$`p value` <- ifelse(anova$`p value` < 0.001, "<.001", round(anova$`p value`, 3))
+anova$`F statistic` <- round(anova$`F statistic`, 2)
+anova$`sumsq` <- round(anova$`sumsq`, 2)
+
+
+anova %>% 
+  kable( booktabs = T,
+  caption = 'Analysis of variance (type II) of the model predicting eigenvector centrality') %>% 
+  kable_styling(latex_options = c("striped", "hold_position"),font_size = 8)
+
+```
+```{r inter1, echo=FALSE, fig.cap="Interaction between Publication year and Community in the model predciting eigenvector centrality"}
+inter1
+```
+
+```{r inter2, echo=FALSE, fig.cap="Interaction between Type of publication and Community in the model predciting eigenvector centrality"}
+inter2
+```
+
+# Citation flows
+
+```{r read_inrefs, echo=FALSE}
+inrefs <- read.csv("../data/raw/outcits.csv") %>% 
+  rename(Source = id.1, Target = id) %>% 
+  filter(Target %in% nodes$Id, Source %in% nodes$Id) %>% 
+  distinct(Target, Source, .keep_all = T)
+source("../src/in_cit_analysis.R")
+```
+
+So far, I have made some observations about the structure of the graph of legal philosophy and the community of *General jurisprudence*, including the centrality of the latter within the graph. To directly address the questions with which this study started, regarding the level engagement of general jurisprudence with other scholarly areas, I will use primarily the tools of citation flow analysis. Notice that co-citation analysis, on which I have been building this study so far, does not measure any direct engagement between texts -- if two texts are connected in a co-citation graph, it means only that they are cited together by other texts and not necessarily that one of them cites the other. Citation analysis, to which I move now, is supposed to measure exactly such a direct engagement of one text with another. I will proceed in two steps. In the first one, I will analyse the flows *within* the graph, to check the extent the various communities identified within the core of legal philosophy borrow ideas from each other. In the second step, I will analyse the extent to which those communities are cited by various research disciplines outside the core of legal philosophy, as identified in this study.
+
+## Citations within the graph
+
+Table \@ref(tab:meanCited) presents the mean number of citations that go to a given community from other communities in the analyzed graph  (i.e., the total number of such citations divided by the number of texts in a given communities) as well as the ratio of that number to the total number of in-graph citations from a given community (i.e., including both those to other communities and to the community itself). *General jurisprudence* features among the communities with highest ratio, with over a half of all incoming within-graph citations coming from other communities. Furthermore, the average number of incoming within-graph outside-community citations for *General jurisprudence* (1.06) is the third largest^[It is also worth noting that the two communities with a larger value of this statistic are an order of magnitude smaller than *General jurisrpudence*]. Both observation imply that a fair share of interest in general jurisprudence comes from other areas of legal philosophy.
+
+Table \@ref(tab:meanCiting), in contrast, presents the mean number of citation *from* a given community *to* other communities and the ratio of that number to the total number of outgoing in-graph citations from a given community. If we order the list by this ratio, this time we find *General jurisprudence* close to the bottom. Only 16% of in-graph references of *General jurisprudence* go to other communities. The mean count of such references for *General jurisprudence* (0.71) is the third-lowest. General jurisprudence appears distinctively *uninterested* in other areas of legal philosophy.
+
+We can further corroborate both sets of observations by subtracting the mean number of outgoing citations from the mean number of incoming citations for each community (Table \@ref(tab:net)), thus obtaining a *net* citation flow for each community. The number for *General jurisprudence* is positive, again illustrating the thesis that, within legal philosophy, others cite general jurisprudence much more than general jurisprudence cites others.
+
+```{r meanCited, echo=FALSE,  message=F}
+mean_cited %>% 
+  rename("Community" = "cluster_label",
+         "Mean # of citations from other communities" = "out",
+         "Mean # of citations from the graph" = "n",
+         "Ratio" = "ratio")%>% 
+ kbl( booktabs = T, caption="Communities ordered by the ratio of the mean number of citations from other communities in the graph to the mean total number of citations to works from the graph") %>% 
+    column_spec(1, width = "3cm") %>% 
+  column_spec(2:4, width = "2cm") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),font_size = 8)
+```
+
+```{r meanCiting, echo=FALSE,  message=F}
+mean_citing %>% 
+  rename("Community" = "cluster_label",
+         "Mean # of citations from other communities" = "out",
+         "Mean # of citations from within the graph" = "n",
+         "Ratio" = "ratio")%>% 
+  kbl( booktabs = T, caption="Communities ordered by the ratio of the mean number of citations from other communities in the graph to the mean total number of citations from works from the graph") %>% 
+  column_spec(1, width = "3cm") %>% 
+  column_spec(2:4, width = "2cm") %>%
+kable_styling(latex_options = c("striped", "hold_position"),font_size = 10)
+```
+
+```{r netCits, echo=FALSE, message=F, warning=F}
+net_cits%>% 
+  rename("Community" = "cluster_label",
+         "Mean # of citations to other communities" = "references",
+         "Mean # of citations from other communities" = "cites",
+         "Difference" = "net") %>% 
+  kbl( booktabs = T, caption="Communities ordered by the difference between the mean number of citations from other communities and the mean number of citations to other communities") %>% 
+    column_spec(1, width = "3cm") %>% 
+  column_spec(2:4, width = "2cm") %>%
+  kable_styling(latex_options = c("striped", "hold_position"),font_size = 8)
+
+source("../src/out_cit_analysis.R")
+```
+
+## Citations from or to outside the graph
+
+In the second part of the citation analysis, I analysed the set of all incoming citations to works belonging to the analyzed graph for which the citation source could be matched with the National Science Foundation three-level classification of journals into academic disciplines^[The NSF classification is frequently employed in similar studies. One of its advantages over the competitors is its disjointness, that is, assigning each journal to just one category on each of the three nested levels. In the present context, its shortcoming is the fact that its coverage is limited to the Web of Science-indexed journals, which excludes citations from non-indexed journals (which are numerous in law and philosophy) and from books. I used the original classification with 9 journals manually reclassified (all of them were philosophy journals, such as *Ethics*, *Synthese*, or *Philosophy & Public Affairs*,  originally classified to other disciplines). To increase legibility, I used just 7 categories from the lowest level (Law, Philosophy, Political Science and Public Administration, Economics, Computers, Management, Criminology), one category from the highest level -- Natural Science and Engineering (NSE; without Computers), and all the residual categories from the medium level]. Table \@ref(tab:med_esp) presents the median number of citations from NSF categories to articles in a given community. As could be expected, a typical article belonging to *General jurisprudence* is likely to be noticed in Law and Philosophy. However, the null median numbers of citations from other analyzed NSF categories (aside from Political Science and Public Administration) indicates a lack of interest in general jurisprudence from other fields.^[A potential alternative explanation of this pattern is the large size and resulting heterogeneity of *General jurisprudence*. Small, specialized communities are likely to be consistently cited by scholars from a specific area outside law and philosophy (see, e.g., Criminology citing *Risk and prevention* and Psychology or Health citing *Consent*), which then can be observed on the level of medians. This is less likely to happen with a large, less specialized communities, as *General jurisprudence*.] A closer look at the table, though, indicates that even the patterns of citations from Law and Philosophy to *General jurisprudence* are more complicated. The median number of citations from Philosophy (2) puts *General jurisprudence* only on the 11th place among 17 communities, suggesting a relatively low level of interest from philosophers. The same statistic regarding citations from Law (4) puts it on the 5th place, thus indicating a relatively high level of interest from legal scholars. Consistently with these results, the ratio^[I do not compare the median values across categories, as, due to a potentially unequal coverage of disciplines by the NSF classification (say, a better coverage of Philosophy than Law), such comparisons might be unreliable. Comparing *ratios*, however, is meaningful and not affected by this risk.] of the median number of citations from Law to the median number of citations from Philosophy (2) puts *General jurisprudence* on the 4th place, which shows a relative overrepresentation of Law in the readership.
+
+What I said in the previous paragraph suggests that *General jurisprudence* is characteristically frequently cited by Law. This is right, yet *General jurisprudence* comes only fifth in terms the median number of citations from Law and when we compare its value of this statistic (4) to the leaders (*International law* -- 10; *Judicial review and constitutional rights* -- 8; *Theory of rights / Contract law* -- 6), we see a significant gap. Overall, general jurisprudence seems to be read by legal scholars, yet it might be far from the most interesting area of legal philosophy to legal scholars.
+
+```{r med_esp, message=FALSE, echo=FALSE}
+source("../src/out_refs_analysis.R")
+
+#median_especiality %>% 
+#  rename(Community = cluster_label) %>% 
+#  filter(!is.na(Community)) %>% 
+# knitr::kable(caption = "Median number of citations from a given discipline to an article in a given community") %>% 
+#    column_spec(1, width = "1.5cm") %>% 
+#  column_spec(2:14, width = "0.4cm") %>%
+#  kable_styling(latex_options = c("striped", "hold_position"), font_size = 5)
+
+```
+
+Recall my earlier analyses addressing the question of whether the interest in general jurisprudence if focused on a bunch of older books rather than more recent discussions. In the present context, if that assumption is right, we will expect citations to *General jurisprudence* to target older texts than citations to other communities. To check it, I calculated the *age* of all external citations by subtracting the publication year of the cited document from the publication year of the citing document^[To limit the effect of citations of extreme ages (many of which appear a result of database errors), I included citations whose age was between 0 and 100 years.]. In this sense, the citations to *General jurisprudence* are indeed older ($M =$ `r round(unname(T_cit$estimate[1]), 2)` years) than citations to other communities ($M =$ `r round(unname(T_cit$estimate[2]), 2)` years; $t($`r round(unname(T_cit$parameter),2)`$)=$ `r round(unname(T_cit$statistic) , 2)`, $p < .001$). This general observation holds true for citations coming from journals classified as Law ($M_{GJ} =$ `r round(unname(T_cit_law$estimate[1]), 2)` years; $M_{nonGJ} =$ `r round(unname(T_cit_law$estimate[2]), 2)` years; $t($`r round(unname(T_cit_law$parameter),2)`$)=$ `r round(unname(T_cit_law$statistic) , 2)`, $p < .001$) and Philosophy ($M_{GJ} =$ `r round(unname(T_cit_phil$estimate[1]), 2)` years; $M_{nonGJ} =$ `r round(unname(T_cit_phil$estimate[2]), 2)` years; $t($`r round(unname(T_cit_phil$parameter),2)`$)=$ `r round(unname(T_cit_phil$statistic) , 2)`, $p = $ `r round(unname(T_cit_phil$p.value), 3)`).
+
+Moving to the final citation analysis, let us take a look at the flow of citations *from* the graph to documents outside the graph (Table \@ref(tab:medianRef)). A typical text belonging to *General jurisprudence* cites one article from Philosophy and one article from Law (and no articles from other categories). In terms of the number of citations, it gives *General jurisprudence* the 10th place (along four other communities) for Philosophy and the 9th place (along three other communities) for Law. Just like for incoming citations, the average age of citation outgoing from *General jurisprudence* ($M =$ `r round(unname(T_ref$estimate[1]), 2)` years) is larger than that of other communities ($M =$ `r round(unname(T_ref$estimate[2]), 2)` years; $t($`r round(unname(T_ref$parameter),2)`$)=$ `r round(unname(T_ref$statistic) , 2)`, $p =$ `r round(unname(T_ref$p.value), 3)`). This general observation holds true for citations to journals classified as Law ($M_{GJ} =$ `r round(unname(T_ref_law$estimate[1]), 2)` years; $M_{nonGJ} =$ `r round(unname(T_ref_law$estimate[2]), 2)` years; $t($`r round(unname(T_ref_law$parameter),2)`$)=$ `r round(unname(T_ref_law$statistic) , 2)`, $p =$ `r round(unname(T_ref_law$p.value), 3)`), while the same observed difference for Philosophy is not statistically significant ($M_{GJ} =$ `r round(unname(T_ref_phil$estimate[1]), 2)` years; $M_{nonGJ} =$ `r round(unname(T_ref_phil$estimate[2]), 2)` years; $t($`r round(unname(T_ref_phil$parameter),2)`$)=$ `r round(unname(T_ref_phil$statistic) , 2)`, $p = $ `r round(unname(T_ref_phil$p.value), 2)`). To sum up, documents belonging to *General jurisprudence* cite rather few sources from outside the core of legal philosophy and the sources they do cite tend to be older -- both observations are consistent with the thesis of the particular self-referentiality of general jurisprudence.
+
+```{r medianRef, echo=F, message=F, warning=F}
+
+median_especiality_ref %>% 
+  rename(Community = cluster_label) %>% 
+  filter(!is.na(Community)) %>% 
+ knitr::kable(booktabs = T, 
+                caption = "Median number of citations to a given discipline from an article in a given community") %>% 
+    column_spec(1, width = "2cm") %>% 
+  column_spec(2:7, width = "1.5cm") %>%
+  kable_styling(latex_options = c("striped", "hold_position"), font_size = 7)
+```
+
+# General discussion
+
+
+
+# Limitations
+
+```{r echo = F, warning=F, message=F}
+source("../src/coverage_analysis.R")
+```
+
+As argued by @verbeek2002measuring, the reliability of any bibliometric analysis can be affected by a few types of factors, including *completeness of bibliometric data*, *coverage of scientific literature databases*, and *imitations to the use of citations*. In the context of this study, the first two types of factors are worth discussing together. Although some proprietary citation databases, such as Web of Science, are more standardly used for this kind of research, they were not useful for this study precisely because of the coverage issues. First, many journals important for legal philosophy are not indexed in the leading dabatases and, second, much legal philosophy has been published outside journals altogether, in books and edited volumes. I addressed the coverage issues by employing the OpenAlex database, which is supposed to provide citation data more indiscriminately across journals and books. This wider coverage, however, comes at the price of some incompleteness, most notably in the form of not reporting reference lists for some articles. While incomplete data might be not dangerous for projects analysis large data sets, it is much more concerning for studies analysing smaller corpora [@verbeek2002measuring], as this one. This would be particularly concerning if the bias is not randomly distributed, as I have some reason to believe in this case. For example, among 19 specialist journals with which I started data collection this study, the 6 journals publishing exclusively in English have a lower rate of published items with no references in the used database (`r cov_prop %>% filter(anglo=="anglo"&refs=="no") %>% .$prop %>% round(2)`) than the remaing 13 journals (`r cov_prop %>% filter(anglo=="not-anglo"&refs=="no") %>% .$prop %>% round(2)`; $\chi^2(1) =$ `r round(unname(chi$statistic), 2)`, *p* < .001). Even though this observation is not conclusive evidence of the database bias,^[Such a pattern can be a result of a relatively smaller completeness of data for non-Anglophone journals or it can be just a result of non-Anglophone journals being more likely to publish items that do not cite anything.], it might cast doubt on the reliability of some reported patterns. Most strikingly, the fact that the analyzed graph consists almost exclusively of texts written in English might be evidence of the core of contemporary legal philosophy being written English (because of the centrality of Anglophone philosophers *and/or* because of English being the lingua franca among non-Anglophone philosophers) but it can also (to some extent) be an artifact of a relatively weaker completeness of non-Anglophone data. Only further research could estimate the relative contributions of these two potential factors.
+
+As argued by @smith1981citation, a typical citation analysis is based on a couple of rather strong assumptions, unlikely to be fully satisfied: the cited document has been used by the citing author; the citation reflects the merit of the cited document; citations are made to the best possible work; the cited document is relevant to the citing document. While the problematic plausibility of these assumptions permeates the entire filed of citation analysis, let me mention a reason for caution more specific for this study. Many earlier analyses, including the central co-citation analysis, are based on citations coming not necessarily from papers written by legal philosophers. Citations coming from non-experts might be speculated to be relatively less reliable, as they might be less likely to indicate an actual engagement with the cited work and more likely to a perfunctory reference to a high-prestige source. To give an example, the high centrality of works in *General jurisprudence*, such as Hart's *The Concept of Law*, might be a result of non-expert authors simply adding some of the most famous bits of legal philosophy to their reference lists, without any deeper specific reason. While this risk should not be overstated, it would ideally be addressed by further research, including taking a closer look at articles citing works in legal philosophy identified as central in this study.
+
+\newpage
+
+```
+
+# References
+
+<div id="refs"></div>
+
+# Appendix
+
+```{r, message=F, error=F, echo=F, warning=F}
+k = 5
+```
+
+
+## General jurisprudence (*N* = `r nodes %>% filter(modularity_class == k) %>% nrow()`)
+
+
+```{r GJ, fig.align = "right", echo = F}
+tablePlot(k)
+k=4
+```
+
+## Law and political theory (*N* = `r nodes %>% filter(modularity_class == k) %>% nrow()`)
+
+```{r LPT, fig.align = "right", echo = F}
+tablePlot(k)
+k=15
+```
+
+## Punishment (*N* = `r nodes %>% filter(modularity_class == k) %>% nrow()`)
+
+```{r P, fig.align = "right", echo = F}
+tablePlot(k)
+k=2
+```
+
+## Responsibility (*N* = `r nodes %>% filter(modularity_class == k) %>% nrow()`)
+```{r R, fig.align = "right", echo = F}
+tablePlot(k)
+k=0
+```
+
+### Judicial review and consitutional rights (*N* = `r nodes %>% filter(modularity_class == k) %>% nrow()`)
+
+```{r JR, fig.align = "right", echo = F}
+tablePlot(k)
+k=19
+```
+
+
+### Torts / causation (*N* = `r nodes %>% filter(modularity_class == k) %>% nrow()`)
+
+```{r TC, fig.align = "right", echo = F}
+tablePlot(k)
+k=9
+```
+
+### Theory of rights / Contracts (*N* = `r nodes %>% filter(modularity_class == k) %>% nrow()`)
+
+```{r TR, fig.align = "right", echo = F}
+tablePlot(k)
+```

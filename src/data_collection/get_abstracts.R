@@ -2,12 +2,12 @@ library(httr)
 library(tidyverse)
 library(tidytext)
 library(textstem)
-nodes <- read.csv("data/cits/nodes.csv")
+nodes <- read.csv("data/cits/nodes_w=6.csv")
 
 
 tokenized <- list()
-for (i in 1418:nrow(nodes)) {
-url <- gsub("openalex", "api.openalex", nodes[i, "id"])
+for (i in 1:nrow(nodes)) {
+url <- gsub("openalex", "api.openalex", nodes[i, "Id"])
 
 response <- GET(url)
 result <- jsonlite::fromJSON(rawToChar(response$content))
@@ -25,13 +25,13 @@ temp <- data.frame(term=names(lengths(abs)), n=as.numeric(lengths(abs))) %>%
   mutate(term = lemmatize_words(term)) %>% 
   group_by(term) %>% 
   summarise(n=sum(n)) %>% 
-  mutate(doc=nodes[i,'id'])
+  mutate(doc=nodes[i,'Id'])
 
 tokenized <- bind_rows(tokenized, temp)
 print(round(i/nrow(nodes)*100))
 }
 
-write.csv(tokenized, "data/text/tokenized.csv")
+write_csv(tokenized, "data/text/tokenized_w=6.csv")
 tokenized <- tokenized %>% 
   filter(term != "")
 

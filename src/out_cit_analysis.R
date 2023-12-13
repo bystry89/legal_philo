@@ -1,67 +1,64 @@
 library(tidyverse)
 library(igraph)
-source("src/functions/labelClust.R")
+source("../src/functions/proNSF.R")
+#source("../src/functions/labelClust.R")
 
-nodes <- read.csv("data/cits/nodes.csv") %>% 
-  labelClusts() %>% 
-  filter(!is.na(cluster_label))
+#nodes <- read_csv("data/cits/nodes_w=6.csv") %>% 
+#  labelClusts() %>% 
+#  filter(!is.na(cluster_label))
 
-work <- read.csv("data/raw/works_full.csv")
-
-
-cits <- read.csv("data/raw/cits.csv") %>% 
-  filter(work %in% nodes$id) %>% 
-  distinct(work, cit, .keep_all = T)
-
-journals_class <- read.csv("data/cits/scopus_class_mod.csv")
+#work <- read.csv("data/raw/works_full.csv")
 
 
-by_area <- read.csv("data/cits/out_cits.csv") %>% 
-  inner_join(journals_class, by="issn") %>%
-  group_by(work) %>% 
-  mutate(weight = 1/n()) %>% 
-  ungroup() %>% select(-X.x, -X.1, -X.y) %>% 
-  right_join(cits, by = c("work" = "cit")) %>% 
-  rename(Source = work.y,
-         Target = work) %>% select(-...1, -group) %>% filter(!is.na(area2)) %>% 
-  left_join(nodes, by  = c("Source" = "id"))
- 
-  
-by_area %>% 
-  group_by(cluster_label, area2) %>% 
-  summarise(sum=sum(weight)) %>% 
-  #mutate(cluster_label = forcats::fct_reorder(cluster_label, sum(sum))) %>% 
-  ggplot(aes(x=area2, y=sum, fill=cluster_label))+
-  geom_bar(stat = "identity") +
-  theme_minimal()+
-  theme(axis.text.x = element_text(angle = 40, size = 10, vjust = 1, hjust = 1), axis.title = element_blank())
+cits_full <- read_csv("../data/raw/outcits.csv") %>%
+  filter(id %in% nodes$Id) %>% 
+  distinct(id, id.1, .keep_all = T) %>% 
+  anti_join(nodes, by = c("id.1" = "Id"))
 
-  by_area %>% 
-    group_by(cluster_label, area2) %>% 
-    summarise(sum=sum(weight)) %>% 
-    pivot_wider(names_from = cluster_label, values_from = sum) 
-  
-  
-by_area %>% 
-  filter(cluster_label == "General jurisprudence") %>% 
-  dplyr::select(Source, area2, weight) %>% 
-  pivot_wider(names_from = area2, values_from = weight, values_fn = sum) %>% 
-  ungroup() %>%
-  mutate(across(where(is.numeric))/rowSums(across(where(is.numeric)))) %>% 
-  summarise(across(where(is.numeric), mean, na.rm=T))
+#journals_class <- read.csv("data/cits/scopus_class_mod.csv")
+journals_class <- readxl::read_excel("../data/cits/WoS_NSF_Classification.xlsx") %>% 
+  clasNSF()
 
+cits <-   cits_full %>%
+  proNSF()
 
-clusters <- unique(by_area$cluster_label)
-tbl <- list()
-for (i in 1:length(clusters)) {
-tbl <- by_area %>% 
-  filter(cluster_label == clusters[i]) %>% 
-  dplyr::select(Source, area2, weight) %>% 
-  pivot_wider(names_from = area2, values_from = weight, values_fn = sum) %>% 
-  ungroup() %>%
-  mutate(across(where(is.numeric))/rowSums(across(where(is.numeric)))) %>% 
-  summarise(across(where(is.numeric), mean, na.rm=T)) %>% bind_cols(data.frame(cluster=clusters[i])) %>% 
-  bind_rows(tbl)
-}
+median_especiality <- cits %>% left_join(nodes, by=c("id" = "Id")) %>% 
+  count(id, disc) %>% 
+  pivot_wider(id_cols = id, names_from = disc, values_from = n, values_fill = 0) %>% 
+  left_join(select(nodes, Id, cluster_label), by = c("id" = "Id")) %>% 
+  group_by(cluster_label) %>% 
+  summarise(across(-id, median))
 
-write.csv(tbl, "data/cits/out_by_clust.csv")
+col_ord <- cits %>% count(disc, sort =T) %>% .$disc
+ median_especiality <-  nodes %>% count(cluster_label) %>% 
+    right_join(median_especiality) %>% 
+     arrange(desc(n)) %>% 
+     select(cluster_label, n, col_ord)
+
+median_especiality <-  nodes %>% count(cluster_label) %>% 
+  right_join(median_especiality) %>% 
+  arrange(desc(n)) %>% 
+  select(cluster_label, col_ord)
+
+lawphil <- median_especiality %>% 
+  mutate(law_phil = Law/(Philosophy)) %>% 
+  select(cluster_label,Law, Philosophy, law_phil) %>% 
+  arrange(law_phil)
+
+age <- cits_full %>% 
+  left_join(nodes, by = c("id" = "Id")) %>% 
+  mutate(age = publication_year.x - publication_year.y) %>% 
+  filter(age>-1, age<100) %>% 
+  mutate(Community = if_else(cluster_label == "General jurisprudence", "General jurisprudence", "Others"))
+
+T_cit <- t.test(age ~ Community, data = age)
+
+T_cit_phil <- age %>% 
+  proNSF() %>% 
+  filter(disc == "Philosophy") %>% 
+  t.test(age ~ Community, data=.)
+
+T_cit_law <- age %>% 
+  proNSF() %>% 
+  filter(disc == "Law") %>% 
+  t.test(age ~ Community, data=.)

@@ -1,21 +1,9 @@
 library(tidyverse)
+library(igraph)
 source("labelClust.R")
 
-nodes <- read.csv("cmp_nodes.csv") %>% labelClusts() 
-works <- read_csv("works_full.csv")
-authors <- read.csv("authors_full.csv")
-authors_list <- authors %>% 
-  select(id, name) %>% 
-  distinct(id, .keep_all = T)
-nodes %>% 
-  left_join(authors, by = c("id" = "item")) %>% 
-  group_by(id.y) %>% summarise(sumEig = sum(eigen)) %>%
-  arrange(desc(sumEig)) %>% 
-  left_join(authors_list, by =c("id.y"="id")) %>% 
-  select(name, sumEig) %>% head(20)
-  
+nodes <- read.csv("data/cits/nodes_w=6.csv") %>% labelClusts() %>% 
+  filter(!is.na(cluster_label))
 
-nodes %>% left_join(works) %>% 
-arrange(desc(eigen)) %>% 
-  select(first_author, display_name, eigen) %>%
-  head(20)
+edges <- read.csv("data/cits/edges.csv")
+

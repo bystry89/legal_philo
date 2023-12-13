@@ -1,26 +1,24 @@
 library(tidyverse)
 
-labelClusts <- function(x, community = x$Modularity.Class) {
+labelClusts <- function(x, community = x$modularity_class) {
   mutate(x, cluster_label = 
 dplyr::case_when(
-  community == 0 ~ "Argumentation",
-  community == 12 ~ "General jurisprudence",
-  community == 11 ~ "Punishment / Responsibility",
-  community == 9 ~ "Justice and fairness",
-  community == 2 ~ "Global justice",
-  community == 7 ~ "Private law / Legal realism and descendants",
-  community == 5 ~ "Constitutionalism / Legal pluralism",
-  community == 19 ~ "Criminal law",
-  community == 6 ~ "Law and political theory",
-  community == 8 ~ "Natural law and non-positivism",
-  community == 1 ~ "International (criminal) law",
-  community == 13 ~ "Expert systems",
-  community == 20 ~ "New theories / Reinterpretations",
-  community == 21 ~ "Promising / Reasonableness",
-  community == 23 ~ "Classical natural law",
-  community == 3 ~ "Legal epistemology",
-  community == 18 ~ "Legal personhood",
-  community == 17 ~ "Free speech", 
-  community == 4 ~ "Kant / Kelsen"
+  community == 5 ~ "General jurisprudence",
+  community == 4 ~ "Law and political theory",
+  community == 15 ~ "Punishment",
+  community == 2 ~ "Responsibility",
+  community == 0 ~ "Judicial review and constitutional rights",
+  community == 19 ~ "Torts / causation",
+  community == 9 ~ "Theory of rights / Contract law",
+  community == 20 ~ "Justifications and excuses",
+  community == 8 ~ "War and killing",
+  community == 3 ~ "Legal reasoning",
+  community == 12 ~ "International law",
+  community == 10 ~ "Evidence and proof",
+  community == 17 ~ "Natural law",
+  community == 7 ~ "Non-positivism (Alexy & Radbruch)",
+  community == 13 ~ "Hate speech",
+  community == 16 ~ "Risk and prevention in criminal law",
+  community == 18 ~ "Consent"
 ))
 }
