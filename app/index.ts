@@ -14,12 +14,12 @@ import data from "./data.json";
 const container = document.getElementById("sigma-container") as HTMLElement;
 const searchInput = document.getElementById("search-input") as HTMLInputElement;
 const searchSuggestions = document.getElementById(
-  "suggestions"
+  "suggestions",
 ) as HTMLDataListElement;
 
 // Instantiate sigma:
 const graph = new Graph();
-graph.import(data);
+graph.import(data as any);
 const renderer = new Sigma(graph, container);
 
 // Type and declare internal state:
@@ -41,7 +41,7 @@ searchSuggestions.innerHTML = graph
   .nodes()
   .map(
     (node) =>
-      `<option value="${graph.getNodeAttribute(node, "label")}"></option>`
+      `<option value="${graph.getNodeAttribute(node, "label")}"></option>`,
   )
   .join("\n");
 
@@ -70,7 +70,7 @@ function setSearchQuery(query: string) {
 
       // Move the camera to center it on the selected node:
       const nodePosition = renderer.getNodeDisplayData(
-        state.selectedNode
+        state.selectedNode,
       ) as Coordinates;
       renderer.getCamera().animate(nodePosition, {
         duration: 500,

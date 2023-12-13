@@ -1,21 +1,17 @@
 {
   "name": "legal-philo",
-  "version": "0.0.19",
-  "description": null,
+  "version": "1.0.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "kotatsu serve --typescript index.ts --public / ./public",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "start": "kotatsu serve --typescript index.ts --public / ./public"
   },
   "license": "MIT",
   "dependencies": {
-    "graphology": "^0.23.0",
-    "sigma": "latest"
+    "graphology": "^0.23.2",
+    "sigma": "^3.0.0-alpha3"
   },
   "devDependencies": {
-    "react-scripts": "1.0.0",
     "kotatsu": "^0.22.3",
     "typescript": "4.4.4"
   },

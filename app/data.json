@@ -5051,13 +5051,13 @@
     {
       "key": "https://openalex.org/W2122165510",
       "attributes": {
-        "label": "Coleman, 1978",
+        "label": "Dworkin, 1978",
         "x": -189.95412,
         "y": 1212.983,
         "size": 35.03877,
         "color": "#f6b26c",
         "publication_year": 1978,
-        "first_author": "Jules L. Coleman",
+        "first_author": "Gerald Dworkin",
         "display_name": "Taking Rights Seriously",
         "modularity_class": 5,
         "eigencentrality": 0.8318715247432042,
@@ -8651,12 +8651,12 @@
     {
       "key": "https://openalex.org/W4233237171",
       "attributes": {
-        "label": "Hart, 2012",
+        "label": "Hart, 1961",
         "x": -435.66815,
         "y": 973.5949,
         "size": 40.0,
         "color": "#f6b26c",
-        "publication_year": 2012,
+        "publication_year": 1961,
         "first_author": "HLA Hart",
         "display_name": "The Concept of Law",
         "modularity_class": 5,
