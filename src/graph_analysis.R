@@ -8,7 +8,8 @@ library(ggplot2)
 #works <- read_csv("data/raw/works_full.csv")
 
 stop <- c("jan", "apr", "httpsdoiorg", "oct", "mar", "ssrn", "journal", "aug", "electronic",
-          "jun", "sep", "nov", "feb", "may", "jul", "dec", "study", get_stopwords()$word)
+          "jun", "sep", "nov", "feb", "may", "jul", "dec", "study", "hereinafter",
+          'rev', get_stopwords()$word)
 
 abstract_tokens <- 
   #read.csv("data/text/tokenized_w=6.csv") %>% 
@@ -56,8 +57,3 @@ clust_tf_idf %>%
     theme_minimal()+
     theme(axis.text.x = element_text(angle = 40, size = 8, vjust = 1, hjust = 1), axis.title = element_blank())
 }
-
-
-
-
-

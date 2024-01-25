@@ -11,7 +11,7 @@ centrTable <- function(x) {
                                     paste(collapse = "\n")})) %>% 
     rename("First author" = "first_author",
            "Title" = "display_name") %>% 
-    tableGrob(theme = ttheme_minimal(base_size=7))
+    tableGrob(theme = ttheme_minimal(base_size=6, padding = unit(c(4, 2), "mm")))
 }
 
 #tokenized <- read.csv("data/text/tokenized_w=6.csv")
